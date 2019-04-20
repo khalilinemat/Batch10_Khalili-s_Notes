@@ -1,0 +1,870 @@
+Jenkins Class:
+
+CI/CD: Stands for automating the process of git process deployment. 
+
+CI: Every time the softwares code is 
+
+- developers write codes 
+- check in their code into different ropos, branches merges 
+
+Continous Integration: 
+- Deploy to development 
+	test funcationality 
+- Deploy to QA environment 
+- Staging (Pre-Production Environment) 
+- Production/Live 
+
+Agile: 
+- Methodology focuses continous improvements, open to changes, testing early and often, collaboration, less documentation ... 
+
+DevOps: 
+	- developers and testers 
+	- Operations 
+	- Development Operator 
+	- Team that works with Jenkins 
+
+DevOps
+- who wrote will maintain it. 
+- same poeple who wrote the application will test the application and deploy the application and maintian the application
+- 
+
+Operations: 
+- team of poeple who are responsible for keeping applying application/environment up and running. 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Tools conducting CI/CD: 
+ -> There are many many CI/CD tools like Jenkings, babmoo, travis, team
+- Jenkin is one of the tools: 
+	- Continous Ingegration tool 
+	- open source 
+	- Automates building, testing, packaging, staging, deploying the application. 
+	- Integrates 
+
+-> We created a virtual machine, it has a banch of databases, Jenkin will be run through this. 
+
+-> Each 
+
+-> localhost means this computer, no need for the computer 
+
+-> 
+
+password: ?VCwbM5NjcQ
+
+Jenkins's status: 
+- if it is sunny, everythign is good 
+- if it is cloudy, then it is not good and something is broken 
+- 
+
+-> Building Trigger in Jenkins: 
+	- Builder periodically --> it means we don't have any fixed schedule 
+	- build after other proejcts are built --> meaning that it will run after each code is built 
+	- Trigger builds remotely --> you can run a run from remote, 
+		H6*** --> every day at 06:00 AM, it is Jenkin's language 
+
+		-> As a tester we usually set our smoke test and identify how often it should run 
+
+-> Build Environment 
+	- 
+
+-> Build: It is where the real action happen. We make connection between our framework and Jenkins. 
+	- we always run from terminal using command: mvn verify 
+	- jenkin will download the files and folders 
+	- Add build step: you add whatever build-in tool you have, so you use Maven, if you use something else in your company, then pick that one 
+
+-> Jenkin has a plugin that is specifically for the cucumber, it calls cucumber-html-plugin-report something like this. 
+
+-> The email from Jenkin goes to all team members, it depends on the company, but smoke test must go to everyone, no matter what. 
+
+-> The smoke test is running in the cloud or virtual machine, it does not open the browser, so the machine should have java, maven and everything that can run the tests. And we can get all the reports and required results regarding to our test. 
+
+-> Who does what with Jenkins in the company: 
+ 
+ 	=> Mostly a lot of developers stuff
+
+	=> We also have some test suits like regression, integression, smoke and other types of the tests, if you create one job, then you have created copy of different jobs and you can put it in the command. 
+
+	=>  In the homepage for our practice jenkins we have a smoke test. The automation is done more often. We normally don't touch the Jenkins unless we have a good reason, but you don't touch it, it usually sets one time. If you have one job, you can have mutliple jobs. 
+
+	=> There is a permission for changing any Jenkins, usually you take username and password to see and run. some others have only see and create. But, in order to change or delete you have to take approval from the leadership. 
+
+	=> If the company's system goes down, it means there is some problem with the Jenkins. Usually, you take temperory user name and password for a week, then create your smoke test during that week, then your password gets expired. 
+
+	=> Another way is working with Jira, to put in the ticket. Someone from the environment just come and give you the permission. It depends on the company if the company way of operation is to add it in Jira, then you added in Jira, if they wanted you to create smoke test with a temporarry password, then you have to do it that way. 
+
+	=> 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Jenkin's 2 day>>>>>>>>>>>>>
+
+what is jenkins?
+	continous integration tool. it is used to schedule and automated builds, deployments etc. it is used for by developers and testers. 
+
+
+
+What kinds processes can be automated using jenkins?
+	running unit tests	
+	building the applicaiton
+	running automated ui tests
+	deploying to different environments
+
+how jenkins is used in your company for testing?
+	In my project, we use jenkins for scheduling and running out automated smoke tests.
+	our smoke tests run every day. 
+
+
+what tests you have on jenkins?
+	in my project we have our smoke and regression tests for jenkins. 
+
+what kind of tests can be done in jenkins?
+	so jenkins can run any automated test. for example we can have unit tests, smoke tests, intergration tests, regression tests, sanity. 
+
+what layers of tests can be tested using jenkins?
+	testing different layers of the application is done with our test code. jenkins does not care if we are testing ui or database or api. it only kickcs of the tests and sends reports. 
+	so if my automated test is a ui test, it means jenkins is running ui tests. or if my automated test is a api tests it means jenkins is running api tests.	
+
+Who sets up Jenkins?
+	In my company we have DevOps/Operations Support team who is responsible for maintaining jenkins. those installed and configured jenkins. for deployments etc they work with developers to create jobs for building and deploying the applications. 
+	For creating smoke tests, they work with automation engineers. 
+
+
+Who sets up smoke tests in Jenkins? 
+	As an automation engineer, I work with the devops/operations supports to create my smoke tests. 
+	for running my tests i need certain plugins installed on Jenkins, I also need java, maven configured on jenkins, I also need browsers installed on the server where the tests will run. 
+	In my project, only devops/operations support team members have right to do the configurations above. that is why I have to work with them.  
+
+	Once the configuration of the Jenkins is completed I can create and run the smoke test job. 
+
+
+how your smoke tests are configured on jenkins?
+	Our jenkins job is configured to get my automated tests from github and run every day using maven. 
+	in configuration, first I created a new job and gave name "smoke tests". then I selected option git in the Source Code Management section and entered the path to my framework on github. and also entered the git credentials. 
+	next configuration is about build triggers where I chose option Build periodically and enter the time how often I want to run my tests.
+	In the Build section, i choose option invoke top level maven command since my automation framework is created using maven. 
+	in the section I enter the maven command (without the mvn part). so if normal command to run my test using terminal is 'mvn test', in jenkins i only enter 'test'. here I also enter the tag i want to run using command line. 
+		test -Dcucumber.options="--tags @smoke"
+
+	if  i want to run regression tests, command is:
+		test -Dcucumber.options="--tags @regression"
+
+
+	in the Post-build Actions, I do couple configuration,
+	1. I add Cucumber reports option. This is avaiualbe because we have installad cucumber html reports plugin to our jenkins. Cucumber reports plugin will generate html report for every build. Every time we run smoke tests on jenkins, we get a new report. and all reports for all build are saved. 
+
+	2. I add email option as the next Post-build Actions. Here I configure it so that every one in my agile team is notified about the test results. 
+
+
+who gets the email reports for tests? 
+	every one in my agile team is notified aobut the test results. 
+
+
+____
+
+
+How about question "Have you worked on DevOps pipeline?"
+	i have build smoke tests on jenkins which are part of the devops pipeline. devops pipeline is built and managed by DevOps/Operations Support. But our smoke test are part of the pipeline. so i participated by creating and configuring the smoke tests on jenkins. 
+
+
+
+Today’s interview question. What is the difference between integration test and end to end test? 
+	test to verify the in
+
+	How do you run them on Jenkins?
+
+
+	KUZZATS RULES
+	1. dont worship management 
+	2. dont be desparate
+	3. act like you have million dollars in your account 
+	4.reset button before any call
+	6. smile when you pick up the phone
+	7. no  peer pressure
+ 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>JAVA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ 
+
+ 03/25/2019
+----------
+
+BootCamp review session Day 1.
+
+Java programming recap.
+----------------------
+
+August 18 - 2018
+----------------
+
+Keep up your hard work.
+
+Continue your hard work same as you did during the classes.
+
+Job market needs 100% effort.
+=============================
+
+Java programming/ Interviews:
+
+1) Experience based
+2) Technical details of Java/Coding challenges
+============================
+
+How comfortable are you with Java programming?
+
+I have good experience with Java programming, I am comfortable with using Core java, OOP concepts, Data structures, String manipulation and other popular libraries like JDBC.
+I am good at exceptions handling etc.
+
+I mainly used java to build automation frameworks, along with other tools like Selenium, TestNg, Junit, Cucumber.
+
+2) Why did you use Java in your framework?
+- Since our developers use java for developing our applications,
+we already have Java environments set up like Maven repositories.
+Java is very dynamic language that supports, Object oriented and Functional programming. We can easily create reusable , maintainable code.
+
+3) What version of Java you are currently using?
+
+We are using java 8, but I also used 7 as well.
+
+4) What is the difference between java 7 and 8?
+
+-> Starting from java 8, java also has functional programming features like lambda expressions(->), Streams.
+
+-> Interfaces can now include default and static methods
+
+-> LocalDate, LocalTime, LocalDateTime Libraries are added to work with time stamps
+
+LocalDate.now() ==> 03/25/2019
+==> Date 
+============================
+Additional notes to mention:
+In my current project we deal with lots of sets of data that come from different sources(like UI, API, DAtabase), So since I am comfortable with Java and data structures, i can easily validate all the required data.
+=================================
+
+2) programming technical questions.
+
+--> Certain concept
+--> list vs set vs map
+-> MAJOR differences
+-> Good to slightly link to your exprience. 
+--> Algorithm. You either describe your approach or type. 
+--> re-describe the problem to them.
+--> If you do not understand, kindly ask to repeat the question
+--> they wanna see your approach, and not necesarily correct answer.
+--> while answering, keep engagement
+============================
+
+HelloWorld.java
+compile (javac HelloWorld.java)
+HelloWorld.class <-- bytecode
+Run (java HelloWorld)
+JRE has interpreter that converts bytecode to 0,1s binary
+===========
+
+When using maven, or any IDE, it compiles the classes and store .class files into bin folder.
+=========================
+
+Memory management in Java:
+STACK AND HEAP
+
+-> Stack -> Local variables, Reference variables, Methods.
+For each method, frame is places into stack memory.
+
+STACK IS FULL:
+StackOverFlow Error
+
+-> HEAP:
+OBJECTS are in HEAP
+-> String pool
+-> Main HEAP AREA
+-> STATIC members area
+HEAP IS FULL:
+OutOfMemory Error
+
+GC ==> Garbage collector
+-> whenever there is no reference to the objects in heap, GC will take it away to allocate more space
+-> We cannot control GC, it is automatic process.
+System.GC(); ==> It is not guaranteed to run
+
+Java memory management is automatic. 
+No need to manually free up space
+
+====================
+
+public static void main(String args[]){
+
+}
+
+main method, that JVM looks for while executing the code.
+
+Why is it static?
+So that it can be called without creating an object.
+
+Can a main method call another main method? YES, we can
+
+CLASS A:
+main
+
+CLASS B:
+main(String[] args){
+A.main(null);
+}
+===================
+
+Explain:
+System.out.println("hi");
+
+System is a classname
+out is a static variable of type PrintSteam
+println is a method of that static out variable and part of PrintSteam class.
+
+
+casting primitives
+
+int i = 100;
+double d = i; // automatic/implicit casting
+
+double d = 12.4;
+int j = (int)d; //explicit casting
+
+CASTING OBJECTS:
+When classes are related to one another using inheritance, we can do upcasting and downcasting.
+
+A > B > C
+
+A a = new C();
+B b = a;
+
+C c = new C();
+B b = (B)c;
+
+=========================
+
+Wrapper classes:
+primitive and make it an object
+And it has useful static method.
+
+Ex: Convert string to int
+int j = Integer.parseInt("234");
+
+AUTO-BOXING
+UN-BOXING
+
+AUTO-BOXING ==> Primitive > Wrapper object
+int i = 100;
+Integer j = i;
+
+UN-BOXING ==> Wrapper object - Primitive
+Integer j = new Integer(100);
+int i = j;
+=========================
+
+CLASS IN JAVA:
+public (final|abstract) class Java
+- final class
+- abstract class
+{
+1) instance variables
+2) static variables
+3) final variables
+
+4) instance methods
+5) static methods
+6) final methods
+
+7) static block
+8) init block
+
+9) constructors
+
+}
+=======================
+
+1) instance variable vs static variable?
+instance -> object variable
+-> we need to create object of the class to use them
+-> each object will have its own copy of the variable
+static -> shared variable/class variable, can be accessed/used by classname. belongs to class itself.
+it is a shared variable and there is only one copy of this variable
+
+2) instance method vs static method?
+-> instance -> we need object of the class to call it
+-> static method - class method, can be called with classname directly.
+-> utility class methods etc
+-> you do not need an object
+-> objects can also call them
+
+public class A {
+public static void m1(){}
+}
+
+A.m1();
+A a = new A();
+a.m1();
+
+3) METHOD vs CONSTRUCTOR:
+CONSTRUCTOR:
+- same name as classname
+- no return type
+- runs every time object is created
+- initialize objects/variables with some values. SET UP
+- If you do not add a constructor, compiler will give you default constructor for free
+- cannot be inherited
+- can be overloaded
+METHOD: 
+- it is a behaviour of the object/class.
+- we need to call them to use them
+- it contains re-usable
+===========================
+
+==> static block vs init block vs constructor
+
+static block => runs first, only once when class is used
+
+init block ({}) => runs every time object is created and runs before constructor and after static block
+
+constructor => runs every time object is created and runs after static and init blocks
+
+==> FINAL KEYWORD
+final class ==> cannot be extended/inherited. String, System,
+
+final method ==> cannot be overriden
+final variable ==> value cannot changed
+
+==> FLOW CONTROL:
+conditional statements
+loops
+
+if else
+if else if else
+switch => can be used when we test a variable if it equals some values. Cannot compare using >= < operators.
+ONLY CAN TEST FOR EQUALITY
+- can work with=> char, String, byte, short, int, long, ENUMs
+
+ternary ==> ? : ==> checks condition and returns a value.
+int a = 10;
+int b = 20;
+int n = a > b? a : b;
+
+enum ==> is a type that contains multiple predefined, options that can be used.
+
+public enum Days {
+MONDAY, TUESDAY, WED, THUR, FRIDAY, SAT, SUNDAY;
+}
+
+
+When do we use it:
+as a method argument and with switch statement
+
+public void showDay(Days days){
+switch(days) {
+case MONDAY:
+print "It is monday";
+break;
+case TUESDAY:
+print "It is tuesday";
+break;
+}
+}
+
+showDay(Days.MONDAY);
+showDay(Days.FRIDAY);
+showDay(Days.SOMEDAY); <== will not compiler
+
+LOOPS:
+while loop => keeps looping as long as 
+condition is true. Can be used when we do not know how long to loop. OR it can also be used with iterator like for loop
+
+do while loop => run loop body code once then check for condition at the bottom.
+-> ensures that code runs at least once
+
+for loop ==> we use it when we know how many times it needs to loop
+
+for each loop ==> can only be used with 
+collections of data. Array, arraylist, set, map, etc
+
+int[] nums = {23,435,34,2,45};
+for (int n : nums) {
+//n
+}
+=============================
+
+ 
+==> OOP CONCEPTS:
+- ENCAPSULATION:
+- INHERITANCE
+- ABSTRACTION
+- POLYMORPHISM
+
+ENCAPSULATION: data hiding by making your instance variable private, and providing getters/setters with public access.
+
+When do you use this?:
+When i work with data in my application, I try to create custom class for them so that I can easily manipulate it.
+I also create POJO classes to easily manipulate JSON data from API or Data from database.
+
+public class RoomBooking{
+private User user;
+private String room;
+private LocalDateTime time;
+
+//public getter/setters
+}
+
+List<RoomBooking> todaysBookings = new ArrayList<>();
+
+INHERITANCE ==> When a class inherits variables and methods from another parent class.
+SUPER CLASS > SUB CLASS
+PARENT CLASS > CHILD CLASS
+
+MULTIPE PARENT CLASSES?
+Java does not support Multiple inheritance.
+
+Java supports single class inheritance.
+
+A Class can only inherit from ONE parent class.
+
+--> WHEN DID U USE INHERITANCE IN YOUR FRAMEWORK?
+When doing Selenium automation, I use POM - Page Object model design pattern. 
+When there are elements that are part of each page in my application , I create a special class for those and let other Page object classes inherit/extend it.
+So that we have less duplicate code.
+
+We created it as an abstract class as >> public abstract class NavigationMenu {}
+
+WHAT IS INHERITED AND WHAT IS NOT?
+
+IS:
+-> all public members
+-> all protected members
+-> default members ONLY IF parent and child classes are in SAME PACKAGE.
+-> static members are also inherited depending on their access modifier
+
+IS NOT:
+-> private members
+-> default members if parent class is in different package
+-> constructors
+
+ACCESS MODIFIERS:
+4 
+1) public --> visible to the world(all class in same project)
+2) protected --> visible to everyone in same package and only to sub classes in other packages
+3) default --> package private --> visible to everyone in SAME PACKAGE ONLY
+4) private --> visible within SAME CLASS only
+
+OVERLOADING VS OVERRIDING
+-> overloading:
+->2 or more methods with same name but different parameters.
+->Signature must be different, name must be same
+-> return type and access/non access modifier can be Different
+-> overriding:
+-> can only override INHERITED methods
+-> method will be SAME NAME and SAME PARAMETERS
+-> Signature MUST be same
+-> return type can be same or any sub type
+
+public class A extends B{
+
+}
+
+public class C {
+public B m1() {
+
+}
+}
+
+public class D extends C {
+@override
+public A m1() {
+
+}
+}
+
+-> access modifier can be same or MORE VISIBLE
+
+public -> public
+protected -> protected, public
+default -> default, protected, public
+private -> is not inherited so overriding cannot happen. 
+==================================
+
+Can static methods be overriden?
+NO, static methods ARE HIDDEN. 
+static methods are inherited but cannot be overriden, can only be hidden
+-> depending on what class name you are using to call the static method, it will call the one from that class.
+
+public class A {
+public static void m1() {
+print "A";
+}
+}
+
+public class B extends A {
+public static void m1() {
+print "B";
+}
+}
+
+A.m1() ==> A
+B.m1() ==> B
+
+A a = new B();
+a.m1(); ==> "A"
+
+=================================== 
+
+what is SUPER and SUPER() keywords?
+super() calls parent class constructor
+super. is used to access parent class variables and methods(members)
+
+====================================
+
+ABSTRACTION:
+--> in Java ABSTRACTION is achieved by using ABSTRACT class and INTERFACEs.
+--> It is like describing the behaviour and hiding the implementation.
+
+HOW did you use in your experience?
+When I created a TestBase class to use to store methods and steps to be used by other test classes. I made my TestBase an Abstact class.
+So this way, TestBase class cannot be instantiated/create object. and Only will be used by other test classes by extending it.
+
+DIFFERENCE BETWEEN ABSTRACT CLASS AND INTERFACE.
+
+common:
+-> both are used to achieve abstraction
+-> cannot create object from either one
+-> we can store absract methods in both
+
+INTERFACE:
+-> A class can IMPLEMENT multiple interfaces
+-> methods can be: abstract, static or default
+-> variables can be: PUBLIC STATIC FINAL
+-> cannot have a constructor
+
+WHAT interfaces u used:
+WebDriver, List, Set, Map etc
+
+ABSTRACT CLASSES:
+-> A class can inherit only single ABSTRACT class.
+-> Methods: All abstract or non abstract
+-> Constructor: YES, it can include
+-> VARIABLE: any type, any access modifier, any non access mod(static , final)
+=> ABSTRACT METHOD:
+Method with no implementation/body 
+=================================
+HWPO --> HARD WORK PAYS OFF
+
+POLYMORHISM:
+-> MANY FORMS:
+-> When Object type is CHILD class and 
+REFERENCE IS PARENT CLASS/INTERFACE TYPE.
+
+public class Cat extends Animal{}
+public class Cat extends Animal implements Pet {}
+
+Animal cat = new Cat();
+Pet cat2 = new Cat();
+
+WebDriver driver = new ChromeDriver();
+List<String> list = new ArrayList<>();
+===========================================
+
+==> DATA STRUCTURES:
+
+Are used to manipulate data of different types.
+
+-> ARRAYS:
+-> COLLECTIONS
+-> MAP
+
+ARRAYS ==> 
+Collection of data of same type.
+ARRAYS ARE FIXED SIZE
+ONCE SIZE OF ELEMENTS ARE DEFINED, CANNOT BE CHANGED.
+
+int[] arr = new int[5];
+arr[0]=342;
+arr[1]=443;
+arr[2]=34132;
+arr[3]=213;
+arr[4]=23423;
+
+int[][] multiD=new int[3][4];
+
+3 rows/arrays, with 4 elements in each
+
+HOW TO SORT ARRAY:
+-> Arrays.sort(arr);
+Merge Sort. Mergesort is a comparison-based algorithm that focuses on how to merge together two pre-sorted arrays such that the resulting array is also sorted.
+Insertion Sort. ...
+Bubble Sort. ...
+Quicksort.
+
+ARRAYLIST -> BASED ON ARRAY, LIKE DYNAMIC ARRAY.
+Resizable array.
+Implements list interface.
+
+ARRAY VS ARRAYLIST:
+-> Array is fixed size
+-> Arraylist is resizable
+-> Array can be of primitive type and object type
+-> ArrayList can accept only objects, so we must use Wrapper classes
+-> Array can be multi dymentional
+-> ArrayList cannot be multi D
+COMMON:
+-> BOTH can accept duplicated values
+-> BOTH keep ordering
+---------
+
+LIST VS SET VS MAP:
+ALL ARE INTERFACES
+
+LIST is an interface
+- ordered collection of data
+- allows duplicates
+
+SET collection of UNIQUE/Non duplicated data.
+-> does not keep ordering
+-> does not allow duplicates
+
+MAP -> K + V ==> Key + Value pair
+KEYS: 
+-> are always unique
+-> do not keep ordering
+VALUES:
+-> Values can be duplicated
+-> Values can be null
+=================
+LIST > ARRAYLIST
+> LINKEDLIST
+> VECTOR
+
+ArrayList : BASED ON ARRAY, LIKE DYNAMIC ARRAY.Resizable array.Implements list interface.
+LINKEDLIST -> consists of NODES that are linked to each other. HEAD -> TAIL
+
+PERFORMANCE:
+get() method: reading
+ArrayList is faster
+
+add() -> adding: linkedList is faster, since it just inserting another node, arraylist must recopy array into new array
+
+remove( ) --> deleting:
+linkedlist is faster since it is just deleting a node and connecting others.
+ArrayList needs to recopy arrays and it is slower
+
+VECTOR:
+IS LIKE ARRAYLIST, but it is thread safe/ SYNCRONIZED.
+
+
+THREAD SAFE -> SYNCRONIZED KEYWORD
+When code runs in many executions at the same time, it is called MULTI-THREADING:
+When something is thread-safe/syncronized --> ONE THREAD AT A TIME CAN ACCESS IT.Other threads will wait.
+It uses something called LOCKING MECHANISM
+================================
+SET IMPLEMENTATIONS:
+-> HASHSET
+Set<Integer> s = new HashSet<>();
+-> TreeSet 
+SET > SORTEDSET -> TREESET
+|
+V
+HASHSET
+TREESET vs HASHSET:
+-> TreeSet is sorted
+-> HashSet is not sorted
+======================================
+
+QUEUE VS STACK:
+-> QUEUE -FIFO->First in First Out
+
+-> STACK-LIFO -> Last in first out
+=======================================
+
+MAPS:
+KEY AND VALUE
+KEYS ARE UNIQUE
+
+-> HASHMAP 
+-> HASHTABLE
+-> TREEMAP
+
+HASHMAP vs HASHTABLE:
+HashMap is not syncronized/ not thread safe
+HashTable is thread safe
+
+HashMap allows one NULL key
+HashTable does not allow any NULL key
+
+HashMap is faster
+HashTable is slower
+
+TREEMAP --> keys are sorted.
+=========================================
+
+==> EXCEPTION HANDLING:
+PARENT OF ALL EXCEPTINS:
+Throwable
+EXCEPTION TYPES:
+CHECKED -> Compile Time:
+-> 
+UNCHECKED -> Run Time
+===============================
+
+OKTA -> SINGLE SIGN ON SYSTEM
+-> MULTI-FACTOR AUTHENTICATION
+
+OKTA INVITATION :> OPEN IT USING YOUR COMPUTER.
+
+- set your password
+- you download "Okta Verify" application into cellphone
+- scan a barcode on the screen
+==============================
+u can access canvas, learn.cybertekschool.com
+
+OKTA > CANVAS
+
+CANVAS
+
+cybertekschool.okta.com
+=================================
+
+EXCEPTIONS, STRING POOL, STIRNGBUILDER, STRINGBUFFER
+
+SINGLETON CLASS
+
+HASHCODE + EQUALS METHODS
+TO WORK WITH HASHSET
+================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

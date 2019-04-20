@@ -1,0 +1,2202 @@
+
+GIT / GitHub Notes
+
+Date: 	5th January 2018 
+
+File Uploading: 
+
+go to https: //the-internet.herokuapp.com/upload 
+upload file 
+click upload 
+verify text uploaded 
+
+create a new test class : FileUpploadClass
+
+-> Selenium cannot deal with windows, pop ups that come from the native OS. For example when we are uploading files, we have to choose a file using a file explorer/finder. this cannot be automated using Selenium. 
+
+There are other tools that helps the Automation: 
+
+	1): AutoIT: only works in windows. 
+
+	2): Robot framework: this is java library, works anywhere java works. 
+
+    3): Sikuli: works on windows and unix. 
+
+Most of te times we stay in the contains of the website, sometimes we need to use extra tools like above.
+
+Selenium handles file uploads in very special way, without opening the pop up windos. 
+
+-> In Selenium, in order to upload a file: 
+	1. We need to locate the choose file input element 
+	2. do sendKeys and send the path to the file we want to upload. 
+
+
+WebTables: 
+
+-> What is a web table? It is a collection of data organized in rows and colums. 
+
+	=> Anatomy of Tables: 
+
+		-> If there is a tag in html called table, then it is a table, if you highlight the table tag, then the whole table will be highlighted. 
+
+		-> table is made of rows and colums, in html: 
+
+		tbody : means the body of a table. 
+			tr - > row 
+			td - > cell
+
+			Note: There is no tag to indicate column in html. only rows. We can write an xpath for it, but there is not a tag to indicate specifically the columns. 
+
+		-> thead: header of the table, usually contains the columns names and 
+			tr : row 
+			th : theader 
+
+		-> All table haders are th and our table looks like this: 
+				table 
+					body 
+						tr 
+							th
+							th
+							th
+				//table[@id='ctl00_MainContent_orderGrid']//th 
+				find the table with this id and within this table, finds all elements of tag th. 
+
+
+Tasking: 
+- print the whole table 
+- print colmns names 
+- print single rows 
+- print certain cell 
+- print by coordinated (row, col) 
+- print the size: columns and rows in a table 
+- print a vlaue in relation to another value 
+
+1. How we find the numbero f rows? find all elements with tr tag 
+2. How do we find number of columns? find the first row and find the number of cells in the first row
+
+find a certain row:  //table[@id='ctl00_MainContent_orderGrid']//th
+
+
+//table[@id='ctl00_MainContent_orderGrid']/tbody/tr/td[2] 
+
+gets all the cells from the second column, gets all of the names 
+
+	1. it finds the table 
+	2. finds all rows 
+	3. finds the second cell in all rows 
+
+Find the selecet checkbo for a name 
+checbox and the naems are in the same row 
+	1. Find the td which contains that name 
+		//td[.='Mark Smith']/..
+
+		/.. -> 
+	2. go to the row that contains that cell from step 1 
+
+	3. 
+
+
+
+Note: Every table looks different that is why we don't need a utility or a TestBase for it. 
+
+===============================================================================================================================
+
+
+Date: January 16, 2019 
+
+GIT and GITHUB from Command Line: 
+
+Mac --> Terminal 
+Window --> Powershell 
+
+official website: 	wwww.git-scm.com 
+
+ Installing git: 
+
+Go to terminal and type:  git version
+
+keep different versions of code. 
+
+What is GIT? 
+
+It is free distributed tool. It is version control system, version control examples: 
+	-> keep different versions of code 
+
+
+Why we use GIT? 
+
+1): Keep track of changes to code, GIT help collobarate 
+
+2): Synchronizes code between different people. 
+
+3): Test your code without losing the original 
+
+4): Revert back to older versions fo code 
+
+
+Different types of versions control system: 
+
+1): Central Repository 
+
+2): Distributed repository -> GIT 
+
+DVCS -> Distributing Version Control System
+
+Similiar tools like Git - CVS, SVN 
+
+
+GIT vs GITHUB? 
+
+GITHUB: It is a central repository in the cloud that is used to store Git Repositories. 
+
+GIT -> GITHUB 
+GIT -> BITBUCK 
+GIT -> GITLAB  
+
+If you wanted to push your code to the central repository, then everyone will see it, unless it is not private. 
+
+GIT COMMANDS: 
+
+git version -> see which version of GIT you have 
+
+git -> shows you mostly used COMMANDS 
+
+Introduce yourself to git: only once 
+
+git config --> global user.name "CybertekSchool"
+git config --> global user.name CybertekSchoo.com 
+git config --> global color.ui true 
+
+
+Git: It is version control tool/software. 
+
+It keeps track of changes that you made and lets you save different versions. 
+
+By doing that, you can easilty go back to the old version or compare with previous version. 
+
+Examples: 
+
+Git, SVN, CVS .... 
+
+Versoin1 -> Version2 -> Version3 
+
+=> in Git terminology, version is Commit. In order to keep all Commits or versions, you need to use a version control system like Git to keep track of the changes and it helps you to collaborate with others. It synchronizes code between different people. You can push a code to the GitHub and other poeple get notification that a code is pushed in GitHub. 
+
+There are 2 different version control softwares: 
+
+1): Centralized version control: 
+	-> If you use a google drive or a spreadsheet, you share with the team members, they make changes and it is saved in the cloud, it is a good example of of centralized version control system. 
+
+	-> source control or version control system (VSC) are the same, Git is one of the VSC. 
+	-> Source control is secruity and backup for your code. 
+	-> If you use Git and GitHub, you save your code in a central remote repository or cloud that you can get back your code. Repository, is a remote place where the files are saved. You can save your code in the cloud location and even if your computer is broken, your code is save. There is one copy of your code in the cloud and everyone from your team is trying to change it. 
+
+2): Distributed version control: 
+	-> Whatever is in the cloud, you keep one exact local copy in your local machine. Even you can see the changes if a team member make. 
+
+There are 2 Repositories: 
+
+	Repository => repo: It is like a folder that has files and etc. Example: you can see java or maven project as an individual repository. 
+
+	a): Locla: The file in your computer, which is local. 
+
+	b): Remote: in the cloud (GitHub) 
+
+	GitHub is not a version control tool itself, you can push your version to the remove in GitHub and then the team members can get a copy. 
+
+Git is Distributed Version Control System (DVCS): Everyone will have local Git Repository which is same as the remote repository. 
+
+Developer can make changes to his local repository file and push to remote repository. Everyone will have the exact same copy   
+
+Another benefit is COLLABORATION among developers/Teams/Communities. 
+
+
+There are 2 different ways of using Git: 
+
+1) Command line 
+2) GUI tool or an IDE (Exclipse or IntelliJi plugin)
+
+The person who wrote Linux Kernel project, he also wrote GIT. 
+
+Introducing yourself to Git: 
+
+=> git config --global user.name "Your name"
+
+=> git config --global user.email --> your email address: myEmail@Gmail.com
+
+=> git config --global color.ui true 
+
+
+Create Local Git Repository (Repo); 
+
+
+=> git init --> It creates a Initialized empty Git repository 
+	 	- Because we are in our project folder, so whole java project is part of git repository now. Everyting from now on that I do inside my java project, it will be tracked by Git. 
+
+	 	- When you do git init in a folder, make sure that you don't use git in for the entire computer 
+
+	 	- a hidden folder is created and in order to see it, you just type - a 
+
+ Why did we create local git repo? We want to track all changes in our java project. 
+
+
+=> git status --> 
+
+   .idea/
+        MyFirstGitRepositoryFall2018.iml
+
+
+Untracked files means, those files/folders are created new and we did not ask git to watch or save versions of those folders/files yet. 
+
+In order for Git to save or track of our file, we need have to bring it to the staging Area and do the following steps: 
+
+	When a new file is added to your poject, it's status will be "untracked". 
+
+		1): We need ot add new files/ file updates to Staging Area. 
+
+			We use --> git add filename  or 
+				   --> git add . <= git add all the files/folders to the staging Area. 
+
+	git status is your friend. You can always check the status of our local git repository. 
+
+	Status: 
+		- any new files? 
+
+	(use "git add <file> ..." to include in what will be committed). 
+
+	
+	Project in your ocmputer >> Stating Area >> Local Repository Commit 
+
+	git config commands: 
+
+	=> git init: initialize or create a local git repo 
+	=> git add . : add everything into staging area 
+	=> git status: show the status of git repo 
+	=> git commit -m: 
+
+	Questions: 
+		I already made a commit earlier. after that, I modified one file by adding one more java statement. 
+		I create a new Java class. 
+
+		How do I create a new version with these changes? 
+
+	Answer: Anytime you want to bring some changes, then bring it to the Staging Area and add to the Staging Area and commit one more time. 
+
+	Meaning of: 
+		"Change to be committed: "
+		It means those changes are in staging Area. It is also called index too. "Git"
+
+	How do you see history of your commits/versons? 
+		=> git log: shows the history of the commits. It is another command that you have remember like git status that you want to use more. 
+
+	Every commit will have a COMMIT HASH, it is a unique id for that commit. 
+
+	Process of pushing code to gitHub: 
+
+	Steps to save/push lcoal repository in GitHub
+
+	-> login in github and show the create New Repository 
+
+	git remote add origin https://github.com/khalilinemat/MyFirstGitRepositoryFall2018.git
+	git push -u origin master
+
+	-> Give it a name and save it 
+
+
+	Task: 
+
+	Create a new java class, 
+
+		Name: GitHub 
+		instance variable: 	public int commits 
+
+	- add GitHub class to the staging Area 
+
+	- commit the changes 
+
+	- push to remote repository 
+
+		This time we can just use git push command Git 
+
+
+	-> commit the changes: 
+		git 
+
+	HomeWork: 
+
+	Open your existing intelliji project and push it to new GitHub repository 
+
+	-> command+shift+.   --> will show your hidden folder inside the git folder 
+
+
+	Work Flow: 
+
+	Whenever a new file is created - it will be in untracked status. Git will not automatically start tracking/looking at it. 
+
+	git add -> add newly added files or folders to staging Area 
+			-> add modified files to staging area 
+	Everytime you make changes to any of files in LOCAL repository : you will need to add it to Staging Area before each commit. 
+
+	- git commit -m "message" -> looks at staging Area and takes snapshot
+	- git add filename 
+	- git add .
+	- git log -> view commit history, commit hash, author, timestamp, comment 
+
+	- Working Directory/files/Folder >>>> Git Add -> Stagin Area >>>> Git Commit -> Commit(s)
+	- Git add file1.txt and file1.txt is in Staging Area and ready to take a snapshot 
+	- Git commit -m "add file1.txt" 
+	- Git log : gives you the history of your work 
+
+	1) Open file1 and add one more line to it and save it 
+	2) Open file2 and add one more line to it and save it 
+
+	Git status 
+
+	Git add * 
+
+	Git commit -m "add lines ..... whatevery notes you want to write" 
+
+	-> Git diff ---> it shows the difference between the last commit and whatever was modified after that. 
+
+	Files that are UNTRACKED will not show by using Git diff command. 
+
+
+	Git reset: --> remove the file from the staging Area and don't include everything. If a file is in Staging Area, you can use the command "git reset" to remove it from the Staging Area. 
+
+	Git commit -a -m  "Message"			--> you git commit, first add by -a and then commit by -m ""
+
+		- git commit -a -m "We are adding and commiting in the same line" 
+
+	=> git commit -a -m  "Message" --> works instead of 2 commands: 
+		1): git add * 
+		2): git commit -m "message" 
+
+	=> When you say git log --> it will bring you a detailed message, long one, in order to get out of the page, you just say ctr+z or command+z. 
+
+	There are 2 ways to link local and remote repository
+
+	1): git remote add origin path to repository like this ->  git remote add origin https://github.com/khalilinemat/MyFirstGitRepo.git 
+
+	2): git clone --> actually works the other way, if you have a code in your GitHub (cloud), you want to bring it to your local machine which is your pc, then you pass url by using of git clone url. 
+
+	=> git push -u origin master --> run for the first time, then will be used git push after that 
+
+	Steps: 
+
+	1. Create a folder 
+	2. Using terminal navigate to that folder 
+	3. git init 
+	4. add a new text file to the folder 
+	5. add > commit 
+	6. Goto GitHub.com and create empty repository to the folder 
+	7. git remote add origin pathToGitHubRepo
+	8. git push -u origin master 
+
+
+	pushing local eclipse project to gihub
+
+	Steps for seding an Eclips project to GitHub: 
+
+	- right click to get the properties of the project, copy the path. 
+
+	- go to terminal and navigate to the path 
+
+	- git init --> to create a git repository 
+
+	- exclude the bin folder 		(.gitignore) 
+
+	- go to your exclips project, right click and create a new file name it -> .gitignore 
+			-> inside --> .gitignore 	--> type bin/ & DS_Store
+
+
+Date: 	January 19, 2019 
+
+Git + GitHub Day 2: 
+
+Git Work Flow: 
+
+WorkSpace (local computer) -> Staging Area (Index) -> commit local repository  -> remote repository in gitHub(virtual machine) 
+
+-> The purpose of the gitHub is to store the copy of your code and collaborate. 
+
+
+1) How to create an empty repository?   
+	- git init 
+
+2) Ho to see what changes were made in workspace?  
+	- git status 
+
+3) How to add changes. new files to index/staging Area? 
+
+	- git add fileName 
+	- git add folerName 
+	- git add . 
+	- git add * 
+	- git add --all 
+	- git add "*.java" => add only .java files
+
+4) How to save in local repo as a commit? git commit -m "update some files" 
+
+5) How to see history of commits? 	git log 
+
+6) How to connect local repo to remote repo in github? 
+	- git remote add origin pathToGithubRepo.git (origin is a nickname for the repository and you can change it as well)
+
+7) How to do initial push to github repo? 
+	- git push -u origin master  (master branch is the main branch, you may have multiple branches and it is the main branch)
+
+8) after initial push we can just say git push 
+
+What is "untracked" files/changes? 
+	- Whe you create a new file in the workspace (eclipse or intellije), it is "untracked", once you added to staging Area or commited, then that file is no longer untracked. Git tells you I know it is a new file, but I am not looking at right now. 
+
+Task: 
+- Login to GitHub and create and empty repository called "Calculator". 
+
+	-> create a file in Intellije called Calculator 
+
+There are many websites that can store/host remote repositories. 
+	- GitHub 
+	- BitBuck 
+	- GitLab 
+	-- many other types 
+
+ git remote -v: this just show the details 
+
+ => Add a file intor project 
+ 		- added calculator with one method 
+
+ => add src folder into staging Area 
+ 		- git add src/
+
+ => commit to local repository: 
+ 		- git commit -m "message"
+
+ => If you add # (Hash Key), then it will be commented 
+
+
+ => git commit -> it opens terminal based file editors (like notepad) 
+ 		- anything that begins with #, is a comment, will be ignored 
+ 		- we will type commit message on top 
+ 		- then hit ESC 
+ 		- then :wq
+ 		- hit enter 
+
+=> better alternative: 
+		- git commit -m "Add subtract method" 
+
+=> git pull --> go to your repository file edit it, put some comments, then come back to your terminal and then use git pull to bring the changes in the code .
+
+
+IT Job Process: 
+
+-> IT is your first day in the job 
+-> Support team/lead gives you a new laptop 
+-> The team/lead gives you a GitHub URL repository for the Automation porject and you have to pull all files by yourself. 
+		
+	There are 2 options to take care of this: 
+
+		1): One way you unzip the folders and import it to your IDE (Eclips or Intellije) --> It is not a good way to do it, because you can't push the modified code back to the remote repository in the future. 
+
+		2): If you git clone, it will get a copy of the whole copy of remote repository and all detailed information will be transferred to your local machine like copy paste and you can connect to the remote repository in the future for modifiying any files in the future. 
+
+Tasking: 
+
+-> You need to clone then Repository in GitHub to your machine. 
+
+-> get the Repository url 
+
+-> in your computer, create an empty folder with same name as the github Repository 
+
+-> Oepn command line or terminal/powershel and navigate to the folder 
+
+-> clone the github Repository --> git clone 
+
+Steps to do it: 
+
+1. Go to Selenium GitHub url by typing --> seleniumhq/selenium
+
+2. Copy the url 
+
+3. Go to your Documents 
+
+4. Create a folder same name as seleniumhq/selenium 
+
+5. Go to your terminal/powershel 
+
+6. Navigate to your selenium folder 
+
+7. once you are in selenium folder, then just type --> git clone url (the url you copied from the selenium GitHub)		 
+ 
+
+https://github.com/CybertekSchool/parallel-multi-browser-testng-framework 
+
+1) clone it to your computer 
+2) import to intellij 
+
+Detailed Steps: 
+
+1) Create a folder and parallel-multi-browser-testng-framework
+2) Navigate to that folder using command line 
+3) git clone https://github.com/CybertekSchool/parallel-multi-browser-testng-framework
+4) open IntelliJ
+5) File > Open ... and navigate to project folder 
+6) click on Open 
+
+		File > New > Project from existing sources 
+- Select Maven 
+
+
+What if new changes were adde dt othat repo, can you pull those changes? 
+
+
+
+git init
+git status
+git add
+git commit
+git push 
+
+git clone
+git pull 
+git fetch 
+git merge
+
+git log 
+
+
+--------------------------------
+
+MERGE CONFLICT: HOW TO SOLVE THEM? 
+
+-> What is merge? It is combine changes from different sources together. 
+
+	1): Merge local version of the file with REMOTE version of the file
+
+		- Local Clors.txt: 
+			red 
+			blue 
+			green 
+
+		- Remote Version Colors.txt 
+			red 
+			blue 
+			green 
+			white 
+
+	Remote one is one commit ahead. 
+
+How do we bring white color to our local Colors.txt 
+
+We have 2 options: 
+
+1. git pull (is a combination of fetch + merge) 
+2. git fitch 
+   git merge 
+
+fetch command => it will bring the changes/commits to local git repository. If we fetch it, we will not be able to see it in Eclipse or IntelliJ, until we merge them together. 
+
+git merge command -> it will get commits from local repository to workspace. 
+
+
+=================================================================
+
+1. Your local Calculator repo and remote is same. 
+2. Someone else pushed to remote 1 commit 
+3. You made changes locally using IntelliJ and commit to your local repository 
+4. Now you want push your commit to github/remote/origin 
+	- will it work? No, After doing lcoal commit, and before trying to push our changes to remote, we need to pull from GitHub and make sure we ahve all the latest commits. 
+	Otherwise it will show an error. 
+
+
+Rules: 
+1) Commit all the changes locally first 
+2) Pull and make sure you have all the commits in GitHub 
+3) If there are any merge conflicts, solve them 
+4) Push to remote 
+
+	-> To make it even better, you can use branching in Git. 
+
+When do merge conflicts happen? 
+	-> Whenever changes were made to same file and same exact line. 
+
+Make a recreate a merge conflict in Calculator repo? 
+
+=========================================================================================================	
+
+Mr. Muradil's Notes 
+
+01/19/2019
+
+Git + GitHub Day 2.
+------------------
+
+Git commands:
+
+How to create local empty repo?
+
+git init
+
+How to see what changes were made in workspace?
+
+git status
+
+How to add changes. new files to index/staging area?
+
+git add fileName 
+git add foldername
+git add .
+git add *
+git add --all
+
+git add "*.java" => add only .java files
+
+How to save in local repo as a commit?
+
+git commit -m "update some file"
+
+How to see history of commits?
+
+git log
+
+How to connect local repo to remote repo in github?
+
+git remote add origin pathToGithubRepo.git
+
+How to do initial push to github repo?
+
+git push -u origin master
+
+after initial push we can just say
+git push
+
+What is "untracked" files/changes?
+
+when you create a new file in the workspace, it is "untracked",
+once you add it to staging area, or commit it then that file is no longer "untracked"
+.
+=============================
+
+Login to GitHub and create an empty repository called 
+"Calculator".
+
+Also Open IntelliJ and create a Java project called
+"Calculator"
+================
+
+there are many websites that can store/host remote repositories:
+
+-- GitHub
+-- BitBucket
+-- GitLab
+-- many other that out there.
+
+================
+
+git, svn, cvs, etc
+
+GitHub was purchased by microsoft and now allows unlimited private
+repositories for free.
+=================
+Login to GitHub and create an empty repository called 
+"Calculator".
+
+Also Open IntelliJ and create a Java project called
+"Calculator"
+================
+
+==> Create a local repository for Calculator java project.
+
+CybertekSchools-iMac:Calculator cybertekschool$ git init
+Initialized empty Git repository in /Users/cybertekschool/IdeaProjects/Calculator/.git/
+
+==> Set up a remote repository in gitHub for local git repo?
+
+git remote add origin https://github.com/CybertekSchool/Calculator.git
+
+==> How to checkif remote repository successfully set up?
+
+git remote -v
+
+==> Add a file into project
+added calculator with one method.
+
+==> add src folder into staging area
+
+git add src/
+
+==> commit to local repository:
+
+git commit -m "write add method"
+
+==> check history to see if it was committed:
+
+git log
+
+==> push local repo to github remote repo(origin):
+
+git push -u origin master
+
+==> Goto github and refresh the page and see if was successful
+============================
+
+Some issues so far:
+
+1) Forgot github username and/or password:
+goto github and reset password
+
+2) cannot push, it says no permission:
+
+maybe you are trying to push to someone else's remote repo.
+Owner of github repo must add you as a collaborator.
+===========================
+
+==> modify Calculator.java by adding one more method
+
+==> check if git knows about it
+
+git status
+
+Changes not staged for commit:
+
+modified: src/Calculator.java
+
+==> We must add Calculator.java to STAGING area again, since it was modified
+
+git add src/Calculator.java'
+
+Changes to be committed:
+(use "git reset HEAD <file>..." to unstage)
+
+modified: src/Calculator.java
+
+
+==> git commit
+
+It opens terminal based file editor (like notepad)
+- anything tha t begins with #, is a comment, will be ignored
+
+- type your commit message on top
+- then hit ESC
+- then :wq
+- then hit enter
+
+better alternative:
+
+git commit -m "Add subtract method"
+==============================
+
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+(use "git push" to publish your local commits)
+
+
+==> push new changes to github:
+
+git push
+
+then goto github refresh page and verify.
+====================================
+
+
+GOTO GitHub and edit the Calculator.java file and commit the
+changes in the GitHub:
+
+--> So far we were changing in the workspace then 
+add to staging then commit then push changes.
+
+--> now we are changing in GitHub remote repo.
+
+Change in GitHub repo can be done by editing the file in the browser, or maybe some other teammate/contributor pushed his 
+code into same github repository.
+
+==> after commiting in GitHub,
+we go to local repo and do 
+git pull
+
+CybertekSchools-iMac:Calculator cybertekschool$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/CybertekSchool/Calculator
+213711a..5e5a8ec master -> origin/master
+Updating 213711a..5e5a8ec
+Fast-forward
+src/Calculator.java | 4 ++++
+1 file changed, 4 insertions(+)
+CybertekSchools-iMac:Calculator cybertekschool$ 
+============================
+
+
+CybertekSchools-iMac:Calculator cybertekschool$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/CybertekSchool/Calculator
+5e5a8ec..ed8d9bc master -> origin/master
+Updating 5e5a8ec..ed8d9bc
+error: Your local changes to the following files would be overwritten by merge:
+src/Calculator.java
+Please commit your changes or stash them before you merge.
+Aborting
+CybertekSchools-iMac:Calculator cybertekschool$ 
+======================================================
+
+
+IT is your first day in the Job.
+And support team/lead gave you your work laptop.
+And he sent you GitHub URl repo for the automation project.
+
+You need to clone the Repository in GitHub to your machine.
+
+=> get the repo url
+
+=> in your computer, create an empty folder with same name as
+the github repository. selenium
+
+=> open command line(terminal/powershell/cmd) and navigate to that folder
+
+=> clone the github repository
+
+git clone https://github.com/SeleniumHQ/selenium.git
+====================================================
+
+https://github.com/CybertekSchool/parallel-multi-browser-testng-framework
+
+1) clone it to our computer
+2) import to intelliJ
+
+Detailed steps:
+
+1) Create a folder and parallel-multi-browser-testng-framework
+2) Navigate to that folder in command line
+3) git clone https://github.com/CybertekSchool/parallel-multi-browser-testng-framework.git
+4) Open IntelliJ
+5) File > Open ... and navigate to project folder
+6) Click on Open
+
+File > New > Project from existing sources > step 6
+
+If after import, you cannot run the tests, please do the following:
+
+- File and close the project.
+- Open IntelliJ again
+- File > New > Project from existing sources
+- Select Maven and follow the steps by clicking next
+==================================
+
+
+https://github.com/CybertekSchool/parallel-multi-browser-testng-framework.git
+
+is a public repository. Everyone could see it in the browser
+and clone to it to their machines.
+
+Does it also allow pushing changes to it?
+
+No, unless the owner of the github repository add you as a contributor.
+
+What if new changes were added to that repo, can you pull those 
+changes?
+
+ 
+
+
+GIT PULL command does 2 commands together.
+1) git fetch
+2) get merge
+
+if any changes happened in GitHub and if you run git status,
+your local git does not automatically know the new commits in the github.
+
+If you want to see what was new, you need to fetch first. 
+and do git status.
+
+git fetch
+==> pulls all the new changes to local repository but it does not
+merge into workspace/you will not see in intellJ
+
+get status
+
+
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+
+fast-forward means when merging no conflicts will happen.
+
+
+git merge
+in this case , it merges commits that are in local repository
+to workspace. If is fast-forward merge, then we are happy.
+No merge conflicts happened.
+=======================================
+
+git init
+git status
+git add
+git commit
+git push
+
+git clone
+git pull
+git fetch
+git merge
+
+git log
+=======================================
+
+MERGE CONFLICTS. How to solve them.
+
+What is merge?
+Combine changes from different sources together.
+
+1) MERGE Local version of the file with REMOTE version of the file.
+
+Local Colors.txt:
+red
+blue
+green
+
+
+Remote Colors.txt
+red
+blue
+green
+white
+
+Remote one is one commit ahead.
+
+How to bring white color to our local Colors.txt
+
+1) git pull (is a combination of fetch+merge)
+2) git fetch
+git merge
+
+fetch command => it will bring the changes/commits to 
+local git repository. Not in workspace yet, cannot see in eclipse or
+intelliJ
+
+git merge command => it will get commits from local repository
+to workspace
+===========================================
+
+1. Your local Calculator repo and remote is same.
+
+2. Someone else pushed to remote 1 commit
+
+3. You made changes locally using IntelliJ and commited to 
+your local repository.
+
+4. Now you want push your commit to github/remote/origin
+
+Will it work?
+
+No, After doing local commit, and before trying to push our changes to remote, we need to PULL from GitHub and make sure we have all the latest commits. 
+Otherwise it will show:
+
+! [rejected] master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/salptekin/Calculator.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+
+================
+
+1) Commit all the changes locally first
+2) Pull and make sure you have all the commits in GitHub
+3) If there are any merge conflicts, solve them
+4) PUSH to remote
+
+================
+
+Best practice:
+
+Depending on how you use git, the above is good practice.
+
+To make it even better,
+we should use branching in Git. 
+===================================
+
+When do merge conflicts happen?
+
+Whenever changes were made to same file and same exact line
+are different.
+
+Lets recreate a merge conflict in Calculator repo.
+
+==> Goto GitHub and add divide method to Calculator.java and commit
+
+==> Goto Local Calculator.java and add divide method using different
+variable names and temporary result variable.
+
+==> Add changes to staging area and commit to local repo
+
+==> fetch the changes from Remote
+
+==> merge the changes from remote
+
+==> Any merge conflicts?
+=======================
+
+
+CybertekSchools-iMac:Calculator cybertekschool$ git merge
+Auto-merging src/Calculator.java
+Merge made by the 'recursive' strategy.
+
+Looks like it fixed the merge issue automatically by adding both.
+
+=========================
+
+GIT + GITHUB DAY 3 WILL BE FRIDAY 7 - 10 PM EST.
+-------------------
+
+BRANCHING, FORKING, ADDING COLLABORATORS
+STASHING
+MORE ON CONFLICTS
+
+=========================================================================================
+
+
+ myPractice: 
+
+ - Create a java project in intellij 
+ - Create same repository in your gitHub (recommanded to be same name)
+ - Create a remote repository by typping: git remote add origin pathToFileInGitHub
+ - git remote -v --> shows the version of remote if added 
+ - git add src/ --> git add file name 
+ - git commit -m "message"
+ - git log --> to see the changes 
+ - git push -u origin master --> pushing 
+ - refresh your gitHub and see if you see the changes 
+ -> If you face any issue like connot push, maybe the owner of gitHub did not give you permistion to collaborate. 
+ - modified the calculator.java by adding another method 
+ - if you run git status, then you will see the following: 	no changes added to commit in calculator.java (if you add anything, you have to add it in the staging Area). 
+ - we do again same command --> git add src/Test.java
+ - git commit ---> this time only write git commit by itself and it will take you to the terminal page, it is terminal based text editor, so you can open a file in terminal, you can make changes and save. 
+ 	-> git commit: opens terminal based file editor (like notepad), anything that begins with #, is a comment and will be ignored. 
+ 		The process will be: 
+ 		- type your commit message on top 
+ 		- then hit ESC 
+ 		- then :wq --> it basically close the terminal 
+ 		- then hit Enter 
+
+If you want to escape the above process, the shortcut is: 	git commit -m "add subtract method" 
+-> git push 
+
+Note: Anytime you add, delete or edit some files, then you have to use: git add file name, git commit -m "Message" and git push 
+
+=> Now we change something in GitHub or our team member changed something in GitHub, then we want to bring those changes to our local machine (pc). 
+
+=> when we add in the same lines of local machine and remote master, then it will give us an error of overriding message, so we need to commit it first, then you use: 	git add fileName, git commit -m "message", then git pull. it give us an error called git conflict merge issue with some red lines. It basically tells you which one you want from the comments that are added in both locations that are exacgittly overlap. So you can handle it manually by deleting the lines that are extra and keep the one that you like to be in your code. You need to push it back by using git add fileName, git commit -m "message", git push 
+
+=> You need to clone the Repository in GitHub 
+	- got to your GitHub, you click download or clone, then come back and make a folder same name as your gitHub folder or file, then navigate to that File through the terminal, then type: --> git clone filePathFromGitHub and enter 
+
+
+=> If you make some changes in remote repository, then you can pull it back, u have 2 options: 
+
+	1): git fetch --> it is note mreged yet, but you can see the status 
+	2): git merge --> it merges  
+
+ -----------------------
+
+case 1 : Happy scenario
+
+command: 
+	git add .
+	git commit -m "message"
+	git push 
+
+case 2: someone else has made some changes 
+
+	When I changed the code, someone else also changed the code in remote repository. 
+	In this case non fast-forward error will be thrown. It means I don't have the latest code from the remote repository. 
+
+	You cannot push code without getting the latest code from the remote repository. 
+
+Solution: 
+
+	1. git pull --> take the latest from the remote Repo and  merge with local change 
+
+	2. git push 
+
+Note: Try to always to git pull, before push to avoid any conflict 
+
+case 3: 
+
+When I changed a file/files, someone else changed the same file and pushed to the remote repo. 
+
+outcome 1: 
+in this case non fast-forward error will be thrown. It means I don't have the latest code from the remote 
+
+Solution: 
+	git pull --> to get the latest one, 
+
+Outcome: 
+
+	when we git pull --> when you do that then there is a conflict because same line of the code was changed by someone else and the outcome will be: we get conflict message since I changed the same file as remote repo 
+
+Solution: 
+	
+	We need to resolve the conflict ourseves 
+
+	1. open the file with conflicts in eclipse, any texteditor 
+
+	I resolve conflict by deleting the chagne that I don't want to keep. I have to keep either my code or other's code. 
+
+	If I want to keep their changes, I delete my code, 
+
+	After deleting and making the changes from the conflict then I do the following steps: 
+
+	after deleting thier changes, we add the file again: 
+
+	--> git add fileName 
+
+	--> git commit -m "message"
+
+	--> git push 
+
+case 4: 
+
+What if I want to keep both changes 
+
+	-> git pull 
+	-> merge conflict by keeping their change  (You have to copy your code in subline, notepat or Ms.Word, accept the other code and then past your code underneath, then push it)
+	--> git add 
+	--> git commit 
+	--> git push 
+
+	change the file with your saved changes,
+		git add 
+		git commit 
+		git push 
+=========================================================================================================
+ 
+
+02/01/2019
+----------
+
+.gitignore
+
+it is a special file where we can list file names or folder names so that git will "ignore" them.
+
+When we say git "ignores" them - we mean git will not track changes to those files/folders.
+
+hello.html
+
+if we have hello.html in the .gitignore file,
+whatever happens to that file will not bother git at all.
+
+/target/
+
+if we have /target in .gitignore file, it will ignore anything that is in that folder.
+
+LoginTests.java
+
+LoginTests.class
+
+*.class
+================================
+
+1) IN INTELLIJ - create a new MAVEN project,
+GitDay3
+
+2) In pom.xml add all dependencies that you have been using so far.
+
+3) Create a "tests" package 
+
+4) Create LoginTests.java
+
+5) Create @Test method and name LoginTest1
+
+6) Execute the test
+=========
+
+Convert this project into Local Git Repo.
+
+1) Goto terminal within IntelliJ
+
+2) Initialize local repo:
+	git init
+
+3) git status
+
+4) We will add .gitignore file into our project root folder. Like pom.xml is in project root folder.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .idea/
+        GitDay3.iml
+        pom.xml
+        src/
+        target/
+
+Now, we will ask git to ignore 
+.idea/
+GitDay3.iml
+target/
+
+Todo that, we create a file called ".gitignore"
+and add those lines to it then save.
+
+Right click on Project name > New > File >
+.gitignore > 
+
+Then type : Make sure no spaces
+.idea/
+GitDay3.iml
+target/
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        pom.xml
+        src/
+=============================
+
+Should I add .gitignore to .gitignore?
+
+Normally no, however if you want any other collaborators to ignore their own files and not like you, then you can ignore it and not push it.
+
+Purpose of .gitignore:
+
+ANy files or folder that are listed in .gitignore file will be ignored by git.
+When you say git status , it will not show any changes or anything at all about them.
+
+Common .gitignore
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+=======================
+
+Goto GitHub and create GitDay3 repository.
+
+Then run git remote and git push commands that are displayed in the page.
+
+Then refresh the page.
+==============================
+
+GIT BRANCHES:
+
+What is git branch?
+
+In git we can have multiple versions of the same repository broken down to branches.
+
+THere is master branch, that is 100% working code
+and we need to be careful while pushing our code to master.
+
+Whenever we work on new code. new test case , we can create our own branch and commit everyting there, instead of commiting everything to master branch.
+
+Once we are finish coding new feature or test case , and test it that 100% working , we MERGE it to master branch
+===================
+
+List all available branches to me:
+
+git branch
+
+* master
+
+There is only master branch and * means we are on it right now. it means our HEAD of git is pointing to master branch
+
+
+How to create a branch?
+
+git branch feature
+
+This will only create a branch but will not switch to it.
+
+How to switch to another branch?
+
+git checkout feature
+
+
+To delete a branch:
+git branch -d feature
+===========================
+
+git branch ==> show all branches and * will be where HEAD is now. or which is current branch
+
+git branch branchName ==> create new branch based on whatever branch you are.
+
+git checkout branchName ==> switch to branch.
+
+git checkout -b branchname ==> create and switch.
+=======================
+
+We have Feature branch, how to merge the feature branch back to MASTER.
+
+1) switch to MASTER first (git checkout master)
+2) git merge feature
+	--> git bring all the commits/changes from feature branch and merge to master
+
+git log --graph
+=================================
+
+1)
+So far all the branching was done in local git repository.
+We created feature branch and 
+commited 2 new commits 
+then merged back to master,
+then pushed to origin/master (github repo)
+
+2) Before you pushed your master, someone else pushed some commits to origin/master.
+
+It will not let you to push your code , since you are behind.
+=======================
+
+MASTER branch - main branch that will have 100% working code.
+
+1) Merge your feature branch to local master >>> pull from origin/master >> push your master to origin/master
+
+(PULL before PUSH)
+
+2) PULL origin/master to local master >> Solve merge conflicts >> merge feature branch to local MASTER >> push local master to origin/master
+===================================
+
+1) switch to feature
+2) make a commit
+3) goto github master branch and make a commit there, to simulate as if another developer pushed that code.
+4) switch to local master
+5) pull from origin/master to local master
+6) merge feature to local master
+	ESC
+	:wq
+	ENTER
+7) push local master to origin/master
+=============================
+
+Next class:
+	push local custom branches to another custom branch in origin/master then create pull request after code review.
+
+	Stashing.
+
+Summary:
+	.gitignore
+	git branching
+==================================
+
+
+02/01/2019
+----------
+
+.gitignore
+
+it is a special file where we can list file names or folder names so that git will "ignore" them.
+
+When we say git "ignores" them - we mean git will not track changes to those files/folders.
+
+hello.html
+
+if we have hello.html in the .gitignore file,
+whatever happens to that file will not bother git at all.
+
+/target/
+
+if we have /target in .gitignore file, it will ignore anything that is in that folder.
+
+LoginTests.java
+
+LoginTests.class
+
+*.class -> ignore anything that ends with .class
+================================
+
+1) IN INTELLIJ - create a new MAVEN project,
+GitDay3
+
+2) In pom.xml add all dependencies that you have been using so far.
+
+3) Create a "tests" package
+
+4) Create LoginTests.java
+
+5) Create @Test method and name LoginTest1
+
+6) Execute the test
+=========
+
+Convert this project into Local Git Repo.
+
+1) Goto terminal within IntelliJ
+
+2) Initialize local repo:
+git init
+
+3) git status
+
+4) We will add .gitignore file into our project root folder. Like pom.xml is in project root folder.
+
+Untracked files:
+(use "git add <file>..." to include in what will be committed)
+
+.idea/
+GitDay3.iml
+pom.xml
+src/
+target/
+
+Now, we will ask git to ignore 
+.idea/
+GitDay3.iml
+target/
+
+Todo that, we create a file called ".gitignore"
+and add those lines to it then save.
+
+Right click on Project name > New > File >
+.gitignore >
+
+Then type : Make sure no spaces
+.idea/
+GitDay3.iml
+target/
+
+Untracked files:
+(use "git add <file>..." to include in what will be committed)
+
+.gitignore
+pom.xml
+src/
+=============================
+
+Should I add .gitignore to .gitignore?
+
+Normally no, however if you want any other collaborators to ignore their own files and not like you, then you can ignore it and not push it.
+
+Purpose of .gitignore:
+
+ANy files or folder that are listed in .gitignore file will be ignored by git.
+When you say git status , it will not show any changes or anything at all about them.
+
+Common .gitignore
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+=======================
+
+Goto GitHub and create GitDay3 repository.
+
+Then run git remote and git push commands that are displayed in the page.
+
+Then refresh the page.
+==============================
+
+GIT BRANCHES:
+
+What is git branch?
+
+In git we can have multiple versions of the same repository broken down to branches.
+
+THere is master branch, that is 100% working code
+and we need to be careful while pushing our code to master.
+
+Whenever we work on new code. new test case , we can create our own branch and commit everyting there, instead of commiting everything to master branch.
+
+Once we are finish coding new feature or test case , and test it that 100% working , we MERGE it to master branch
+===================
+
+List all available branches to me:
+
+git branch
+
+* master
+
+There is only master branch and * means we are on it right now. it means our HEAD of git is pointing to master branch
+
+
+How to create a branch?
+
+git branch feature
+
+This will only create a branch but will not switch to it.
+
+How to switch to another branch?
+
+git checkout feature
+
+
+To delete a branch:
+git branch -d feature
+===========================
+
+git branch ==> show all branches and * will be where HEAD is now. or which is current branch
+
+git branch branchName ==> create new branch based on whatever branch you are.
+
+git checkout branchName ==> switch to branch.
+
+git checkout -b branchname ==> create and switch.
+=======================
+
+We have Feature branch, how to merge the feature branch back to MASTER.
+
+1) switch to MASTER first (git checkout master)
+2) git merge feature
+--> git bring all the commits/changes from feature branch and merge to master
+
+git log --graph
+=================================
+
+1)
+So far all the branching was done in local git repository.
+We created feature branch and 
+commited 2 new commits 
+then merged back to master,
+then pushed to origin/master (github repo)
+
+2) Before you pushed your master, someone else pushed some commits to origin/master.
+
+It will not let you to push your code , since you are behind.
+=======================
+
+MASTER branch - main branch that will have 100% working code.
+
+1) Merge your feature branch to local master >>> pull from origin/master >> push your master to origin/master
+
+(PULL before PUSH)
+
+2) PULL origin/master to local master >> Solve merge conflicts >> merge feature branch to local MASTER >> push local master to origin/master
+===================================
+
+1) switch to feature
+2) make a commit
+3) goto github master branch and make a commit there, to simulate as if another developer pushed that code.
+4) switch to local master
+5) pull from origin/master to local master
+6) merge feature to local master
+ESC
+:wq
+ENTER
+7) push local master to origin/master
+=============================
+
+Next class:
+push local custom branches to another custom branch in origin/master then create pull request after code review.
+
+Stashing.
+
+Summary:
+.gitignore
+git branching
+======================================================================================================
+
+
+Date: February 08, 2019 
+
+Git and GitHub Day 4: 
+
+-> Remote Git Branches: 
+
+-> Git workflow with Branches: 
+
+Difference between Merge vs Rebase? 
+
+
+Stashing: 
+
+
+- git branch 
+- * master 
+- feature: --> you can have as much branches as you want 
+- git checkout branch name --> switch the branch 
+
+How to bring changes from feature branch to master? 
+
+	-> git pull 
+	-> git add . 
+	-> git commit -m "message"
+	-> git push 
+
+1) You created a feature branch and switched to it? 
+2) You added few cucumber scenarios to existing feature, and added new feature file with more scenario
+
+-> git status --> one file modified (because, we touched the existing file, it was already tracked by the Git and git knew about it). 
+
+-> If you are in a branch and you create another branch, then the entire comments will be transferred to the new branch as well. 
+
+-> What happens if you switched to master at this point? 
+
+	- It will not let you checkout master branch, because the changes we made in the code are not committed. 
+
+-> How do I bring the changes to master branch? 
+	1 - git add .
+    2 - git commit -m "message"
+	3 - git checkout master 
+	4 - git merge feature 
+	5 - it will create another commit dedicated for this merge, we need to enter a message t odescribe why this merge took place. 
+
+6 - Then it will be saved as another commit in the history. 	
+
+git log --graph (shows the changes in graph)
+
+git log --graph --oneline (shows the changes in 1 line like a graphe) 
+
+Git Workflow: 
+
+1. No collaborators will be able to push to origin/master directly. 
+
+2. Each person has its own branch in GitHub
+
+3. Each developer will push their code to their branch in GitHub 
+
+- This process is done through PR (Pull Request)
+- Owner of the branch in GitHub will create a pull request 	
+
+How to create pull request? 
+
+- Owner of the branch in GitHub will create a pull request. 
+
+--------------------------------
+
+Steps: 
+	- Go to GitHub Project Settings 
+
+	- Go to Branches, there is a linck called Add rules --> (here is the place where you create the rules, like nobody should be able to push directly to the masters and etc)
+
+	- If you click on the Add rules, you can make some rules that the collaborators and owner (master) should follow: 
+
+Note: when you create a branch, everything automatically copies from master to the branch 
+
+fatal: --> It is an error, it means something went wrong 
+
+fatal: The current branch khalili has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin khalili
+
+
+How to set upstream (it is basically GitHub)? 
+	-> git push --set-upstream origin khalili
+
+How do you do peer/code review in your current project? 
+	-> Every team member pushes their code to their branch in GiHub. Then After testing the code himslef/herself, creates a PR (Pull Request), then we as a team, sit and review the code and give feedback. If everything looks good and code is in the standard of our project and framework, then the Team Lead will merge the changes to the master branch. After the master of GitHub is updated, all team members can pull the updated code to the local machine. 
+
+Best Practice based on our Git WorkFlow: 
+
+-> Commit all new changes to your local feature branch? 
+
+	- commit all new changes to your local feature branch 
+	- Do not commit to the local master 
+	- Regularly Pull Remote master to your local master. 
+	- Merge 
+
+-> Tools for Merge Conflicts: 
+	- What is MC (Merge Conflict)? When same line in same file have differenct values, we try to merge them, git will not be sure which one to pic. Then merge conflict will happen. Collaborator/you decdie which version of code to keep or you can added a brand new code. 
+
+	When MC can happen? 
+
+	1. When you pull from GitHub
+	2. When your merge 2 local or remote branches. 
+
+	What are the ways to resolve merge conflicts? 
+
+		1) Manually: Delete the part that you don't like, 
+			- git add. 
+			- git commit -m "message"
+
+		2) By using of tools (like IntelliJ and other tools). 
+
+02/08/2019
+----------
+
+Git and GitHub Day 4.
+--------------------
+
+Remote Git branches.
+
+Git workflow with Branches.
+
+----------
+
+Merge vs Rebase
+
+----------
+
+stashing
+
+----------
+
+How to see list of branches?
+
+git branch
+
+*master
+feature
+testCase1
+
+How to switch to a branch?
+
+git checkout feature
+
+How to bring changes from feature branch to master?
+
+1) You created a feature branch and switched to it
+2) You added few cucumber scenarios to existing feature file, and added new feature file with more scenarios.
+
+git status
+
+1 file modified (for existing feature file)
+1 File untracked (new file)
+
+Q: What happens if you switch to master at this point?
+
+it will not let you checkout master branch, because the changes we made in the code are not committed.
+
+Q) How do I bring LoginTests and LogInPage to Master branch?
+
+
+1) git add .
+2) git commit -m "add LoginPage and comment"
+3) git checkout master
+4) git merge feature
+5) it will create another commit dedicated for this merge. We need to enter a message to describe why this merge took place.
+Then it will be saved as another commit in the history.
+6) Feature and Master branches are same/in sync
+
+git log --graph
+
+git log --graph --oneline
+
+7) send these commits to origin/master
+
+8) git pull
+9) git push
+====================
+
+Git Workflow:
+
+1. No Collaborators will be able to push to origin/master directly.
+
+2. Each developer will push their code to their branch in GitHub
+
+3. Now in github we need to merge other branches into master
+
+This process is done through PR (Pull Request)
+Owner of the branch in GitHub will create a pull request 
+========================
+
+1) Goto GitHub Project settings
+2) Click on Branches link
+3) Create new rule
+4) Check first and last checkboxes
+5) Test the settings:
+6) Create a single commit in your local master
+and try to push it
+7) Try to push from local master to remote master
+8)  ! [remote rejected] master -> master (protected branch hook declined)
+9) Create new branch based on Master
+git branch murodil
+
+10) Set upstream(github) branch to push from local murodil
+
+git push --set-upstream origin murodil
+
+Branch 'murodil' set up to track remote branch 'murodil' from 'origin'.
+
+11) In GitHub - create a pull request
+12) Needs one approval
+
+============================
+
+How do you do peer/code review in your current project?
+
+Every team member pushes their code to their branch in GitHub.
+Then After testing the code himself, he/she creates a PR(Pull Request).
+Then we as a team sit and review the code and give feedback. If everything looks good and code is in the standards of our project and framework.
+Team lead merges the changes to master branch.
+
+After the master of GitHub is updated, all team member can now pull those changes to their local master branches.
+
+===================
+
+Best Practice based on our Git WorkFlow:
+
+--> commit all new changes to your local feature branch
+--> Do not commit to the local master
+--> Regularly Pull Remote master to your local master
+--> Merge new changes in your local master to your local feature branch
+
+==========================
+
+Tools for Merge conflicts:
+
+What is MC?
+When same line in same file have different values,
+and we try to merge them , git will not be sure which one to pick. Then merge conflict will happen.
+Collaborator/Git User/You need to tell Git which version of code to keep.
+
+When MC can happen?
+
+1. When you pull from GitHub
+2. When you merge two local or remote branches
+
+
+<<<<<<<<<<HEAD
+Apples
+
+=============
+Bananas
+
+>>>>>>>>>>fsdkjfh4rwe
+
+What are the ways to resolve merge conflicts?
+
+1) Manually:
+	You go and manually delete >>>>>> <<<<<< scary lines.
+	git add .
+	git commit -m "message"
+
+2) There are tools that can help you choose which version you want, those tools DO NOT CHOOSE FOR YOU. They only help with the process
+
+	- IntelliJ IDEA conflict resolution tool
+	-  P4Merge
+	.....
+
+=================================
+
+git fetch origin 
+
+git reset --hard origin/master
+
+the above 2 codes will reset your project as the master (whatever is inside master will be exactly like yours)
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Git>Commands>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+git init	Initialize a local Git repository
+git clone ssh://git@github.com/[username]/[repository-name].git	Create a local copy of a remote 
+repository
+
+git status							Check status
+
+git add [file-name.txt]				Add a file to the staging area
+
+git add -A							Add all new and changed files to the staging area
+
+git commit -m "[commit message]"	Commit changes
+
+git rm -r [file-name.txt]			Remove a file (or folder)
+
+git branch							List branches (the asterisk denotes the current branch)
+
+git branch -a						List all branches (local and remote)
+
+git branch [branch name]			Create a new branch
+
+git branch -d [branch name]			Delete a branch
+
+git push origin --delete [branchName]	Delete a remote branch
+
+git checkout -b [branch name]		Create a new branch and switch to it
+
+git checkout -b [branch name] 		origin/[branch name]	Clone a remote branch and switch to it
+
+git checkout [branch name]			Switch to a branch
+
+git checkout -						Switch to the branch last checked out
+
+git checkout -- [file-name.txt]		Discard changes to a file
+
+git merge [branch name]				Merge a branch into the active branch
+
+git merge [source branch] [target branch]	Merge a branch into a target branch
+
+git stash							Stash changes in a dirty working directory
+
+git stash clear						Remove all stashed entries
+
+Sharing & Updating Projects
+Command	Description
+
+git push origin [branch name]		Push a branch to your remote repository
+
+git push -u origin [branch name]	Push changes to remote repository (and remember the branch)
+
+git push							Push changes to remote repository (remembered branch)
+
+git push origin --delete [branch name]	Delete a remote branch
+
+git pull							Update local repository to the newest commit
+
+git pull origin [branch name]		Pull changes from remote repository
+
+git remote add origin ssh://git@github.com/[username]/[repository-name].git	Add a remote repository
+
+git remote set-url origin ssh://git@github.com/[username]/[repository-name].git	
+															Set a repository's origin branch to SSH
+
+git log								View changes
+git log --summary					View changes (detailed)
+git diff [source branch] [target branch}		
+									Preview changes before merging
+ 
+=================================================================================================
+ 
+ Date: 	15th February 2019 
+
+ 
+Git + GitHub Day 5.
+ 
+
+Recap of our Branch Based Git Workflow
+--------------------------------------
+ How to view all remote branches?
+ git branch -r
+ ==================================
+ If any developer asks you if your automation project is together with application code project.
+ It is seperate and describe the Git workflow.
+ Devs follow their own workflow
+ QA Automation/SDET follow their own workflow
+=----------------------------------
+DIFFERENCE BETWEEN GIT MERGE AND GIT REBASE
+-------------------------------------------
+git merge - merges 2 branches and preserves the history. It means the commits that came from another branch, will show info about that branch and will not delete it.
+git rebase -> brings changes but will not show that it came from another branch. It will make it as if all the commits were done on single branch.
+Rewriting the BASE. changes the base
+=====================================
+1) Add new branch "merge1"
+2) 2 new commits
+3) Switch to Murodil ==> git checkout murodil
+4) git merge merge1
+5) git log --graph
+   git log --graph --oneline
+=======================
+STASHING in Git:
+    When you do a stash, git will put away the changes that you made but did not commit yet.
+    And code will revert to the last commit.
+It helps you to temporarily put aside the code changes that you made , but not ready to commit yet.
+How to stash current un-committed changes?
+git stash -m"message"
+How to see all the stashes history?
+git stash list
+How to bring back the stashed code into workspace?
+git stash ( pop | apply )
+git stash pop <stash2> --> it will bring stashed changes and delete stash2 from history.
+ git stash apply <stash2> --> it will bring stashed changes and stash2 will remain history.
+git stash clear.
+======================
+git stash pop someStash#1
+first you need to commit then you can bring back other stashed content.
+git add .
+git commit -m "msg"
+git stash pop someStash#2 
+=========================
+When you want to bring stashed code back to your file, you need to COMMIT first(if there are any uncommited changes)
+It cannot stash untracked files.
+Once it is untracked, it can be added to stash 
+==========================
+FORKING IN GITHUB
+-----------------
+Helps you copy someone's WHOLE repository to your GitHub account.
+Copied/Forked Repo will be your own 100%.
+======================
+RESET --hard
+RESET --soft
+checkout file
+git cherry-pick
+=====================
+
+How to delete unwanted files from remote repository
+
+1)    Add unwanted file/folder into .ignore file
+2)    On local machine clear your stage using below command on terminal
+git rm --cached -r .
+3)    Add files to stage now: git add .
+4)    Check if files deleted as expected:  git status  (optional)
+5)    Commit it : git commit -m”some files removed”
+6)    Now push it:  git push
+ 
+
+
+-> git remote remove origin 		--> It will disconnect it from the original master 
+
+ 
+•	Git merge fetch_head --allow-unrelated-histories
+•	Resolved an issue for pulling an non-fast-forward issue
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2955 @@
+SQL (Structured Query Language): 
+
+Practice SQL through the website !!! 
+
+	https://www.w3schools.com/sql/default.asp 
+
+
+Application Structure: 
+
+Front-End 	
+	-> User facing part of application 
+	-> what you see on the browser 
+
+Back-End: 
+	-> part where data is procesed, stored 
+	-> business logic/ funtionality 
+	-> API 
+	-> Application code 
+
+Database: Is where all data related to the application is stored. 
+
+SQL (Structured Query Language): It is a special language which is talking with Databases. 
+
+-> For front-end we use from html, CSS, Javascript 
+	- It is also called client side, we have a server and whoever is talking to the server is a client. 
+
+Angular JS: It is one of the most famouse javascript librarries. It is use to develop the front-end of your application.  
+
+React JS: It is use to develop the front-end of your application. 
+
+What technologies are used in developement of your application under test? 
+
+Back-End Dvelopment technologies: 
+
+1): Spring Framework --> It is a famouse java framework and used mostly in the market. 
+2): Javascript --> also has some back-end applications like NodeJS 
+3): Ruby --> Ruby on Rails 
+4): Python --> Phyton Django 
+
+Database: 
+
+1): Relational databases: 
+	- Oracle 11g, 12 
+	- MySQL 
+	- MS SQL Server 
+	- IBM DB2
+	- Sybase 
+	- etc ... 
+
+2): Non-Relational databases: 
+	- MongoDb 
+	- Appache CouchDB, ArangoDB, BaseX, Clusterpoint, Couchbase, Cosmos DB, IBM Domino, MarkLogic, MongoDB, OrientDB, Qizx, RethinkDB. 
+
+Every application has a database. Databae is a place where data is stored in an organized manner. Databases provided security, performance. 
+
+Database -> Tables > Rows/Records > Columns 
+
+Ebay:
+	Seller 
+	Buyer 
+	Item 
+
+- In Database you seperate your data in to seperate table
+
+- Every table in database has columns. 
+
+- Every table in database has a unique column. 
+	unique -> does not include the duplicate. 
+=======================================================================
+
+SQL Developer: It is an IDE like Eclips and work with databases. 
+
+Query to view all data in Employees table. 
+
+SELECT * 
+FROM (TABLE NAME) employees; 
+
+Query to show all countries 
+
+SELECT * 
+FROM countries; 
+
+Data Types in SQL: 
+
+- Columns in SQL can accept only specific data type. 
+	Like in java 
+	int j = 123; 
+
+- Nubmer -> whole numbers 
+- number(9) -> can accept numbers up to 9 digits 
+- number(5,3) -> can accept 5 whole numbers and up to 2 decimals 
+
+char -> character/strings 
+
+varchar2 -> also characters. used for varying length data. 
+	
+	Firstname 
+	1): char(7) -> Mark - 4 
+
+	state
+	char(2) -> IL, MD, VA, CA 
+
+	City
+	varchar2(20) -> Mclean 
+
+	================================
+
+	DATE -> full date 
+	Currency -> data type used for prices etc 
+
+	How do I know what data types are in my table? 
+
+	describe table_name; 
+
+	describe countries; 
+	
+	Null, 
+	Null -> inserting data into this column is optional 
+	Not Null -> mandatory to enter data to this column 
+	-----------------
+
+	char vs varchar2: 
+
+	char is used for fixed lenght characters: 
+		gender. M, F 
+
+		gender -> char(1) 
+
+		email -> char(50); --> even if you do not insert 50 characters, database will still take space for 50 characters from memory. 
+
+		email -> varchar2(50); --> if you do not insert 50 characters, database will only take that length memory. 
+		abc@gmail.com
+================================	
+
+describe departements 
+describe locations 
+
+PRIMARY KEY: 
+	-> Every table has a primary key, unique 
+
+FOREIGN KEY: 
+	-> When a column is used and that is primary key in another table 
+
+	When a column is a foreign key, only data from primary key table can be used. 
+
+RDBMS (RELATIONAL DATABASE MANAGEMENT SYSTEM): We call them RELATIONAL DATABASE MANAGEMENT SYSTEM because tables in that databse are related using primary and foriegn key relationship. 
+
+Example: 	
+	Oracle, MySql 
+
+AMAZON EC2 SERVER AND INSTALLED ORACLE RDBMS. 
+
+We are connecting to that databse using SQL developer 
+
+Database Schem: --> It is a chart to show the relationship of all the tables with each other. 
+
+-> One to Many relationship -> One Departement -> Many Employees 
+
+-> Many to Many relationship -> 
+
+Example: 	
+	-> Someone gave access to database. There is no schema. 
+
+	1) Display all tables 
+
+	MySQL: show tables; 
+	Oracle: Select table_name from user_tables; 
+
+	2) Describe command to see columns and relations. 
+	=================================================== 
+
+Database is a storage for data 
+In Database we have tables 
+tables have columns and rows 
+
+tables are related to one another using primary and foreign keys. Each table column can accept only pre-defined  keys. 
+
+Each table column accept only pre-defined data types. 
+===================================================
+
+AWS: EC2 -> cloud machine. 
+
+Amazon RDS -> for databases 
+===================================================
+
+DISPLAYING DATA FROM SPECIFIC COLUMNS: 
+
+SELECT col1, col2, col3 
+
+FROM table; 
+
+Query to see emp first name, lastname
+
+SELECT first_name, last_name
+FROM employees; 
+
+Query to see emp first name, lastname, salary, job id: 
+-----------
+
+SORTING QUERY RESULTS: 
+
+ORDER BY is used to sort results. 
+
+Query: Display all lastname, emp ids, emails sorted by lastname 
+
+	SELECT last_name, employee_id, email FROM employees
+	ORDERED BY last_name; 
+
+ORDER BY in descending way. 
+
+ORDER BY col desc; 
+
+TASK: 	Display emp ids, lastname, job ids, salaries with descending order of salary 
+
+select emp_id, last_name, job_id, salary 
+from employees
+order by salary desc; 
+
+SELECT employee_id, last_name, job_id, salary
+FROM employees 
+ORDER BY salary desc;  
+
+SELECT employee_id, last_name, job_id, salary
+FROM employees 
+ORDER BY 4 desc;   
+
+
+Arithmatic Expressions: 
+	
++,-,*,/ 
+
+SELECT 10 * 10 + 2000 
+FROM employees; 
+
+Query: 
+
+	Display emp last name, and annual salary sort result by annual salary 
+
+	SELECT last_name, salary * 12 
+	from employees
+	order by 4;
+
+ 	select last_name, salary * 12  
+ 	from employees 
+ 	order by 4; ; 
+	
+	SELECT last_name, salary * 12
+    FROM Employees
+    ORDER BY 2; 
+
+RENAMING COLUMNS IN RESULT. 
+
+AS keyword, or just space. 
+
+
+	SELECT last_name, salary * 12 AS Annual
+    FROM Employees
+    ORDER BY 2; 
+
+    select last_name, salary * 12 AS Annual 
+    FROM employees 
+    ORDER BY 2; 
+
+DISPLAYING UNIQUE/NON duplicated DATA: 
+
+DISTINCT KEYWORD removes duplicates.  distinct keyword removes duplicates from a table 
+
+select distinct job_id 
+from employees; 
+
+SELECT DISTING job_id
+FROM employees; 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Concatenation operator in SQL: 
+
+JAVA: 	+ 
+SQL: 	|| 
+
+SELECT first_name || last_name || '@gmail.com' As emails
+FROM employees; 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+SELECT, FROM, ORDER BY, AS, DISTINCT, || 
+DESCRIBE --> 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Using Results in SQL: 
+
+WHERE keyword: 
+
+Query: display last_name, salary only for people who earn less than 5000 monthly. 
+
+select last_name, slary 
+from employees 
+where salary < 5000; 
+
+select last_name, salary 
+from employees 
+where salary < 5000; 
+
+SELECT last_name, salary FROM employees; 
+WHERE salary > 5000; 
+
+
+Task: 
+Show all IT_programmers
+SELECT * job_id 
+FROM employees
+WHERE job_id = IT_programmers;
+
+Task: 
+	Tell me job_id and departement id of David
+
+	select job_id, department_id
+	from employees 
+	where first_name = 'David'; 
+
+select job_id, departement_id
+from employees 
+where first_name = 'David'; 
+
+SQL Day 2: 
+
+-> Localhost deosn't need to be connected to the internet and the ip address for the local host is as following: 	127.0.0.1 --> localhost 
+
+127.0.0.1:8081 --> the localhost for Jenkin 
+
+COMPARISON OPERATORS: 
+
+=, > , < , >= , <= , <> 
+
+For ranges: Between ... AND ... 
+
+IN operator: for sets with OR condition 
+Like operator: for partial search is NULL 
+
+Logical Operators: 
+	AND, OR, NOT 
+=============================
+
+Query Operator: 
+	show all employees whose salary is more than 4000 and less than 6000 
+
+	select * 
+	from employees 
+	where salary > 4000 AND < 6000; 
+
+	select *
+	from employees
+	where salary > 4000 AND salary < 6000; 
+
+	SELECT * 
+	FROM employees 
+	WHERE salary > 4000 
+	AND salary < 6000; 
+
+Query Operator: 
+	show all employees whose salary is more than 4000 and less than 6000 
+
+	select * 
+	from employees 
+	where salary BETWEEN 4000 AND 6000; 
+
+	SELECT * 
+	FROM employees 
+	WHERE salary BETWEEN 4000 AND 6000; 
+
+
+Display all employee lastname and job ids who are not sales representatives
+
+	select last_name, job_ids 
+	from employees 
+	where NOT job_id = 'sal_rep'; 
+
+
+	select last_name, job_id 
+	from employees 
+	where NOT job_id = 'SA_REP';
+
+
+  	SELECT last_name, job_id
+    FROM employees 
+    WHERE job_id <> 'SA_REP'; 
+    
+    SELECT last_name, job_id
+    FROM employees
+    WHERE NOT job_id = 'SA_REP'; 
+    
+Query: 
+	list all employees who joined the company after or on jan 1, 2001 and before or on jan 1, 2004. 
+
+	select * 
+	from employees 
+	where hire_date BETWEEN '01-01-2001' AND '01-01-2004'; 
+
+	SELECT * 
+	FROM employees 
+	where hire_date BETWEEN '01-JAN-01' 
+	AND '01-JAN-04'; 
+
+	SELECT * 
+	FROM employees 
+	WHERE hire_date BETWEEN '01-JAN-01' 
+	AND '01-JAN-04'; 
+
+Query: 
+	list all employees who work in any of these departments: 
+
+	SELECT * 
+	FROM employees 
+	WHWER department_id = '60'
+	OR department_id = '90'; 
+
+	SELECT * 
+	FROM employees 
+	WHERE department_id = '90'
+	OR department_id = '60'
+	OR department_id = '130'
+	OR department_id = '120';
+
+	- 90, 60, 100, 130, 120 
+
+   	SELECT *
+	FROM employees 
+	WHERE department_id = '90' 
+    OR department_id = '60'
+    OR department_id = '100'
+    OR department_id = '130'
+    OR department_id = '120'; 
+
+    SELECT * 
+    FROM employees 
+    WHERE department_id IN (60, 100, 130, 120); 
+
+Task: 
+	Show all employees who work as any of these jobs: 
+	IT_PROG, SA_REP, FI_ACCOUNT, AD_VP, sort by job ids. 
+
+	SELECT * 
+	FROM employees 
+	WHERE job_id = 'IT_PROG'
+	OR job_id = 'SA_REP'; 
+
+	SELECT * FROM employees WHERE job_id IN ('IT_PROG', 'SA_RE'); 
+
+	select * 
+	from employees 
+	where job_id = 'IT_PROG'
+	OR job_id = 'SA_REP';
+
+
+	SELECT * 
+	FROM employees 
+	WHERE job_id = 'IT_PROG'
+	OR job_id = 'IT_PROG'
+	OR job_id = 'SA_REP'
+	OR job_id = 'FI_ACCOUNT'
+	OR job_id = 'AD_VP'; 
+==============================================
+
+LIKE operator in SQL: 
+	- It is used to do partial searches using wildcard 
+
+Query: 
+	List all employees whose first name start with N --> SELECT * FROM employees WHERE first_name LIKE 'N%'; 
+
+	SELECT * 
+	FROM employees 
+	WHERE first_name like 'N%'; 
+
+	SELECT * 
+	FROM employees 
+	WHERE first_name LIKE 'N%'; 
+
+Task: 
+	show all employees whose last name ends with 'a' --> select * from employees where first_name like '%a'; 
+
+	SELECT * 
+	FROM employees
+	WHERE last_name LIKE 'a%'; 
+
+Task: 
+	List all employees who started working in month of FEB Or in March or in April -->  
+
+	select * 
+	from employees 
+	where hire_date '%Feb%'
+	or hire_date '%Mar%'
+	or hire_date '%Apr%'; 
+
+	select * 
+	from employees 
+	where start_date like '%mar%' 
+	OR start_date like '%feb%'
+	OR start_date like '%mar%'; 
+
+
+	SELECT * 
+    FROM employees 
+    WHERE hire_date LIKE '%FEB%'
+    OR hire_date LIKE '%MAR%'
+    OR hire_date LIKE '%APR%'; 
+
+Task: 
+	List all employees whose last name second letter is 'a'. 
+
+	select * 
+	from employees 
+	where last_name like '_%a'; 
+
+		-> any single character 
+
+		select * 
+		from employees 
+		where last_name like '_%a'; 
+
+    SELECT * 
+    FROM employees 
+    WHERE last_name LIKE '_a%'; 
+
+
+Task: 
+	List all employees whose last name contains either a or e, or b 
+
+	select * 
+	from employees 
+	where last_name like '%a%'
+	or last_name like '%e%'
+	or last_name like '%b%'; 
+
+	SELECT * 
+    FROM employees 
+    WHERE first_name LIKE '%a%' 
+    OR first_name LIKE '%b%' 
+    OR first_name LIKE '%e%';
+
+Contains 2 'a'S 
+
+Query: 
+	Show all records whose last name contains 2 lowercase 'a's 
+
+SHOW FIRST 5 RECORDS: 
+
+Oracle: rownum in where condition 
+MySQL: limit numberOfrows 
+
+Query: 
+	Show first 5 employees in compnay after sorting by last name. 
+
+	SELECT * 
+	FROM employees 
+	WHERE rownum <= 5; 
+
+
+Task: 
+	Show 7 top highest salaried employees
+
+	select first_name, last_name  
+	from employees 
+	ORDER BY salary DESC
+	LIMIT 7;
+
+	SELECT * 
+	FROM employees 
+	WHERE rownum <= 7
+	ORDER BY salry desc; 
+	--> ther is a bug in this code and will be fixed in the future classes. 
+
+===================================================
+
+NULL in SQL: 
+
+Query: Show all lastnames, and commisions
+
+select last_name  
+from employees 
+where commission_pct IS NOT NULL; 
+
+SELECT last_name, salary, commision_pct
+FROM employees 
+WHERE commission_pct IS NOT NULL; 
+
+SELECT last_name, salary, commision_pct
+FROM employees 
+WHERE commission_pct IS NULL; 
+===================================================
+
+Topics that will be covered: 
+
+- FUNCTIONS IN SQL
+- JOINS 
+- SUBQUERIES 
+- SET OPERATORS 
+- DDL, DML 
+- CUSTOM TRIGGER AND FUNCTIONS 
+- DATABASE TESTING CONCEPT IN QA 
+- AUTOMATION OF DATABASE TESTING AND QUERING USING JAVA 
+
+API --> SEPERATE CLASS 
+
+===================================================
+
+There are 2 functions in SQL and all of them return a value, there is no void function. 
+
+1) single row functions: Function will run for each row and return a value for each row. 
+
+2) Multiple row functions: Aggregate functions, Group Functions. It is a function will run for many rows and return a single value. 
+
+Single Row Functions: 
+
+	- LOWER 
+	- UPPER 
+	- INITCAP 
+
+Query: show all first and last names all in uppercase. select UPPER(first_name), UPPER(last_name) from employees; 
+
+select UPPER(first_name), UPPER(last_name)
+from employees;
+
+SELECT UPPER(first_name), UPPER(last_name)
+FROM employees;  
+
+Query: show all email of employees in Uppercase, lowercase and Initcap: SELECT UPPER(email), LOWER(email), INITCAP(email) from employees; 
+
+	SELECT UPPER(email), LOWER(email), INITCAP(email)
+    FROM employees; 
+
+Query: show all employees whose last name 6 characters --> select * from employees where LENGTH(last_name) = 6; 
+
+														   SELECT * FROM employees WHERE LENGTH(last_name) <= 6; 
+
+	SELECT last_name
+	FROM employees 
+	WHERE LENGTH(last_name) = 6; 
+===================================================
+
+String Manipulation: 
+
+- CONCAT 
+- SUBSTR
+- LENGTH 
+- INSTR
+- TRIM 
+- REPLACE 
+
+Query: 
+	
+	select SUBSTR(first_name, 0, 3) || SUBSTR(last_name, 0, 3) AS 'employee password';
+
+	Create a password for each employee that consists of first 3 letters of first name and first 3 letters of last name. 
+
+	select SUBSTR(first_name, 0, 3) || SUBSTR(last_name, 0, 3) || '123456' AS (employee password); 
+
+	select SUBSTR(first_name,0,3) || SUBTR(last_name,0,3) AS 'Employee password';  
+	from employees; 
+
+SELECT SUBSTR(first_name,0,3) || SUBSTR(last_name,0,3) || '123' As "Employee passwords"
+FROM employees;  
+
+Convert password to lowercase: 
+
+SELECT LOWER (SUBSTR(first_name,0,3) || SUBSTR(last_name,0,3)) As "Employee passwords"
+FROM employees;  
+===================================================
+
+NUMBER related single row functions: 
+
+- ROUND: It only rounds the numbers 
+
+    SELECT ROUND (23.43)
+    FROM dual; 
+    	--> the result for this will be 23 
+   
+- TURNC:  
+
+   	SELECT TRUNC (23.598, 1)
+    FROM dual; 
+
+
+- MOD: 
+
+Query: 
+	Show all salaries and commission and ammount for employees who earn commission 
+
+SELECT salary, salary * commission_pct
+FROM employees
+WHERE commission_pct IS NOT 
+
+Query: 
+	Show all employees 
+	whose employees id is even number 
+
+	SELECT *
+	FROM employeeS
+	WHERE MOD (employee_id,2) = 0; 
+
+	SELECT * 
+	FROM employees 
+	WHERE MOD(job_id, 2); 
+
+
+Multiple Row Functions 
+Group functions 
+Aggregate Functions 
+
+Processes multiple rows and return single result/Row 
+
+COUNT, MAX, MIN, AVG, SUM 
+
+Query: 
+	Show number of employees in the compnay. 
+
+	SELECT COUNT (*)
+	FROM employees
+    WHERE job_id = 'IT_PROG'; 
+
+
+Query: 
+	Show all department ids that have more than 5 employees ---> select * from employees where employee_id > 5; 
+
+	SELECT department_id
+    FROM employees
+    WHERE employee_id > 5; 
+=================================================== 
+
+Task: 
+	Show number of unique job ids 
+
+	SELECT COUNT (DISTINCT job_id)
+	FROM employee; 
+
+Functions: 
+
+-> Single Row 
+-> Multiple Row
+
+MAX shows highest number 
+
+Query: 
+	Show the maximum salary in company 
+
+	select MAX (salary)
+	from employees; 
+
+	 	SELECT MAX (salary)
+    	FROM employees; 
+
+	show the highest employee id. 
+		SELECT MAX (employee_id)
+	    FROM employees; 
+
+ SELECT MAX (salary), MIN (salary), ROUND(AVG (salary), 1)
+ FROM employees; 
+      
+
+SUM --> sums the values for each record 
+
+Query: 
+	Show the company SUM payrol 
+
+		SELECT MAX (salary), MIN (salary), ROUND(AVG (salary), 1)
+	 	FROM employees; 
+===================================================/////////////////////////////////////////
+
+GROUP BY keyword/clause 
+	-> It creates sub-groups and is used with group functions. 
+
+Query: 
+	Display department ids and count of people who work for that department 
+
+
+	SELECT department_id, COUNT(*) --> select department_id, COUNT(*) FROM employees GROUP BY employee_id; 
+	FROM employees
+	GROUP BY department_id; 
+
+Query: 
+	Display job ids and count of people who work for those jobs  
+  
+    SELECT job_id, COUNT(*)
+    FROM employees
+    GROUP BY job_id; 
+    
+ Note: Whenever you use a group function in a select statement and you include also columns that are not with Group functions,- those columns must be in GROUP BY clause/Keyword. 
+
+ SELECT job_id, count(employee_id)
+ FROM employees
+ GROUP BY job_id;
+===================================================
+
+Difference between GROUP BY and ORDER BY? 
+
+GROUP BY: It is used whenever we use Multiple Row functions And it creates sub group. 
+
+ORDER BY: It sorts the results either in asc (Asscending) or desc (Descending) manner. 
+
+Query: 
+	Display Department id and min salary 
+	for the department that have min salary less than 3500. select department_id, min(salary) from employee group by department_id, HAVING MIN(salary) < 3500; 
+
+	SELECT department_id, MIN(salary)
+	FROM employees
+	GROUP BY department_id
+	HAVING MIN(salary) < 3500; 
+
+Whenver you use condition with group functions, then you need to use from keyword HAVING 
+
+Query: 
+	Display job ids and count of people for those jobs that have more than 4 people 
+
+	SELECT job_id, COUNT(*)
+	FROM employees
+	GROUP BY job_id 
+	HAVING count(*) > 4; 
+
+HAVING VS WHERE? 
+
+- We use HAVING when our condition includes a GROUP BY function. 
+- WE use WHERE when our condtions does not include GROUP BY functions. 
+
+SUMMARY: 
+	- comaprison operators 
+	- BETWEEN AND 
+	- IN 
+	- LIKE 
+	- ROWNUM 
+	- FUNCTIONS 
+		-> Single row 
+		-> Aggregate:
+			- GROUP BY 
+			- HAVING  
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> DAY 3 SQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+SQL Programming Day 3: 
+
+JOINs in SQL.
+
+DISPLAYING DATA FROM MULTIPLE TABLES
+ 
+Scenario:
+Can you create a report that includes:
+Employee id, lastname, department id and department names
+for all employees
+PATEL
+
+Autozone:
+Customer Bob -> Alternator for 2015 Civic.
+
+Part id - 12345.
+
+He looks for the Alternator by using Part id.
+Once he finds it , then he exactly know Alternator manufaturer/or any more data.
+
+=======================
+
+TYPES OF JOINS IN SQL:
+1) INNER JOIN
+2) OUTER JOIN
+
+WHAT IS INNER JOIN?
+Inner join is used to display data from multiple tables
+and it returns only matching records.
+
+SELECT employee_id, last_name, employees.department_id, department_name
+FROM employees JOIN departments
+ON employees.department_id=departments.department_id;
+
+
+SELECT student_id,student_lastname,students.course_id,
+course_name
+FROM students JOIN courses
+ON students.course_id=courses.course_id;
+===================
+
+select student_id, student_lastname, students.course_id, course_name 
+from students JOIN courses 
+ON studetns.course_id = courses.student_id; 
+
+WHAT IS INNER JOIN?
+Inner join is used to display data from multiple tables
+and it returns only matching records according to joining condition.
+
+Task:
+Display department id and department name, city name
+for all departments.
+
+SELECT department_id,department_name,city
+FROM departments INNER JOIN locations
+ON departments.location_id = locations.location_id;
+
+Task:
+Display All cities , country names
+
+SELECT city, country_name
+FROM locations INNER JOIN countries
+ON locations.country_id=countries.country_id;
+
+Query:
+Display country_id, country name, region id , region name
+
+SELECT country_id, country_name,c.region_id, region_name
+FROM countries c INNER JOIN regions r
+ON c.region_id=r.region_id;
+
+TABLE ALIAS. -> renaming/nickname for table.
+==================
+
+QUERY:
+Employee id, lasdtname, department id, departement name,
+location id, city, country name.
+
+SELECT employee_id,last_name,e.department_id,department_name,
+d.location_id, city, country_name
+FROM employees e JOIN departments d
+ON e.department_id=d.department_id
+JOIN locations l
+ON d.location_id = l.location_id
+JOIN countries c
+ON l.country_id=c.country_id;
+===============================
+
+OUTER JOINS.
+
+3 types of outer joins:
+1) Right outer join
+2) Left outer join
+3) Full outer join
+
+Right outer join-> is used to display data from multiple tables, and it returns matching recording as well as NON matching records from RIGHT hand side table.
+
+Left outer join-> is used to display data from multiple tables, and it returns matching recording as well as NON matching records from LEFT hand side table.
+
+FULL outer join-> is used to display data from multiple tables, and it returns matching recording as well as NON matching records from LEFT AND RIGHT hand side table.
+
+
+SELECT student_id, student_lastname, c.course_id,course_name
+FROM students s RIGHT OUTER JOIN courses c
+ON s.course_id=c_course_id;
+====================
+
+
+Query:
+Display Employe lastname, department id, department name
+for department that have employees and that does not have.
+
+SELECT last_name, d.department_id, department_name
+FROM employees e RIGHT OUTER JOIN departments d
+ON e.department_id=d.department_id;
+
+SELECT last_name, d.department_id, department_name
+FROM employees e LEFT OUTER JOIN departments d
+ON e.department_id=d.department_id;
+
+SELECT last_name, d.department_id, department_name
+FROM employees e FULL OUTER JOIN departments d
+ON e.department_id=d.department_id;
+==================================
+
+SELF JOIN -> when you join a table to itself.
+
+Query:
+Display employee lastname, manager id, managers last name
+
+SELECT e1.last_name, e1.manager_id, e2.last_name
+FROM employees e1 JOIN employees e2
+ON e1.manager_id=e2.employee_id;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> DAY 4 SQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+SUBQUERIES
+SET OPERATORS
+DML DDL COMMANDS
+================
+
+SUBQUERIES:
+
+What is a subquery:
+Subquery is a nested query. Query within another query.
+like nested method calls.
+
+System.out.println(student.getName());
+
+Scenario:
+
+First name, last name , salary , job id 
+of the lowest salaried employees
+
+Manually:
+1) look at salaries and find the lowest one. 2345
+2) look at each employee's salary and check if it matches the lowest salary.
+
+
+SELECT first_name, last_name, salary, job_id
+FROM employees
+WHERE salary = (SELECT MIN(salary) FROM employees);
+
+2) Highest paid employee.
+
+SELECT first_name, last_name, salary, job_id
+FROM employees
+WHERE salary = (SELECT MAX(salary) FROM employees);
+
+QUERY:
+List emp ids, job_ids, dep ids for employees who are not managers.
+
+1) FIND UNIQUE manager ids
+2) FIND employees who do not have those ids as employee ids
+
+SELECT employee_id,last_name,job_id,department_id
+FROM employees
+WHERE NOT employee_id IN (SELECT DISTINCT manager_id FROM employees WHERE manager_id is not null);
+===============================
+
+HOW TO FIND SECOND LOWEST SALARY.
+We need to use correlated subquery.
+
+SELECT * FROM employees e1
+WHERE 2 = (SELECT COUNT(DISTINCT(salary)) FROM employees e2
+WHERE e1.salary <= e2.salary);
+
+================================
+
+SET OPERATORS:
+
+UNION, UNION ALL, MINUS, INTERSECT
+
+SET operators work with INDEPENDENT queries.
+==============
+
+UNION -> returns combined rows from 2 independent queries and 
+removes duplicates and sorts them.
+
+(Query 1)
+UNION
+(Query 2)
+
+A
+A
+B
+C
+UNION
+A
+D
+E
+=
+A
+B
+C
+D
+E
+==================
+
+(SELECT employee_id,last_name,salary
+FROM employees
+WHERE department_id = 100)
+UNION
+(SELECT employee_id,last_name,salary
+FROM employees
+WHERE department_id = 10);
+
+----------
+For SET operators to work:
+-> You need 2 independent queries
+-> Same number of columns in Select statement
+-> Same data type in same order
+
+
+(SELECT department_id,department_name
+FROM departments)
+UNION
+(SELECT employee_id,last_name
+FROM employees)
+==========
+
+Difference between INNER JOIN and UNION?
+INNER JOIN is used to retrieve matching data from multiple tables
+UNION is used to retrieve data from multiple queries.
+And it removes duplicates and sorts the result.
+=======================
+
+UNION ALL -> -> returns combined rows from 2 independent queries and does not 
+removes duplicates and does not sort them.
+A
+A
+B
+C
+UNION ALL
+A
+D
+E
+=
+A
+A
+B
+C
+A
+D
+E
+==================
+
+Query:
+
+(SELECT employee_id, last_name, job_id
+from employees)
+UNION
+(SELECT employee_id, last_name, job_id
+from employees);
+
+
+(SELECT employee_id, last_name, job_id
+from employees)
+UNION ALL
+(SELECT employee_id, last_name, job_id
+from employees);
+
+========================
+
+(SELECT employee_id, last_name, job_id
+from employees where department_id IN(10,30, 60))
+UNION ALL
+(SELECT employee_id, last_name, job_id
+from employees where department_id IN(10,40, 60));
+
+(SELECT employee_id, last_name, job_id
+from employees where department_id IN(10,30, 60))
+UNION 
+(SELECT employee_id, last_name, job_id
+from employees where department_id IN(10,40, 60));
+
+UNION VS UNION ALL?
+
+===================
+
+MINUS
+-----
+-> returns records from first query that is not present 
+in second query.
+
+-> it will only return values(from 1st query) that are not common in 2 queries
+-> It will take results of 1st query and compare with 2nd query.
+and show only records that do not appear in 2nd query.
+It will help you find difference between two queries.
+
+
+1) Wooden Spoon, Apples, Bananas, Cucumber, Charger
+
+2) PlasticSpoon, Apples, Bananas, Charger
+
+
+Wooden Spoon,Cucumber
+==========
+
+A
+A
+B
+C
+MINUS
+A
+D
+E
+=
+B
+C
+=================
+
+(SELECT employee_id, last_name
+FROM employees
+WHERE employee_id IN (100,104,105,106))
+
+MINUS
+
+(SELECT employee_id, last_name
+FROM employees
+WHERE employee_id IN (100,104,110,120));
+
+=========
+QUERY:
+1) Dislay emp ids, dep ids, dep names
+for all employees and departments
+MINUS
+2) Dislay emp ids, dep ids, dep names
+for all employees and departments
+only for departments that have employees
+=============
+
+(SELECT employee_id, e.department_id, department_name
+FROM employees e FULL OUTER JOIN departments d
+ON e.department_id=d.department_id)
+MINUS
+(SELECT employee_id, e.department_id, department_name
+FROM employees e INNER JOIN departments d
+ON e.department_id=d.department_id);
+=======================
+
+DATA MIGRATION FROM DATABASE1(MYSQL) 
+TO DATABASE2(ORACLE)
+
+SAME DATABASE SCHEMA IN BOTH.
+
+TABLEA IN MYSQL
+TABLEA IN ORACLE
+
+
+SELECT * from TableA
+MINUS
+SELECT * from TableB;
+
+-> if same data -> nothing should show up
+-> if there difference -> those records will show
+
+SELECT * from TableB
+MINUS
+SELECT * from TableA;
+===========================
+
+INTERSECT -> returns records that are present/common/appear in both query results. It will sort and remove duplicates.
+
+
+A
+A
+B
+C
+INTERSECT
+A
+D
+E
+=
+A
+
+						SET A = {A, B, C}, SET B = {D, E, F}; 
+
+						A U B = {A, B, C, D, E, F}; 
+						A INTERSECT B = 0; 
+
+
+================
+
+(SELECT employee_id, last_name
+FROM employees
+WHERE employee_id IN (100,104,105,106))
+
+INTERSECT
+
+(SELECT employee_id, last_name
+FROM employees
+WHERE employee_id IN (100,104,110,120));
+100
+104 (SELECT employee_id, last_name
+FROM employees
+WHERE employee_id IN (100,104,105,106))
+
+MINUS
+
+(SELECT employee_id, last_name
+FROM employees
+WHERE employee_id IN (100,104,110,120)); 
+105,106
+================
+
+SUBQUERY: nested query
+Summary of SET operators:
+
+UNION -> combines, removes duplicates, sorts
+UNION ALL-> combines,does not remove duplicates,does not sort
+MINUS -> show records from query1 that are not present in query2
+INTERSECT -> show common records from 2 queries
+==================
+
+Do you have experiece with SQL?
+
+Yes, I have worked with relational databases and i am very comfortable with DDL and DML commands.
+
+DDL:
+CREATE
+DROP
+TRUNCATE
+ALTER
+
+DML:
+SELECT
+INSERT
+UPDATE
+DELETE
+
+CREATE TABLE Teachers 
+(
+teacher_id number (5) primary key, 
+first_name varchar2(30) NOT NULL, 
+last_name varchar2(30) 	NOT NULL, 
+classroom number (5) NULL 
+)
+
+INSERT INTO Teachers Values(5000, 'Halim', 5325); 
+INSERT INTO Teachers Values(3352, 'Fateh', 5232); 
+INSERT INTO Teachers Values(5325, 'Jawad', 552); 
+
+
+CREATE TABLE Students
+(
+Student_id number(4) primary key,
+last_name varchar2(30) NOT NULL,
+course_id number(4) null
+
+)
+
+INSERT INTO Students Values(200,'Jones',101);
+INSERT INTO Students Values(201,'Smith',101);
+INSERT INTO Students Values(202,'Siddiqui',102);
+INSERT INTO Students Values(203,'Kim',104);
+INSERT INTO Students Values(204,'Lee',103);
+----------
+
+UPDATE command is used to update records . values in database table.
+
+UPDATE Students SET course_id = 102 
+WHERE last_name = 'Jones';
+-----------
+DELETE command is used to delete data from database table.
+
+DELETE FROM students 
+WHERE student_id = 204;
+=================
+
+DROP vs TRUNCATE
+
+Both are Data Definition language commands
+Drop removes data and table as well
+Truncate will remove all data but keeps the empty table.
+
+Neither of them can be rolled back.
+
+TRUNCATE table Students;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> JDBC DAY 1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+CLASSNOTES: JDBC Day1
+
+
+Every week or 2 weeks, we will form a group to job market.
+VA Campus + Online will be one group
+IL Campus is separate another group.
+
+1 Group(15-20) from Online, VA Campus
+1 Group(10-20) from IL Campus
+
+You will join a slack channel where all instructors and mentors are.
+
+1,5 - 2 weeks activity.
+
+-> You have to complete mentoring sessions, if not already done so
+-> YOU WORK(NOT COPY) on YOUR resume 
+-> Mentors will go over your resume with you
+-> Mentors will do a mock interview(3 ppl panel interview)
+-> Prepare you for interview
+-> Your resume will be sent to our market team
+AVOID ->INDEED.COM
+DICE.COM, GLASSDOOR, MONSTER, CARREERBUILDER
+-> ONCE you get a job offer, you notifiy your mentor.
+-> Paperwork must be done with Marketing team.
+Please do not do any paperwork on your own.
+========================
+dont get upset if you dont find a job right away. keep applying and interviewing.
+------------------------
+========================
+MURODIL:
+202-375-1774
+
+
+JDBC API
+Selenium API
+Apache POI Api
+
+YOUR CODE ---> SELENIUM API --> BROWSER
+YOU -- WAITER --> RESTAURANT KITCHEN
+YOUR CODE --> APACHE POI --> MS OFFICE APP
+
+YOUR CODE --> JDBC API --> DATABASE
+
+
+CODE -> SELENIUM -> CHROMEDRIVER -> CHROME BROWSER
+-> GECKODRIVER -> FIREF0X BROWSER
+
+
+CODE -> JDBC -> ORACLE DRIVER -> ORACLE DATABASE
+-> MYSQL JDBC DRIVER -> MYSQL
+.....
+
+JDBC 3 IMPORTANT CLASSES:
+
+1) Connection -> helps connect to database
+2) Statement -> helps write sql query and execute
+3) ResultSet -> data that came from database will be stored in ResultSet format.
+
+
+Connection connection = DriverManager.getConnection()
+
+Connection > Statement > ResultSet > Columndata
+
+----------
+
+RESULTSET methods.
+
+next() -> moves to next row
+getObject(colname/index) -> read data from column
+
+last() -> goes to last row
+first() -> goes to first row
+getRow() -> current row number
+
+beforeFirst() -> goes to row 0
+afterLast() -> goes to after last row
+absolute(rowNum) -> jumps to specified row
+
+List<List<Object>>
+
+List<Object[]>
+
+List<Map<String,Object>> queryData = new ArrayList<>();
+
+Map<String,Object> row = new HashMap<>();
+row.put("employee_id",resultSet.getObject("employee_id"))
+row.put("last_name",resultSet.getObject("last_name"))
+row.put("salary",resultSet.getObject("salary"))
+row.put("job_id",resultSet.getObject("job_id"))
+
+queryData.add(row);
+-----
+
+Map<String,Object> rowD = queryData.get(0);
+rowD.get("employee_id") -> 100
+
+{ {("EMPLOYEE_ID", 100), ("LAST_NAME","King"), ("JOB_ID","AD_PRES"), ("SALARY",24000)} ,
+
+{("EMPLOYEE_ID", 101), ("LAST_NAME","Kochhar"), ("JOB_ID","AD_VP"), ("SALARY",17000)} }
+
+
+public enum Days{
+MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY
+}
+
+
+Days.MONDAY
+
+public static void checkIfClass(Days day){
+switch(day) {
+case MONDAY:
+print "automation demo";
+break;
+case TUESDAY:
+print "java class at 7";
+break;
+
+
+default
+....
+}
+}
+
+checkIfClass(Days.SATURDAY);
+
+what is Enumaration in Java?
+
+we can use ENUM type.
+
+it is used to store constant values.
+
+public enum Cards{
+VISA, MC,AMEX,DISCOVER
+}
+
+Object obj = new String("ABC")
+String str = new String("ABC");
+
+obj.equals(str) ->
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> JDBC DAY 2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ 
+Tuesday and Wednesday 6-7 pm est
+Interview preparation classes with Marufjon
+
+Oracle Application Development Framework - Oracle ADF
+
+Front end -> JS -> AngularJS
+BackEnd -> Java Spring Framework etc
+
+
+Oracle ADF -> Full stack dev framework by oracle.
+
+Once application is built is built it is deployed.
+
+When you deploy , you deploy to web server or application server software.
+
+Tomcat, WebLogic server, Jetty
+Webhisphere
+
+jar , war, ear extentions to make your application deployable.
+
+ec2-34-223-219-142.us-west-2.compute.amazonaws.com:7101/console
+
+EAR -> jar, war
+WAR -> jar
+JAR ->
+
+
+34.223.219.142:7101/HRSystem-ViewController-context-root/faces/DeptEmpPage
+
+
+AMAZON EC2 -> TOMCAT -> APP
+
+www.amineapp.com
+=========================
+
+DATABASE Testing: JDBC
+
+BACKEND TESTER is one separate tester role availible.
+BIG DATA TESTER -> Hadoop 
+DATA SCIENCE 
+MACHINE LEARNING
+ARTIFICIAL INTELLIGENCE
+====================
+
+FRONT END --- DATABASE
+
+1)compare front end and database data matching
+	1) read data from front end
+	2) connect to database and run sql that matches the front end data, and verify
+
+2)make change in front end and goto database and verify/validate
+	1) make changes(add.update/delete) in front end
+	2) connect to database and verify that changes are made in database tables as well
+	
+3)make changes in database and verify in front end
+
+1) connect to db run sql that update/delete/insert
+2) goto front end app module where data is being displayed and verify
+===========================
+
+[{DEPARTMENT_NAME=Administration, LOCATION_ID=1700, MANAGER_ID=200}]
+
+
+but found [{DEPARTMENT_NAME=Administration, LOCATION_ID=1700, MANAGER_ID=200}]
+
+ 
+Date: 	Feb 23, 2019 
+
+	database -> tables -> rows/records -> columns 
+
+select * 
+from employees;
+
+select first_name
+from employees;
+
+select first_name, last_name
+from employees;
+
+select *
+from countries;
+
+select *
+from employees
+where employee_id = 114;
+
+select first_name, last_name, salary, job_id
+from employees;
+
+select email || '@gmail.com'
+from employees
+where employee_id = 111;
+
+--SELECT first_name || ' ' || last_name as FULLNAME
+--FROM employees
+--WHERE employee_id = 111;
+
+--COMMENTS
+
+select last_name ||', '|| first_name as full_name, email || '@gmail.com', job_id
+from employees
+order by job_id asc;
+
+select last_name ||', '|| first_name as full_name, LOWER(email) || '@gmail.com' as email , job_id as id
+from employees
+order by full_name desc;
+
+select LOWER(email)
+from employees;
+
+select last_name ||', '|| first_name as full_name, email || '@yahoo.com' as email , job_id as id
+from employees
+order by 2 asc;
+
+
+select last_name ||', '|| first_name as full_name, email || '@yahoo.com' as email, job_id as id
+from employees
+order by 1 asc;
+
+select *
+from employees
+where salary > 5000
+order by salary asc;
+
+select salary * 12 as annual_salary, last_name ||', '|| first_name as full_name 
+from employees
+order by annual_salary asc;
+
+
+select first_name||'_'||last_name as full_name, 
+round(salary/160) as hourly,
+round(salary/20) as daily,
+round(salary*12/52) as weekly, 
+salary as monthly, 
+round(salary*12) as yearly  
+from employees order by salary DESC;
+
+
+select distinct first_name
+from employees order by first_name DESC;
+
+select *
+from employees
+where job_id = 'IT_PROG' or job_id='PU_CLERK';
+
+select *
+from employees
+where job_id in ('IT_PROG','PU_CLERK');
+
+
+select *
+from employees
+where first_name like 'S%';
+
+select *
+from employees
+where first_name like '__so%';
+
+select *
+from employees
+where to_char(hire_date,'mon') = 'jan';
+
+===============================================================================================================================
+
+SELECT * 
+FROM employees
+WHERE job_id NOT IN ('FI_ACCOUNT', 'PU_CLERK', 'ST_MAN')
+ORDER BY job_id;
+
+select last_name ||', '|| first_name as full_name, LOWER(email) || '@gmail.com' as email , job_id as id
+from employees
+order by full_name desc;
+
+SELECT UPPER(SUBSTRING(first_name, 1, 3)) || LOWER(SUBSTRING(last_name, 1, 3)) 
+AS employee_password, LOWER(email) || '@gmail.com' AS email,
+first_name, last_name
+FROM employees
+LIMIT 5;
+
+
+SELECT 
+UPPER(SUBSTR(first_name, 1, 1)) || LOWER(SUBSTR(last_name, 1, 3)) as password, employee_id
+AS employee_password, LOWER(email) || '@gmail.com' AS email,
+first_name, last_name
+FROM employees
+ORDER BY employee_id desc
+FETCH FIRST 10 ROWS ONLY;
+
+
+---WHERE ROWNUM <=5: THIS IS FOR ORACLE DB WE ARE USING POSRTGRESQL
+---WHERE ROWNUM <=5: THIS IS FOR ORACLE DB, RIGHT NOW WE ARE USING POSRTGRESQL, IT WILL NOT WORK HERE
+
+SELECT COUNT(DISTINCT(job_id))
+FROM employees;
+
+SELECT DISTINCT(job_id)
+FROM employees;
+
+SELECT ROUND(AVG(salary), 1)
+FROM employees;
+
+SELECT MIN(salary)
+FROM employees;
+
+SELECT MAX(salary)
+FROM employees;
+
+SELECT SUM(salary) as payroll
+FROM employees;
+
+SELECT SUM(salary)*12 as annual_payroll
+FROM employees;
+
+SELECT ROUND(AVG(salary)*12/52/40, 2) as avarage_hourly_rate
+FROM employees;
+
+SELECT AVG(salary) FROM employees
+
+SELECT * 
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees)
+ORDER BY salary ASC;
+
+SELECT * 
+FROM employees
+WHERE salary AS ABOVE AVG(salary)
+ORDER BY salary ASC;
+
+SELECT (AVG(salary)) as above
+FROM employees;
+
+SELECT * 
+FROM employees
+WHERE salary < (SELECT AVG(salary) FROM employees)
+ORDER BY salary ASC;
+
+SELECT * 
+FROM employees
+WHERE salary < AVG(salary)
+ORDER BY salary ASC;
+
+SELECT * 
+FROM employees
+WHERE hire_date BETWEEN '01-JAN-99' AND '02-JAN-04' 
+ORDER BY hire_date;
+
+SELECT first_name || ', ' || last_name AS full_name
+FROM employees
+WHERE last_name LIKE '%a%a%a%';
+
+SELECT AVG(salary)
+FROM employees
+WHERE commission_pct IS NOT NULL;
+SELECT AVG(salary)
+FROM employees
+WHERE commission_pct != 0;
+
+SELECT * 
+FROM employees
+WHERE job_id <> 'SA_REP';
+
+SELECT * 
+FROM employees
+WHERE job_id != 'SA_REP';
+
+select round(avg(commission_pct*salary + salary),1) as Average_Salary_With_Commission 
+from employees;
+
+SELECT AVG(salary - (salary * commission_pct))
+FROM employees;
+
+select ROUND((AVG((salary*commission_pct+salary)))) 
+from employees 
+where commission_pct IS not NULL;
+
+select ROUND((AVG((salary*commission_pct+salary)))) 
+from employees;
+
+---before ROUND method 2.8324823, after ROUND method 2.8, 
+---but you need to provide 2 params: firt is column name, second amount of decimals/digits
+
+SELECT job_id, COUNT(*) as amount_of_jobs
+from employees
+GROUP BY job_id;
+
+SELECT job_id, COUNT(*)
+FROM employees
+GROUP BY job_id
+HAVING count(*)>=2;
+
+SELECT first_name, COUNT(*)
+FROM employees
+GROUP BY first_name;
+
+SELECT h.*
+FROM employees e
+JOIN job_history h on e.employee_id=h.employee_id;
+
+SELECT e.first_name ||' ' || e.last_name, r.region_name, c.country_name
+FROM employees e
+JOIN departments d on e.department_id=d.department_id
+JOIN locations l on l.location_id=d.location_id
+JOIN countries c on c.country_id=l.country_id
+JOIN regions r on r.region_id=c.region_id
+WHERE e.employee_id = 112;
+
+SELECT column_name, is_nullable, data_type from INFORMATION_SCHEMA.COLUMNS WHERE table_name = 'jobs';
+SELECT * FROM employees;
+-- Get first name, last name, job title and country name of the all employees, using joins.
+SELECT e.first_name, 
+       e.last_name, 
+       j.job_title, 
+       c.country_name
+
+FROM employees e
+LEFT JOIN jobs j ON e.job_id=j.job_id
+JOIN departments d ON e.department_id=d.department_id
+JOIN locations l ON d.location_id=l.location_id
+JOIN countries c ON l.country_id=c.country_id;
+
+--- In the emploees table we have 107 records, in the job history we have 10 records
+
+SELECT *
+FROM employees e
+RIGHT JOIN job_history j ON e.employee_id=j.employee_id;
+
+SELECT *
+FROM employees e
+JOIN job_history j ON e.employee_id=j.employee_id;
+
+--let's find a maximum salary for employee with first name Payam and last name Kaufling
+
+SELECT j.max_salary
+FROM employees e
+JOIN jobs j on e.job_id=j.job_id
+WHERE first_name = 'Payam' AND last_name = 'Kaufling';
+
+SELECT AVG(salary)
+FROM employees e
+JOIN jobs j ON e.job_id=j.job_id
+WHERE job_title like 'Programmer';
+
+SELECT first_name, last_name, department_id 
+from employees 
+where department_id IN (100, 60)
+UNION
+
+SELECT first_name, last_name, department_id 
+FROM employees 
+WHERE department_id IN (100, 60, 30);
+
+SELECT first_name, last_name, department_id 
+from employees 
+where department_id IN (100, 60)
+UNION ALL;
+
+SELECT first_name, last_name, department_id 
+FROM employees 
+WHERE department_id IN (100, 60, 30);
+
+SELECT first_name, last_name, department_id 
+from employees 
+where department_id IN (100, 60, 30)
+EXCEPT
+
+SELECT first_name, last_name, department_id 
+FROM employees 
+WHERE department_id IN (100, 60);
+
+SELECT *
+FROM employees
+WHERE salary > (SELECT AVG(salary) 
+FROM employees 
+WHERE job_id = 'ST_MAN');
+--- instead of job_id use job title
+
+
+SQL 4 
+saucelabs --> platform for testing in the cloud
+
+AWS RDS
+
+And we gonna connect to the odoo, book-it-qa data base and we gonna run our own RDS.
+
+LINUX it's a kernel. MacOS based on the linux.
+
+end poin: (DNS name)
+
+room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+
+port: 5432 (default port for PostgreSQL DAta base)
+
+
+end point can be ip address: 52.34.34.234
+
+Domain Name Server
+
+CREATE AWS account
+GO TO SERVICES
+CLICK ON THE RDS UNDER DATABASE
+THEN CLICK ON THE CREATE DATA BASE
+THEN SELECT POSTGRESQL DATA BASE
+SELECT Only enable options eligible for RDS Free Usage Tier
+Info
+ENTER NAME OF OUR RDS MACHINE for EXAMPLE: mypostgresqldb
+USERNAME(example): sdetuser
+PASSWORD(example): sdetuser12345
+ENTER DATA BASE NAME (example): hr
+Once status is available click on your machine
+Then go to the first tab and copy end point 
+Once you are connected to the DB, go to the canvas SQL Module and download hr_backup-1.tar
+RIGHT CLICK ON THE HR DATA BASE UNDER CONNECTION TO YOUR RDS
+CLICK RESTORE AND FIND hr_backup-1.tar
+AND RESTORE THIS DATA BASE WITH
+
+ODOO CONFIG
+
+name: odoo
+host: 54.148.96.210
+port: 5432
+username: podoo
+password: podoo
+
+
+BOOK-IT QA
+
+host: room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+
+port: 5432
+username: qa_user
+password: Cybertek11!
+================================================
+
+DML 
+DATA MANIPULATION LANGUAGE
+SELECT - to get data
+INSERT - to insert some record (for example test data) 
+UPDATE - to update something
+DELETE - to dele
+
+DDL
+
+DATA DEFINITION LANGUAGE
+
+CREATE - to create user, database etc.
+DROP this for seleteing something
+TRUNCATE - when you want to delete only content and the whole DB or TABLE
+
+DBA 
+DATA BASE ADMIN
+back up, craeting tables, creating users, deleting, revoking permissions, or granting permissions.
+
+
+CREATE TABLE
+
+
+CREATE TABLE Students (
+   student_id integer primary key,
+   last_name varchar  NOT NULL,
+   course_id integer null
+);
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>JDBC Vasyl>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+DBC DAY 1
+
+=======
+Your first days at work, you will spend on learing application, and setting up your environment and laptop.
+
+You will get all URLs 
+Credentials
+
+This for HR schema:
+
+host: room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+username: hr
+password: hr
+
+DevOps --> developer who is also responsible for operations
+
+DevOps - it's a title same as SDET, Developer etc.
+
+CI/CD person
+
+It's related to Jenkins
+========================
+
+JDBC allows java application connect to the relational data(RDS) base.
+
+STEPS To CONNECT TO THE DATA BASE FROM JAVA CODE
+
+1.JDBC driver for our databse
+This is for Postgres data base:
+
+<dependency>
+    <groupId>postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.1-901-1.jdbc4</version>
+</dependency>
+
+2. Get connection
+	String connectionString = "jdbc:postgresql://host:port/database"
+	String username = "hr";
+	password = "hr";
+
+	"jdbc:postgresql://room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com:5432/hr"
+
+	postgresql - type of database managment system that we are using
+	room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com - host name, also it can be IP address. If database if on the same computer(machine) as our connection point we would use localhost as a host name.
+
+	port - (door) point where databse is listening.
+
+	PORT?
+	The port number is like a door or gate where database is listening on.
+
+	Default for PostgreSQL: 5432
+
+	mvn clean install -X
+
+	So we created simple maven project
+
+	Then we added dependencies, for JUnit, because we gonna run unit tests (one method) and we added JDBC for PostgreSQL database
+
+	<dependencies>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+3. Create statement object
+4. Execute query
+5. Proccess result set
+
+/// BREAK TILL 2:10 PM
+
+=================
+
+String url = "jdbc:postgresql://room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com:5432/hr";
+	String username = "hr";
+	String password = "hr";
+	
+	@Test
+	public void jdbcTest1() throws SQLException{
+		Properties properties = new Properties();
+		properties.setProperty("ssl", "false");
+		//Now we are connecting to the data base from eclispe/intellij with java code and JDBC Api
+		Connection connection = DriverManager.getConnection(url, username, password);
+		//We need to create a statement 
+		Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		//Now we gonna run a query, so for that we need to create a result set
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM employees;");
+		//we need to skip first record, because it start from 0
+		resultSet.next();
+		//we are getting first record based on the column name
+		String value = resultSet.getString("first_name");
+		//just to output result int oterminal
+		System.out.println(value);
+		//TO close stream of data (connection)
+		connection.close();
+	
+	}
+
+===========
+
+So there is no differenct between code running in Eclipse or Intellij
+
+
+java.sql.SQLException: No suitable driver found for jdbc
+
+It means you are using wrong JDBC driver.
+If you are connection to the Postgres Data Base you need to use JDBC for Postgres.
+
+<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.5</version>
+		</dependency> 
+
+When to use SQL Developer or pgAdmin (alternative tools: DbVisualizer, DBeaver)
+
+And when we are using JDBC?
+
+JDBC we are using in order to build test automation for beck-end testing.
+
+Same thing as manual testers can test web application without selenium, just by following test cases and manually executing verification, we can run SQL queries in order to verify that data is in the data base indeed. 
+
+1. Read and analyze.
+2. Test manually
+3. You are doing UI automation (you are developing test atomation scripts for web application that you are working. You need to have Page Classes with all web elements, you have methods for entering data then you have methods for verification.)
+3. For back-end testing part we are craeting verification methods that are taking expected result from cucumber feature file(test definition), and actual result we will get after executing query based on the parameters. (This is done with help of JDBC)
+=============
+First you are looking into schema to find out where this inforamtion located. So we need to understand which tables are holding information that we need to verify
+
+in my company central or main table was users.
+primary key was user_id
+I was writing 99% of the queries based on the user_id. So I was doing backend testing to verify that data was saved in the database for specific user. And based on the user id I was finding data in the data base.(WHERE user_id = 134234);
+
+----------\ example
+SELECT start_date
+FROM employment
+WHERE user_id = '111'
+
+Manual testers most of the time are doing backend testing too. So they are writing SQL queries in the SQL Developer/pgAdmin to get actual data from the database. 
+resultset.next() returns boolean, so we can put it inside a while loop to get all information.
+next() method moves to the next row. If we put inside a loop we will scroll to the end of the list with records.
+
+getRow() -- to get current row index 
+
+if you don't do next()
+org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
+
+next() -- to move to the next row
+
+beforeFirst() -- moves us to the row 0, there is no information. So to get the data from first row we need to call method next();
+
+first() -- to move to the first row
+last() -- to move to the last row
+
+METADATA ---> data about data
+
+
+@Test
+	public void jdbctest4() throws SQLException {
+		//So we want to get metadata about DB
+		DatabaseMetaData dbmetadata = connection.getMetaData();
+		System.out.println("Username: "+dbmetadata.getUserName());
+		String expcetedDBType = "PostgreSQL";
+		String actual = dbmetadata.getDatabaseProductName();
+		Assert.assertEquals(expcetedDBType, actual);
+		System.out.println(actual+" : "+dbmetadata.getDatabaseProductVersion());
+	}
+
+This is some inforamtion about database management system.
+
+//Metadata about resultset, means metadata about our query
+	@Test
+	public void jdbctest5() throws SQLException {
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM employees;");
+		ResultSetMetaData resultsetmetadata = resultSet.getMetaData(); 
+		System.out.println(resultsetmetadata.getColumnCount());
+	}
+This inforamtion gives us idea of what are the paraneters of our output after running query.
+
+getColumnName(index) --> returns column name based of index
+
+resultsetmetadata.getColumnCount() --> to get columns count 
+
+===========
+TASK 
+==========
+print all column names for this query: SELECT * FROM employees
+
+// get all columns names 
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM employees;");
+		ResultSetMetaData resultsetmetadata = resultSet.getMetaData();
+		for (int i = 1; i <= resultsetmetadata.getColumnCount(); i++){
+		    System.out.println("Name of a specific column with index:"+resultsetmetadata.getColumnName(i));
+		}
+
+What's the difference between testing in Eclipse and SQL Oracle?
+Everything is same, but in ECLIPSE (with JDBC) we can get data based of query and put that data inside a list, map, String, etc. to verify smth. So we can automate our backend testing proccess.
+
+
+===============
+SQL JDBC DAY 2
+===============
+AGENDA (PLAN FOR TODAY)
+
+REVIEW of Yesterdays class (JDBC DAY 1)
+
+We gonna practice how to run query from JAVA code and get data, then put that data into the list, map, List<Map<Object, Object>>, also how to execute commands like INSERT, UPDATE, DELETE
+
+We gonna switch to testNG + selenium + JDBC in order to test bookit application.
+
+
+When we do integration testing we are testing how 2 appliactions working together.
+Integration testing can be done for application that are connected
+application 1 ----> application 2
+
+backend tesing for both.
+
+application 1 J2EE (JAVA) web development framework/ database informix (ibm)
+
+application 2 .NET Framework (C#) (Microsoft) web development framework. data base Microsoft SQL Server
+
+How to switch drivers?
+
+in the properties file we can set db config point
+if(ConfigurationReader.getProperty("dbenvironment")==="javaapplication"){
+	//run this driver, because we know that our java app is using this driver
+	Class.forName("org.postgresql.Driver");
+}else if(ConfigurationReader.getProperty("dbenvironment")===".netapplication"){
+	//run this driver, because we know that this .NET app is using this driver
+	Class.forName("com.microsoft.sqlserver.SQLServerDriver");
+}
+
+Neoload, Jmeter, Loadrunner 
+
+Neoload it's perfomance testing tool, can be used with selenium
+
+localhost will be used we we are connection to the local DB
+
+1. we are connection to the data base with utl, username, password
+2. we need to create statement to run query. Based of query we will get data back.
+3. then we need to create resultset that will hold our information.
+		|
+		|
+	   \./
+resultset
+
+if we will not call method next() position of our index will be 0, there is no data.
+next() method shifts row index(position)
+
+--> index 0	|first_name|last_name|user_id| (if we will try to get value here, we will get an exception (please call next method)) 
+--> index 1	| james    | may.    |  1    |
+--> index 2	| mark     | twen    |  2    |
+
+resultSet.getObject("first_name")  ---> it will return james
+
+absolute(20); --> to move to specific row
+
+----last() --> to shift ot the last row
+----first() --> shift to the first row
+
+
+META DATA --- it's data about data
+
+DatabaseMetaData  --> retutns data about data base
+ResultSetMetaData --> retutns data about result set (iformation that we are getting after running query)
+
+last step , ALWAYS CLOSE CONNECTION
+
+======
+TASK 
+==========
+let's print out data types of employees table
+
+
+getColumnTypeName(1) --> return data tyoe of column
+
+
+//to output data types and column names of employees table
+	@Test
+	public void jdbctest7() throws SQLException {
+
+		//Result set returns data based of query
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM employees;");
+		
+		//Result set meat data (data about our data) this info gives us idea about Result Set
+		ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+		
+		//We need to know amount columns 
+		int numOfColumn = resultSetMetaData.getColumnCount();
+		
+		//step by step we are getting column name and data type
+		for(int i = 1 ; i <= numOfColumn ; i ++) {
+			System.out.println("column type with index: " + i + " ==> " + resultSetMetaData.getColumnTypeName(i)+" : "+resultSetMetaData.getColumnName(i));
+		}
+	}
+
+
+SELECT e1.employee_id, e1.first_name, e1.last_name, e2.first_name, e2.last_name
+FROM employees e1
+JOIN employees e2 on e1.manager_id=e2.employee_id;
+===============
+
+/// we can get first name and last name of managers
+
+column type with index: 1 ==> serial : employee_id (primary)
+column type with index: 2 ==> varchar : first_name
+column type with index: 3 ==> varchar : last_name
+column type with index: 4 ==> varchar : email
+column type with index: 5 ==> varchar : phone_number
+column type with index: 6 ==> timestamp : hire_date
+column type with index: 7 ==> varchar : job_id
+column type with index: 8 ==> numeric : salary
+column type with index: 9 ==> numeric : commission_pct
+column type with index: 10 ==> int4 : manager_id
+column type with index: 11 ==> int4 : department_id
+
+DATA TYPES:
+NUMERIC DATA TYPES
+
+int - whole number (age, quantity)
+numeric (P, S) decimal point
+
+P - length
+S - number of digits after decimal point
+
+serial - it's not true data type, and it work on postgres.
+It's auto incrementing whole number - ID (primary key)
+
+==== String data types
+
+char(N) --> N means fixed length of chars (for example gender: F, M), states (MD, VA, AZ) 
+varchar(N) --> N means maximum length of chars
+TEXT --> there is no maxmimum amount of chars. For exmaple comments, reviews 
+
+===== DATE data types
+
+timestamp YYYY-MM-DD HH:MM:SS -- order time (for date and time when user was created, updated) 
+time = HH:MM:SS
+date = YYYY-MM-DD
+
+======Other
+
+boolean true or false
+enum --> it's like label, custom data type
+
+Example of SEASONS: WINTER, SUMMER, SPRING, FALL
+
+=====REMEMBER=====
+we can have only one primary key within a table
+primary key cannot be null
+
+
+Table with primary key called reference table or paranet table, table with foreign key called child
+
+
+Please connect to your RDS on AWS
+
+host: myrdspostgresql.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+username: sdetuser
+password: sdetuser12345
+
+
+100	"Steven"	"King"	"SKING"	"515.123.4567"	"1987-06-17 00:00:00"	"AD_PRES"	"24000.00"			90
+
+======
+Let's change his email to sking@cybertekschool.com with JDBC
+
+// how to create schema with owner (owner it's a user that owns this schema)
+
+CREATE database hr WITH OWNER hr
+
+
+====
+UPDATE table name
+SET column name = value
+WHERE condition
+
+======TASK
+
+Create 2 unit tests: first one will create a user in the employees table, second test will verify that user exists.
+
+
+===== TO INSER RECORD (CREATEA Employee)
+//we need to specify all parameters
+
+--INSERT INTO employees VALUES(222, 'SdetName', 'SdetLastName', 'sdet@email.com', '515.123.4567', '2018-06-17 00:00:00', 'IT_PROG', 10101.01, 0.01, 100, 110);
+
+SELECT * FROM employees WHERE first_name = 'SdetName' AND last_name = 'SdetLastName';
+
+SELECT COUNT(*) as count 
+FROM employees
+WHERE first_name = 'AutoUser' and  last_name='SdetLastName';
+
+//we can specify column names that we want to set values, other columns will null or they will recieve auto generate value like employee_id
+
+INSERT INTO employees (first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id)
+VALUES('SdetName', 'AutoUser', 'qauser@email.com', '515.123.4567', '2018-06-17 00:00:00', 'IT_PROG', 10101.01, 0.01, 100, 110);
+
+
+=======
+
+BOKIT QA
+
+Endpoint
+room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+
+Port
+5432
+
+username: qa_user
+password: Cybertek11!
+ 
+
+ Serik went to market with traditional resume
+
+Backend testing with Cucumber
+
+Open the Bookit acceptance tests project on intellik
+
+switch to master branch
+	git checkout master
+
+git pull
+
+when we do db testing we need login information to db:
+
+__
+
+name: qa1
+user: qa_user
+password: Cybertek11!
+host: room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+port: 5432
+db_name: room_reservation_qa
+
+BREAK: 
+we upgraded to number of connections, try again after 7.55 pm
+
+connect using SQL Developer or PGAdmin, either one is fine
+connection information is in slack announcements
+
+TYPE THE PASSWORD, IF YOU COPY FROM SLACK IT WILL HAVE A SPACE AT THE END
+
+
+Create a new feature file:
+	right click on features
+	new --> file
+	name: team_info_back_end_test.feature
+
+
+UPDATE NOW
+
+
+git fetch origin
+git reset --hard origin/master
+
+to do back end testing, we add driver dependency for our db type to the pom file
+	we use postgres, driver is
+		<dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.5</version>
+        </dependency>
+
+For oracle:
+		<dependency>
+
+	<groupId>com.oracle</groupId>
+<artifactId>ojdbc14</artifactId>
+<version>10.2.0.3.0</version>
+		<dependency>
+
+__
+to connect to db we create conenction using the Connection class
+
+Connection connection = DriverManager.getConnection()
+
+getConnection we pass 3 params:
+	url
+	username 
+	password
+
+CONNECTION INFO FOR SQL DEV, 
+
+name: qa1
+user: qa_user
+password: Cybertek11!
+host: room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+port: 5432
+db_name: room_reservation_qa
+
+CONN INFO FOR JDBC
+
+	jdbc:postgresql://room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com:5432/room_reservation_qa
+
+jdbc:
+postgresql.  --> type of the db. in the pom file we must have the driver for this type of database
+
+host:-->  room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+
+port: 5432
+
+db name: room_reservation_qa
+
+Once we create connection, we can make queries. to make a query. to make query we youe Statement class. 
+
+			statement = connection.createStatement();
+the we create resultset object to store the result of the query
+
+	           resultSet = statement.executeQuery(query);
+
+Ramazan Gunay [9:34 PM]
+"jdbc:type of data db://host:port/dbname"
+
+Map<String, List<String>> a = new hasmap<>() ; 
+
+a.put("given key", ennes); 
+
+LIst<String> ennes = new ArryayList<>(); 
+
+ennes.add("aham"); 
+ennes.add("mo"); 
+ennes.add("aafdsdaam"); 
+
+List< enes
+list.add("vallufs")
+
+asdsas.put(dsab, enes)>
+
+
+Actions actions = new Actions(driver); 
+
+actions.moveElements("afkalsd").page
+
+JavaScript js = new JavaScript(); 
+
+Web
+js.executeScip ("argument[0].scroolintowisc", element)
+
+
+HashMap<Country name, Country Population> n; 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BootsCampSQL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+* to get all data from the table
+SELECT * 
+FROM employees
+--select secific column 
+SELECT first_name
+FROM employees;
+
+--to get first name + last name 
+SELECT first_name ||', '|| last_name as full_name
+FROM employees;
+
+-- in order to sort records
+SELECT job_id
+FROM employees
+ORDER BY 1;
+
+--in order to sort 
+SELECT *
+FROM employees
+ORDER BY job_id DESC;
+
+--limit returns specific amount or records
+SELECT *
+FROM employees
+ORDER BY job_id DESC
+LIMIT 10;
+
+--offset - skips first 20 records and return 5 
+SELECT *
+FROM employees
+ORDER BY 1 ASC
+LIMIT 5 OFFSET 20;
+
+---get last record
+SELECT * 
+FROM EMPLOYEES
+ORDER BY employee_id DESC
+LIMIT 1;
+
+-- where filters results based on some condition
+SELECT * 
+FROM employees
+WHERE job_id = 'IT_PROG';
+
+--like provides pattern for search 
+SELECT * 
+FROM employees
+WHERE first_name LIKE 'A%';
+
+--ILIKE it's case insensetive version of LIKE, works only in POSTGRESQL
+SELECT * 
+FROM employees
+WHERE first_name ILIKE 'a%';
+
+-- 'A%' means return everything that starts with A
+SELECT * 
+FROM employees
+WHERE first_name LIKE 'A%' and last_name LIKE 'B%';
+
+-- '%a' means return everything that ends with a
+SELECT * 
+FROM employees
+WHERE first_name ILIKE '%a';
+
+-- will return all employees where first name has second letter a 
+SELECT * 
+FROM employees
+WHERE first_name LIKE '_a%';
+
+--returns all records where commission_pct is null
+SELECT * 
+FROM employees
+WHERE commission_pct is null;
+
+SELECT * 
+FROM employees
+WHERE commission_pct is not null;
+
+SELECT *
+FROM employees
+WHERE department_id in (60, 80);
+
+SELECT *
+FROM employees
+WHERE department_id = 60 or department_id = 80;
+
+-- distinct keyword returns unique values
+SELECT DISTINCT first_name
+FROM employees;
+
+--arihmetic operators +, -, *, /, <, >, >=, <=
+SELECT *
+FROM employees
+WHERE salary >= 5000;
+
+SELECT *
+FROM employees
+WHERE salary <= 8000;
+
+SELECT *
+FROM employees
+WHERE salary >= 5000 AND salary <= 8000;
+
+SELECT *
+FROM employees
+WHERE salary BETWEEN 5000 AND 8000;
+
+-- order by 1 means prder by first column
+SELECT *
+FROM employees
+WHERE employee_id%2 = 0
+ORDER BY 1;
+
+SELECT ROUND(AVG(salary), 2)
+FROM employees;
+SELECT MAX(salary)
+FROM employees;
+SELECT MIN(salary)
+FROM employees;
+SELECT MAX(salary) - MIN(salary)
+FROM employees;
+
+
+--(SELECT AVG(salary) FROM employees) --> sub-query
+SELECT * 
+FROM employees
+WHERE salary < (SELECT AVG(salary) FROM employees);
+
+SELECT UPPER(first_name), UPPER(last_name)
+FROM employees;
+
+SELECT LOWER(first_name), LOWER(last_name)
+FROM employees;
+
+SELECT last_name||', ' || first_name as full_name, LOWER(email) || '@gmail.com' as email
+FROM employees;
+
+--SUBSTRING: 3 parameters(column name, start index, length)
+SELECT SUBSTRING(first_name, 1, 1) || SUBSTRING(last_name, 1, 1) as new_name
+FROM employees;
+
+-- it does to upper case for first letter 
+SELECT INITCAP(email)
+FROM employees;
+
+SELECT last_name||', ' || first_name as full_name, job_title
+FROM employees e
+JOIN jobs j on j.job_id = e.job_id;
+
+SELECT last_name||', ' || first_name as full_name, job_title
+FROM employees e
+RIGHT JOIN jobs j on j.job_id = e.job_id;
+
+SELECT * 
+FROM employees e
+JOIN job_history j on j.employee_id = e.employee_id;
+
+SELECT * 
+FROM employees e
+LEFT JOIN job_history j on j.employee_id = e.employee_id
+ORDER BY j.start_date;
+
+SELECT last_name||', ' || first_name as full_name, city
+FROM employees e
+JOIN departments d on e.department_id=d.department_id
+JOIN locations l on d.location_id=l.location_id
+ORDER by city DESC;
+
+---self join
+SELECT e1.first_name as employee_name, e1.last_name as employee_last_name, e2.first_name as manager_name, e2.last_name as manager_last_name  
+FROM employees e1
+JOIN employees e2 ON e1.manager_id=e2.employee_id
+
+PRACTICE: 
+
+SELECT emp_id, last_name, job_ids, salary 
+FROM employees 
+ORDER BY salary DESC; 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>MURODIL CLASS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+04/06/2019
+----------
+
+BackEnd: API, Databases review.
+-------------------------------
+
+Welcome.
+--------
+
+SQL review
+----------
+
+Web Application Architecture:
+
+1) Front end, GUI/UI, Presentation layer
+
+2) BackEnd/ Business logic/ Service layer/ Server Side. 
+This is where API is located and we can test it directly without going from UI.
+
+3) Database - where data of the application is stored:
+
+Every application has a database.
+
+
+https://learn.cybertekschool.com/courses/129
+
+Goto Etsy.com
+https://www.etsy.com/search?q=java
+
+@GetUrl(/search)
+public List<Product> search(String q) {
+//code
+Goto Database and get all the products that contain "java"
+(JDBC -> run sql query -> resultset)
+
+Loop through result
+Select * from Products 
+where description like '%iphone case%';
+
+Format into Product[] using java.
+
+Return ==> when you are returning, there will be some other code that is responsible to convert java object into JSON.
+
+}
+
+UI Send request https://www.etsy.com/search?q=iphone%20case
+>> API method search("iphone case")
+>> Build SQL Query > JDBC > Get All products
+that match "iphone case"
+>> ResultSet >> loop through and Convert to 
+List<Product>
+>> List<Product> >> convert to JSON and send as response
+
+List<Product> >> Json
+Serialization. 
+=================================
+
+SQL : 
+DBMS: Database Management Systems
+
+2 Main types:
+1) Relational databases
+2) Non-Relational databases
+
+Relational databases ==> data is stored/organized in mulitiple tables. And those tables are connected/related to each other using primary+foreign keys(colums).
+
+Each table has columns and rows:
+
+Examples: Oracle Database/ Postgress / MySQL/ MariaDB/ IBM Db2 etc
+
+NON RELATIONAL database:
+Data is stored similar to JSON format.
+{
+key : value
+}
+BSON --> Binary JSON format.
+If you are comfortable with JSON then NON-RELATIONAL databases should not be hard to learn.
+
+We can look at each KEY as a column name in relational database.
+it is organized in JSON format.
+==================================
+
+DO YOU HAVE EXPERIENCE WITH SQL?
+
+YES! I am comfortable with Writing SQL Queries. and know all DDL DML commands.
+I am also comfortable to use JOINs and SET operators as required.
+
+HOW DID YOU USE SQL IN YOUR CURRENT PROJECT?
+
+Our web application uses Oracle database and I normally write queries to do Data validation. For example: I create data from UI Or I send POST request from API then I write query to verify that data was successfully and correctly inserted into database.
+
+Our database consists of many tables, so most of the time, i need to write queries that involve joins.
+
+CAN MENTION: Since our application has large sets of data, data is stored to Oracle and to another CACHE database.
+I write queries to test data that both are in SYNC(same).
+
+=================================
+Cache database that is much faster than normal Oracle
+
+RAM ==> L1, L2, L3 Cache memory
+=================================
+
+COLUMN ATTRIBUTES:
+a Column will have data type
+some data types: Number, Char, VarChar2, Boolean, Date, Currency.
+
+Char vs VarChar2 ? 
+Both like String in Java.
+
+char(10) ==> this column can store 10 characters. When inserting data to this column, even if you enter only 5 characters, it will still use memory for 10 characters.
+
+Varchar2(10) ==> this column can store up to 10 characters. If you insert a value with 5 characters, it will only use memory for 5 characters
+
+VIN number --> can be char(16) because it is always 16 chars
+
+Email column --> can be VarChar(100), it means up to 100 characters, but if email is shorter than that it will only use that much memory.
+
+===================================
+
+
+544453453
+
+Wooden Spoon, Homemade from speacial wood
+
+====================
+
+COLUMN CONSTRAINTS:
+-> PRIMARY KEY.Every table will have 1 primary key column. Purpose of this column is uniquely identify that row. and data that can be stored must always be UNIQUE. and NOT NULL
+--> will be used to establish connection with other tables
+--> FOREIGN KEY -> It means this column comes from a Different table. and is being used to establish relation between 2 tables.
+
+ACCOUNTS table
+
+account id, account holder
+
+TRANSACTIONS
+
+transaction id, account id, amount
+
+account id --> 1234, 2345
+
+transactions --> 1234,1234,1234
+--> 4444
+
+==============================
+
+COLUMN CONSTRAINTS:
+- PRIMARY KEY
+- FOREIGN KEY
+- NOT NULL
+- NULL
+- UNIQUE
+=========================
+
+JOINS:
+inner join -> returns matching records
+==========================
+
+TOMORROW:
+API, ICE CREAM ... ?
+
+=================================
+
+
+-- Select all the rows and all the columns from employees table
+SELECT * FROM employees;
+
+--Select only specific columns: employee id, first and last name
+SELECT employee_id , first_name, last_name
+FROM employees;
+
+-- we can also put filtering conditions. WHERE statement,
+-- display all employee ids, first and last name , job id ONLY for ppl who are 'IT_PROG'
+
+SELECT employee_id, first_name, last_name, job_id
+FROM employees
+WHERE job_id = 'IT_PROG';
+
+-- display all employee ids, first and last name , job id only for ppl whose first name starts with A
+-- LIKE operator to do wildcard/partial searches
+
+SELECT employee_id, first_name, last_name, job_id
+FROM employees
+WHERE first_name LIKE 'A%';
+
+-- Other operators that can be using in WHERE condition. AND, OR , BETWEEN, IN, NOT
+-- display employees whose salary is more than 6000 and whose job is SA_REP
+SELECT *
+FROM employees
+WHERE salary > 6000 AND job_id = 'SA_REP'
+ORDER BY first_name;
+
+-- DISPLAYING DATA FROM MULTIPLE TABLES. JOINS ARE USED TO DISPLAY DATA FROM MULTIPLE TABLES
+-- INNER JOIN -> SELF JOIN
+-- OUTER JOIN -> RIGHT OUTER JOIN, LEFT OUTER JOIN, FULL OUTER JOIN
+-- CROSS JOIN -> JOIN WITHOUT VALID CONDITION. IT WILL MULTIPLY EACH ROW IN BOTH TABLES.
+
+-- DISPLAY FIRST NAME, LASTNAME, JOB ID, DEPARTMENT NAME FOR ALL EMPLOYEES
+-- INNER JOIN --> IT WILL RETURN MATCHING RECORDS BETWEEN TABLES ACCORDING TO JOINING CONDITION.
+
+
+SELECT first_name, last_name, job_id, department_name
+FROM employees JOIN departments
+ON employees.department_id = departments.department_id;
+
+
+-- LEFT OUTER JOIN --> IT WILL RETURN ALL MATCHING RECORDS AND NON-MATCHING RECORDS FROM LEFT TABLE
+
+-- RIGHT OUTER JOIN --> IT WILL RETURN ALL MATCHING RECORDS AND NON-MATCHING RECORDS FROM RIGHT TABLE
+
+-- FULL OUTER JOIN --> IT WILL RETURN ALL MATCHING RECORDS AND NON-MATCHING RECORDS FROM RIGHT AND LEFT TABLE
+
+
+SELECT first_name, last_name, job_id, department_name
+FROM employees RIGHT OUTER JOIN departments
+ON employees.department_id = departments.department_id;
+
+
+SELECT first_name, last_name, job_id, department_name
+FROM employees LEFT OUTER JOIN departments
+ON employees.department_id = departments.department_id;
+
+
+SELECT first_name, last_name, job_id, department_name
+FROM employees FULL OUTER JOIN departments
+ON employees.department_id = departments.department_id;
+
+Some of The Most Important SQL Commands
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+
+	int a = 10; 
+	int b = 4; 
+
+	a = a + b; -> 10+4 = 14; 
+	b = a - b; -> 14-4= 10; 
+	a = a - b; -> 14-10= 4; 
+
+	a => 4; 
+	b => 10; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

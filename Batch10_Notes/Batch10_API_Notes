@@ -1,0 +1,1820 @@
+Appachi/API: 
+
+API Test: 
+
+Json/xml --> All files will be either in Json/xml format 
+
+REST API http calls --> specific code you look like a zip code, then it will change it to applyable format 
+cityname --> API call 
+
+
+35 C 
+
+If you ask google.com about the weather in Newyork, it will not be able to response you until the request is sent to the weather.com and finally API request is approved by the weather.com and provide you a copy of the information about the weather. So, all the requsts will be either in Json or xml and these 2 formats are readable by any language. 
+
+What is the Endpoint? 
+	- We can describe something in Json/xml format, how the request go to the relevent webpage, like if we call someone, then we need a phone number, if you have endpoint is the address for the relevent application you make API request. 
+	- End points are designed from the following peices or include the following pieces: 
+
+
+		1. BaseURL: It is like country code, qaclikacademy and we can call it as host. 
+
+		2. Resources: Each file can be threated as a resource, in main domain there are multiple files, each file has it's own resource.  
+
+		3. Parametrs: 
+
+	Examples: 
+		Endpoint: 	Baseurl/resource?Paramters 
+					qaclickacademy.com/coures-details/id=web 
+		resource and parameter is seperated by the question mark. 
+
+-> Even a simple Website calling is an example of the API. 	 
+
+What are types of rest request? 
+
+
+The key principles of REST are as follow: 
+
+xcel Automation Using Java.
+----------------------------
+
+java, csv, xml, json, txt, ppt, doc, 
+xlsx
+============================
+
+1) Data Driven Framework.
+   Data Driven Testing
+
+When there is a functionality in the Application that required testing with multiple inputs. We need to use DDF(Data driven framework).
+
+In this case we store our test data in XL files. 
+
+Code and Test Data is separated.
+We store Test data in External source(XL file.)
+Can also be Examples table in Cucumber(If not too many rows)
+- Data can also be stored in Database
+- Data is pulled dynamically using API calls.
+===============
+
+2) Excel reports are very popular in Projects.
+
+Excel Data comparison from different applications/ environments are popular automation scenarios.
+
+=================
+1) Excel file structure
+2) How to read and write to Excel files using Apache POI Library
+3) Selenium + Excel file data driven test
+=================
+
+Excel File structure / Hierarchy:
+
+Cucumber Steps> step definitions >
+
+in Excel:
+Workbook > Worksheet > Row > Cell
+==============================
+
+What do we use to automate Excel actions in Java?
+
+Apache POI Library.
+
+http://poi.apache.org/
+
+=======================
+
+If it is a maven project, how I get Apache POI libraries ?
+
+Add a dependency into pom.xml file.
+<dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+======================
+
+If you are using OpenOffice, please
+make sure to select type as XLS
+while saving the document.
+
+
+xls -> is an older type of excel files
+xlsx -> is current type
+===========================
+
+For XLS files ==> HSSFWorkbook implementation
+	HSSFWorkbook wb = new HSSFWorkbook(inputStream);
+
+For XLSX files ==> XSSFWorkbook implementation
+	XSSFWorkbook wb = new XSSFWorkbook(inputStream);
+
+For Both of them, we can use
+Workbook workbook = WorkbookFactory.create(inputStream);
+
+------>>>>>>>>>>>>>------>>>>>>>>>>>>>-------------
+
+Urls for Appachi API testing: 
+
+1): 	https://forms.zohopublic.com/murodil/report/EmployeesList/reportperma/			KEHLOBKT11LEZjKP5cyQEty3fyFpD_R1CpTajvMbrY0
+
+
+2): 	https://forms.zohopublic.com/murodil/form/SDETs/formperma/A4aUtJT12MU4UkgyfbQW2RY5EJTq93wGZaw05F7Gxq4
+
+
+02/13/2019
+----------
+Excel Automation Day 2.
+Libraries used: Apache POI
+--------------------------
+poi.apache.org
+=============================
+Excel workbook structure/Layers
+Workbook > Worksheet > Row > Cell
+==============================
+- Get familiar with ExcelUtil utility class
+- Build Data driven test
+Java + TestNG + Apache POI + Selenium + Maven + Git/GitHub + POM Design
+=============================
+LIST OF MAPS
+Each Element in The ArrayList is a HashMap object
+List<Map<String,String>> listM = getDataList();
+String c = listM.get(6).get("Country");
+========================
+DDT ==> Data driven Test
+DDF ==> Data driven Framework
+SPA ==> Single Page Application
+When do you need to do Data driven test?
+When there is a functionality or module of the application that MUST be tested with multiple sets of data/inputs.
+Then we need to do Data Driven test.
+Normally, we separate CODE and DATA.
+CODE is Java+Selenium
+DATA is stored in Excel file externally.
+APPLICATION + SELENIUM/JAVA + EXCEL FILE WITH TEST DATA
+APPLICATION + SELENIUM/JAVA + DATABASE
+APPLICATION + SELENIUM/JAVA + CSV, TXT FILE
+APPLICATION + SELENIUM/JAVA + CUCUMBER EXAMPLES TABLE
+APPLICATION + SELENIUM/JAVA + API CALLS
+================================================
+1) Test The functionality/Test case manually
+and make sure it is working and YOU UNDERSTAND IT
+2) Locate Elements and store into Page Object Class
+3) Create a TestNG test and automate for a SINGLE set of Data 
+4) Prepare Test Data:
+    YOU NEED MAKE SURE TO HAVE CORRECT DATA TO TEST
+    Where can we get test data:
+        Depending on type of test data, it can come from different sources:
+    -> URLS, CREDENTIALS => BA, QA MT, Dev. You can also look up in properties file
+    -> Large set of data(Random Firstname, emails, SSNs, Numbers ...) 
+        YOU NEED TO KNOW THE REQUIREMENT OF TEST DATA:
+        --> Random Generated using JAvafaker library
+        --> Mockaroo Download or API call
+5) Store the Test data into Excel document
+6) Link Excel Document with Java+Selenium TestNG test
+7) Execute for multiple sets of data and analyze the results
+8) Report results / Bugs if found
+=====================================
+//div[contains(text(),'Dear')]
+//div[contains(.,'Dear')]
+//*[contains(.,'Dear')]
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>API>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+Date: Feb 22, 2019 
+
+What is API? 
+
+-> It is Application Programming Interface 
+
+There 4 different types requests. 
+
+CRUD Operation 
+
+	Create -> Read -> Update -> Delete 
+
+How do we send request using API? 
+
+	- We use URI / URL (service end point) to send request by calling different HTTP Method 
+
+GET 		--> Read Data 
+POST 		--> Create 
+PUT 		--> Update 
+DELETE      --> Delete 
+
+JSON --> Java Script Object Notation, 
+		 It is a key and value format, like login --> CybertekSchool, something else !!! 
+
+There are mutliple formats to deliver a request: 
+
+- JSON 
+- HTTP 
+- XML 
+
+JSON --> POPULAR --> PRIMARILY USED FOR REST API 
+
+HOW DO WE CREATE A JSON REPORT: 
+
+	- The key must be String, the value can be String or number  
+
+Different Type of API (web servicies)
+
+SOAP --> Simple Object Access Protocol 
+			- 	Use XML as request and response format  
+
+REST --> Representational State Tranfser
+			- Can use both XML and JSON formats 
+
+URI --> Unified Resource Identifier 
+URL --> Unified Resource Locator 
+
+car object 
+
+{
+	
+	"model": "honda" , 
+	"make": "civic" , 
+	"year": 2008 , 
+
+}
+
+
+{
+	
+	"model": "honda" , 
+	"make": "civic" , 
+	"year": 2018 , 
+
+	"features" : ["autocivic", "sun roof", "cruise"],
+
+	"Engine" : { 
+					"cylinder count" : 6, 
+					"engine type": "turbo"
+				}
+
+}
+
+
+--> if we have multiple objects, it is stored inside an Array, Java Script use Array like [ ] this and you see below how it looks like; 
+
+[
+   
+
+    { 
+	"cylinder count" : 6, 
+	"engine type": "turbo"
+	}
+
+]
+
+API Key -> It is like a key to enter the door, if you have it, then you have more access and can track 
+
+-> http://jsonviewer.stack.hu/ --> it will give you a better readable report, you copy paste your json report, then you can click on Viewer that giv you a better readable format. 
+
+How requesing work in API: 
+
+https://www.google.com/search?q=abc&rlz=1C5CHFA_enUS810US810&oq=abc&aqs=chrome.0.69i59j0l5.2511j0j7&sourceid=chrome&ie=UTF-8
+
+
+https://www.google.com/search?q=abc
+
+Anything after ? mark is query parameter which has key and value 
+
+https://api.github.com/users --> returns all users 
+
+https://api.github.com/khalilinemat --> returns a specific user under users resource collection 
+										/khalilinemat --> path parameter 
+										--> It i a pointer for single resource and you can just pass it by putting slash and name of the parameter. 
+
+Oracle Rest Data Service -- ORDS 
+
+Oracle Database --->>> Rest API 
+
+
+We have 4 actions to implement: 
+
+- GET --> GET EVEYRTHING 
+- PUT --> ADD DATA TO THE SERVER 
+- POST --> IT IS ADDING DATA TO THE SERVER OR DATABASE 
+- DELETE --> IT IS DELETING DATA FROM DATABASE OR SERVER 
+
+PLEASE USE API TESTING COURSE CHAT
+
+
+
+
+WHAT IS API.
+HOW API WORKS
+HOW TO TEST API MANUALLY
+
+POSTMAN
+
+API -> APPLICATION PROGRAMMING INTERFACE
+WEB SERVICE
+-----------------
+
+CLIENT -> -> -> SERVER(API SERVER)
+
+CLIENT <- <- <- SERVER(API SERVER)
+
+API is a middle man between database and client.
+
+2 TYPES API:
+1) SOAP
+2) REST
+
+REST api is much more popular than SOAP.
+
+RESTFul Api / RestFul WebServices
+
+API is an application but without UI.
+
+REST-ASSURED LIBRARY IN JAVA.
+====================================
+
+2 TYPES OF API:
+SOAP VS REST
+
+SOAP -> SIMPLE OBJECT ACCESS PROTOCOL.
+
+It used XML format for request and response.
+
+API enables communication between systems.
+API enables secure way of sharing data and functionalities.
+
+REST and SOAP
+
+DATA FORMATS USED BY APIs
+
+XML, JSON
+
+========================
+JSON(JavaScript Object Notation) is a lightweight of XML.
+
+{
+“id”:1,
+“name”:”Kevin”
+}
+
+KEY+VALUE FORMAT.
+
+===================
+
+JDBC API
+SELENIUM API
+
+CODE -> SELENIUM API -> BROWSER
+CODE -> JDBC -> DATABASE
+
+IF API comminication happens through internet ,
+we can also call it web service.
+========================
+REST API is enabling communication between systems
+
+HOW DO WE TEST APIs?
+
+As we know in Api, there is request and response communication happens.
+
+As testers, we send a request to an API and verify the response.
+
+request -> types of requests in RestApi:
+
+-> GET request -> READ data like SELECT in sql
+-> POST request -> is to CREATE data
+-> PUT request -> UPDATE data
+-> DELETE request -> DELETE data
+
+How and where are you sending request?
+
+A REST API will have endpoints/urls/uris
+
+https://www.google.com/search?
+
+Builders of API will create public URLs. and Requests are sent to that url.
+
+Swagger is a tool for API documentation
+
+UNDERSTANDING API ENDPOINTS/URLS
+
+BASE URL:
+/MethodName
+
+http://petstore.swagger.io/v2/swagger.json
+
+--> http://petstore.swagger.io/v2/swagger.json/pet
+-> /store/inventory
+
+
+I make sure that all Endpoints/Urls of Rest api work as expected. I send GET,POST,PUT or DELETE requests and validate the response.
+
+We have Swagger for API documentation.
+It gives description of API endpoints and how to use them.
+-----------------
+
+When a API developer programs an API url,
+he will decide if that url works with GET,OR POST,or PUT, DELETE requests.
+
+http://myapp.com/api/prices
+
+http://myapp.com/api/
+
+GET -> http://myapp.com/api/prices
+
+POST -> http://myapp.com/api/prices
+
+REST API:
+GET -> methods/url that are mapped to them
+POST
+PUT
+DELETE
+===========================
+
+POSTMAN
+-------
+
+Is a RESTAPI client tool that helps to test Rest API
+urls.
+
+It is popular for both developers and testers.
+Testers use it for manual testing.
+=====================
+
+ 
+
+http://34.223.219.142:1212/ords/hr/employees/
+
+http://34.223.219.142:1212/ords/hr/departments
+
+ORACLE DATABASE -> SAMPLE DATABASE -> HR
+
+ORDS -> ORACLE DATA SERVICES -> RESTAPI -> HR DATABASE
+-------------------------
+
+When I send a GET request to http://34.223.219.142:1212/ords/hr/departments
+Then response status code must be 200
+And I should see departments data in json format
+
+
+When I send a GET request to http://34.223.219.142:1212/ords/hr/employees/101
+Then response status code must be 200
+And I should see Neenas information in Json format
+
+
+httpstatuscodes.com
+First thing you verify is response status code
+Then you verify response BODY.json/xml
+
+200 -> OK
+400 -> CLIENT'S ERROR
+500 -> SERVER/API'S ERROR
+
+
+
+RESTful API Testing Day 2.
+-------------------------
+
+How do you test rest api?
+
+I verify if each REST API endpoint is working as expected.
+I send POST,PUT,GET, DETELE type of requests and verify reponse status code and response body.
+I also do positive and negative testing of API.
+When I do positive testing, I send valid request parameters , valid headers, valid request json body and verify that response status code is 200 and Json response body data is as expected.
+
+When I do negative testing, I send invalid request parameters , or invalid headers, or invalid request json body and verify that response status code is not 200 and Json response body contains error message.
+========================
+
+Oracle ORDS Rest API -> 
+ORDS -> oracle Rest Data Services
+
+Ords is a tool/technology that Oracle built to make easy for creating RESTful APIs on Oracle databases.
+===================
+
+GET - Positive Scenario:
+
+When I send a GET request to REST Url http://34.223.219.142:1212/ords/hr/employees
+Then reponse status should be 200
+And response json body should contain employees data
+===============================
+
+When I send a GET request to REST Api Url
+http://34.223.219.142:1212/ords/hr/countries/AU
+Then response status should be 200
+And Country name should be "Australia" for country id "AU" 
+in Json response body
+
+===============================
+
+GET REQUEST WITH HEADERS
+------------------------
+
+Content-Type, Accept
+
+header are also in key+value format, they are used to provide additional information about request/response.
+
+Accept -> application/json
+-> application/xml
+
+I am expecting JSON/XML data back. And API needs to support it, otherwise it will send back default one.
+-----------------
+
+
+When I send a GET request to REST Api Url
+http://34.223.219.142:1212/ords/hr/countries/US
+And Accept type is "application/json"
+Then response status code should be 200
+And Country name should be "United States of America" and country id should be "US" in Json response body
+==================
+
+
+REST ASSURED LIBRARY.
+We will automate RESTful API testing using REST ASSURED library in Java.
+
+It is a BDD style library
+-------------------------
+<dependency>
+<groupId>io.rest-assured</groupId>
+<artifactId>rest-assured</artifactId>
+<version>3.0.7</version>
+<scope>test</scope>
+</dependency>
+
+APACHE CLIENT is another library in Java for REST apis/Services testing.
+
+We are starting to automate REST services/REST apis.
+We are using RESTAssured Library in Java.
+
+ API Notes Chicago: 
+
+Chicago Notes
+{
+
+"students" : [ {"name": "John"}, {"name": "Emily"}, {"name": "James"}]
+
+}
+
+1. { } --> stands for an object in json. 
+2. [ ] --> stands for an array/list in json.
+
+public class Person{
+String name = "John";
+int age = 43;
+}
+
+ 
+
+{
+"name": "James Bond",
+"age": 36,
+"work": "Jp Morgan",
+"location": "Chicago"
+}
+
+
+----------------------
+
+Flow 
+1. Find the API details --> API documentation
+
+MUST things for each api
+a. Endpoint/resource/url
+b. Request body
+c. Method type
+
+2. Meet the request requirement
+3. Hit the api
+4. Get response
+
+----------------------
+
+TC End to End github user repository
+
+Steps
+1. Hit api with resource "https://api.github.com/users/eniiazov/repos" and GET method
+2. Go to github application and find "eniiazov" user
+3. Open repository
+4. Verify API total repo and UI total repo is matching
+
+
+sudo npm install -g json-server
+
+For windows: npm install -g json-server
+
+For all: json-server --watch db.json
+
+
+--------
+
+API documentation:
+
+1. DELETE METHOD
+2. http://localhost:3000/comments
+Requested: comment id
+
+ API Testing layers: 
+
+ 	-> Status Check / 
+
+sudo npm install -9 json-server
+
+json-server --watch db.json
+
+- API vs web services
+-  Soap vs Rest 
+- HTTP methods 
+- HTTP status codes 
+- API header 
+- JSON vs XML 
+- tool that tests API manually 
+- tool that tests API programatically 
+- API Request body 
+
+ Date: 	February 23, 2019 
+
+ Hibernet Services, 
+
+Task: 
+ 1. hit localhost:3000
+
+
+ {
+ 		"glossary": {
+
+ 			"title": example glossary", 
+ 			"GlossList": {
+ 			"title": "S", 
+ 			"GlossList": {
+ 				"GlossEntry": {
+ 				"ID": "SGML", 
+ 				"SortAs": "SGML", 
+ 				"GlossTerm": "Student Generalized Markup Language", 
+ 				"Acronym": "ISO 8879:1986", 
+ 				"GlossDef":{
+ 				"para": "A meta-markup language, used to create markup languages such as DocBook.", 
+ 				"GlossSeeAlso": {
+ 				"GML",
+ 				"XML"
+ 				}
+ 				},
+ 				"GlossSee": "markup"
+
+ 				}
+ 			}
+ 			}
+ 		}, 
+ 		"id": 13
+ }
+ 
+
+1. hit localhost:3000/posts api with GET request 
+2. Get response and convert it into JsonPath object 
+3. Write jsonPath expression to get "XML" value inside the "GlossSeeAlso" array 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Murodil's Notes>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+RESTful API Testing Day 2.
+-------------------------
+
+How do you test rest api?
+
+I verify if each REST API endpoint is working as expected.
+I send POST,PUT,GET, DETELE type of requests and verify reponse status code and response body.
+I also do positive and negative testing of API.
+When I do positive testing, I send valid request parameters , valid headers, valid request json body and verify that response status code is 200 and Json response body data is as expected.
+
+When I do negative testing, I send invalid request parameters , or invalid headers, or invalid request json body and verify that response status code is not 200 and Json response body contains error message.
+========================
+
+Oracle ORDS Rest API -> 
+ORDS -> oracle Rest Data Services
+
+Ords is a tool/technology that Oracle built to make easy for creating RESTful APIs on Oracle databases.
+===================
+
+GET - Positive Scenario:
+
+When I send a GET request to REST Url http://34.223.219.142:1212/ords/hr/employees
+Then reponse status should be 200
+And response json body should contain employees data
+===============================
+
+When I send a GET request to REST Api Url
+http://34.223.219.142:1212/ords/hr/countries/AU
+Then response status should be 200
+And Country name should be "Australia" for country id "AU" 
+in Json response body
+
+===============================
+
+GET REQUEST WITH HEADERS
+------------------------
+
+Content-Type, Accept
+
+header are also in key+value format, they are used to provide additional information about request/response.
+
+Accept -> application/json
+-> application/xml
+
+I am expecting JSON/XML data back. And API needs to support it, otherwise it will send back default one.
+-----------------
+
+
+When I send a GET request to REST Api Url
+http://34.223.219.142:1212/ords/hr/countries/US
+And Accept type is "application/json"
+Then response status code should be 200
+And Country name should be "United States of America" and country id should be "US" in Json response body
+==================
+
+
+REST ASSURED LIBRARY.
+We will automate RESTful API testing using REST ASSURED library in Java.
+
+It is a BDD style library
+-------------------------
+<dependency>
+<groupId>io.rest-assured</groupId>
+<artifactId>rest-assured</artifactId>
+<version>3.0.7</version>
+<scope>test</scope>
+</dependency>
+
+APACHE CLIENT is another library in Java for REST apis/Services testing.
+
+We are starting to automate REST services/REST apis.
+We are using RESTAssured Library in Java.
+
+Notes_day_2
+https://github.com/sabyrbek07?tab=repositories
+
+
+What kind of information we need to know in order to hit an api?
+
+1. url/end point/resources
+
+2. HTTP method
+
+https://api.github.com/users/sabyrbek07/repos - get
+
+
+HTTP METHODS: are the method types which helps us to take certain actions using APIs.
+
+-> POST --> creates a resource/data using api. 
+-> GET --> reads a resource/data using api.
+-> PUT --> updates a resource/data using api.
+-> DELETE --> deletes a resource/data ...
+
+POST --> When requesting we need to pass Request Body.
+
+http://cybertekchicago.com/
+
+http://cybertekchicago.com/swagger-ui.html
+
+http://cybertekchicago.com/instructor/create = POST
+
+
+-----------------------------------------------
+
+What are we looking for when testing an API?
+
+1. STATUS CODES
+-> This testing is JUST checking if successfully hitting the API or NOT. 
+-> PASS --> 200
+-> FAILD --> 400/404
+2. ATTRIBUTE VERIFICATION
+-> Required attribute MUST NOT BE NULL value.
+-> We are looking for the attribute value only, we don't read the value and validate its meaning. As long as it's not NULL it's a PASS.
+
+3. DATA VERIFICATION
+-> We are testing the Values of attributes that coming in the response.
+
+04/21/2018
+---------
+
+API DAY 3
+---------
+
+PASSING PARAMETERS
+HEADERS
+JSONPATH AND JSON MANIPULATION
+
+POST METHODS
+GSON
+=============================
+
+HOW TO CONVERT JSON TO JAVA OBJECT?
+
+<dependency>
+<groupId>com.google.code.gson</groupId>
+<artifactId>gson</artifactId>
+<version>2.8.2</version>
+</dependency>
+
+{
+"items": [
+{
+"region_id": 1,
+"region_name": "Europe",
+"links": [
+{
+"rel": "self",
+"href": "http://34.223.219.142:1212/ords/hr/regions/1"
+}
+]
+},
+{
+"region_id": 2,
+"region_name": "Americas",
+"links": [
+{
+"rel": "self",
+"href": "http://34.223.219.142:1212/ords/hr/regions/2"
+}
+]
+},
+{
+"region_id": 3,
+"region_name": "Asia",
+"links": [
+{
+"rel": "self",
+"href": "http://34.223.219.142:1212/ords/hr/regions/3"
+}
+]
+},
+{
+"region_id": 4,
+"region_name": "Middle East and Africa",
+"links": [
+{
+"rel": "self",
+"href": "http://34.223.219.142:1212/ords/hr/regions/4"
+}
+]
+}
+],
+"hasMore": false,
+"limit": 25,
+"offset": 0,
+"count": 4,
+"links": [
+{
+"rel": "self",
+"href": "http://34.223.219.142:1212/ords/hr/regions/"
+},
+{
+"rel": "edit",
+"href": "http://34.223.219.142:1212/ords/hr/regions/"
+},
+{
+"rel": "describedby",
+"href": "http://34.223.219.142:1212/ords/hr/metadata-catalog/regions/"
+},
+{
+"rel": "first",
+"href": "http://34.223.219.142:1212/ords/hr/regions/"
+}
+]
+}
+
+https://www.google.com/search?q=cucumber&param=value&param=value
+
+Full url:https://www.google.com/search
+? is used to say that this is the end of url
+anything after that is nothing but key+value request parameters
+
+
+https://www.amazon.com/s/ref=nb_sb_ss_c_1_7?field-keywords=wooden+hangers
+
+2 TYPES OF PARAMETERS IN REST SERVICES:
+1) QUERY/REQUEST PARAMETERS:
+-> is not part of url and passed in key+value format
+those parameters must be defined by API developer
+http://34.223.219.142:1212/ords/hr/employees?limit=100
+
+2) PATH PARAMETERS
+-> is a part of URL and followed by the end of full resource url
+http://34.223.219.142:1212/ords/hr/employees/100
+
+http://34.223.219.142:1212/ords/hr/employees/:id
+
+======================
+
+
+JSONPATH -> JSON PATH is used to easily navigate and manipulate json data.
+
+JsonPath is already included into io.restassured dependency.
+
+json.getList("items.findAll{it.employee_id > 150}.employee_id")
+select employee_id from employees
+where employee_id
+
+XMLPATH <-> JSONPATH
+
+JSON FILE -> NEED TO MODIFY DEPARTMENT ID
+
+JSON FILE -> DATA STRUCTURE
+-> POJO
+->CHANGE VALUES
+-> SERIALIZE IT TO JSON
+-> OUTPUTSTEAM TO FILE
+
+
+GSON -> is a json parser. that is used to convert from java object to json and from json to java object.
+
+DE-SERIALIZATION: CONVERT JSON -> JAVA OBJECT
+SERIALIZATION: CONVERT JAVA OBJECT -> JSON
+
+HashMap<String,String> map =response.as(HashMap.class);
+
+[commission_pct, manager_id, department_id, job_id, employee_id, last_name, phone_number, links, hire_date, salary, first_name, email]
+
+[null, 100, 50, AC_MGR, 120, Weiss, 650.123.1234, [{rel=self, href=http://34.223.219.142:1212/ords/hr/employees/120}, {rel=edit, href=http://34.223.219.142:1212/ords/hr/employees/120}, {rel=describedby, href=http://34.223.219.142:1212/ords/hr/metadata-catalog/employees/item}, {rel=collection, href=http://34.223.219.142:1212/ords/hr/employees/}], 2004-07-18T04:00:00Z, 18000, Matthew, MWEISS]
+
+{
+"employee_id": 120,
+"first_name": "Matthew",
+"last_name": "Weiss",
+"email": "MWEISS",
+"phone_number": "650.123.1234",
+"hire_date": "2004-07-18T04:00:00Z",
+"job_id": "AC_MGR",
+"salary": 18000,
+"commission_pct": null,
+"manager_id": 100,
+"department_id": 50,
+"links": [
+{
+"rel": "self",
+"href": "http://34.223.219.142:1212/ords/hr/employees/120"
+},
+{
+"rel": "edit",
+"href": "http://34.223.219.142:1212/ords/hr/employees/120"
+},
+{
+"rel": "describedby",
+"href": "http://34.223.219.142:1212/ords/hr/metadata-catalog/employees/item"
+},
+{
+"rel": "collection",
+"href": "http://34.223.219.142:1212/ords/hr/employees/"
+}
+]
+}
+
+===========================
+
+SUMMARY:
+-> GET HTTP METHOD:
+-> HEADERS
+-> PARAMETERS:
+-> QUERY PARAMS
+-> PATH PARAMS
+
+-> ASSERT ITEMS. HASITEMS,HASSIZE ETC. -> HAMCREST MATCHERS
+assertThat().body("items.id",hasSize(10))
+
+-> JSONPATH -> To manipulate json. for more complex assertions etc
+
+-> DESERIALIZATION USING GSON:
+JSON TO MAP
+JSON TO LIST<MAP>
+MAP1 <-> MAP2(EXCEL FILE)
+
+-> POJOS, PUT , POST METHODS
+
+ 
+ Post Scenario: 
+
+ given conetent type is Json 
+ And Accept type is Json 
+ When I send a post request to 
+ http://localhost:3000/posts
+ with request body: 
+
+ {
+
+ 	"region_id": 5,
+ 	"region_name": "Khalili's Region", 
+ 	"first_name": "Nematullah"
+ }
+
+  {
+
+ 	"region_id": 6666,
+ 	"region_name": "Ahmad's Region"
+ 
+ }
+
+
+IMPORT: 
+
+mvn clean install -X --> download the dependcies again (Nexus, it is like a mirror with Maven)
+
+connection 
+
+Statement 
+
+Resultsest 
+
+How do you Automating? 
+
+
+let him to ask 
+
+inheritance 
+
+break; get out of the loop 
+
+continue just escape 
+
+java ? 
+
+It is length is not resizable 
+
+Arrayb
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>API MarufJon>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Day 1: 
+
+API 
+
+what is api
+how/why used
+
+different types
+
+basic manual testing
+
+rest assured
+
+___
+
+API --> application programming interface
+
+api is middle man, 
+
+restaurant is the application
+waiter will be our api
+customers are the users
+
+customer places an order thru the waiter
+	order:
+		fries, burgers, diet coke, milk shake
+waiter takes the and disappears for some time
+and comes back with food
+
+API TESTING in restaurant
+
+make an order
+	fries, burgers, diet coke, milk shake
+waiter bring food
+verify if you have fries, burgers, diet coke, milk shake
+
+__
+
+apis can be web services which work over the net
+apis can be jar files which are used as part of the code
+selenium webdrviver 
+jdbc
+
+_____
+
+stand alone desktop applications may not rely on web services. 
+but there other applications which are called multi tier applications
+
+in multi tier applications there are following componnents:
+	client side: 
+	application layer/business logic
+	database
+
+end users (peope or programs) interact with the applcation using the client side. communicaiton with the ret of the application is done using api.
+api gets requests from users and goes to other layers, does magic, and returns data
+
+in this archtecture, the api used is a web service. 
+what it web service? api that works over the net. 
+
+all webservices are apis, but not all apis are web services. 
+web servives perform specific operations, other types apis can do differnt types of operations.
+
+web services are based on 	REST, SOAP, XML-RPC architecture
+
+
+REST, SOAP,  --> most common types of web services
+
+API have documentation, documentation tell us how we can use that api. it gives us the 
+	base url --> this is where the api is
+	resources
+	parameter
+
+
+how to use api?
+in using/calling api, we make requests (placing order to the waiter)
+
+how make request: we build our request and send
+
+anyting that is returns by an api call is response.
+
+for manual testing api , we use Postman, SoapUI
+
+
+__
+
+Open postman
+New --> Request
+
+Request name: UI names
+Create folder: UI names
+
+Select the folder UI names
+
+Click save to UI Names
+___
+
+that who sends request is called client
+when client makes a api request, it is accepted and processes by a server. 
+and server returns a response to client. 
+
+
+__
+
+Request line: 
+	end point. --> address, where we send the request
+	GET --> gets some data withouth changing the data in server. 
+
+apis do diifernet types of operations know as CRUD operations:
+	C --> create
+	R --> read (get)
+	U --> update
+	D --> delete
+
+
+Response also has mutiple components:
+	status: 
+	body:
+
+response body can be in different formats: JSON, XML, text, html. 
+
+SWAGGER/WSDL: documentation of web services
+
+HOW TO IMPORT SWAGGER TO POSTMAN
+	1. copy the swagger url
+	2. Import --> Import from link
+
+
+Different types of parameters
+
+logging
+Different types of method calls (update, delete..)
+authentication
+header
+mapping (serialization)
+ssl
+
+________
+
+	Open intellij
+	File --> New -->Project
+	Make sure maven is selected
+	Next
+	group-id --> com.cybertek
+	artifact-id --> rest-assured-project
+	Next
+	Finish
+____
+
+REST API vs Rest Assured
+
+RESTful API == REST API is a type of a webservice, api. just like SOAP
+
+Rest Assured --> java library that is used for testing REST api. Rest assured is a maven dependency/jar file just like selenium webdiver ...  
+
+
+Create new package:
+	right click on java (the one under test)
+	new --> package
+	Name: com.app.tests
+
+
+___
+
+Import another collection to postman using the link in announcement
+
+https://www.getpostman.com/collections/c5f46b0459908e5c6596
+
+
+https://api.got.show/api/cities has to 2 parts
+
+
+1. BASE URI: https://api.got.show/api, base url for all apis in the address. 
+
+2. path to specific resourse
+cities --> path 
+
+Day 2: 
+
+JSON: it is a file type just like xml, java, xls, txt, pdf ....
+
+- JSON stands for Java Script Object Notation 
+- json is used to transfer data, It is data exchange format 
+- json is read by poeple and programs alike. 
+
+Cucumber: has an api which generated report in json format. 
+cucumber-html-maven reporting plugin which has api that reads the json report and generates html report. 
+
+ 		{
+            "name": "ID Parameter",
+            "description": "e.g. ?i=tt0000001"
+        },
+
+in json we use curly braces {} and square brackets []. 
+object in json are surrounded by 
+
+json 
+jsonpath
+hamcrest
+________
+JSON : 
+JSON is a file type just like xml, java, xls, txt, pdf....
+JSON stand for java script object notation. 
+json is used to transfer data, It is data exchange format. 
+easy to read by people and programs alike.
+CUCUMBER has an api which generated report in json format. 
+cucumber-html-maven reporing plugin which has api that reads the json report and generates html report. 
+list = {a, b, c, d,}
+map = {name = "admiral", lastname = "kunkka"}
+in json we use curly braces {} and sqaure brackets [].
+object in json are surrounded by braces
+{
+    "name": "Martha",
+    "surname": "Day",
+    "gender": "female",
+    "region": "United States"
+}
+json array, this array has 2 nodes in it.
+ node is an elememnt of and array
+[
+    {
+        "name": "Evanghelina",
+        "surname": "Budescu",
+        "gender": "female",
+        "region": "Romania"
+    },
+    {
+        "name": "Constant",
+        "surname": "Reynaud",
+        "gender": "male",
+        "region": "France"
+    }
+]
+In JSON, values must be one of the following data types:
+a string.
+a number
+an object (JSON object)
+an array.
+a boolean.
+null.
+__________
+JSONPATH 
+jsonpath --> similir to xpath, but for json
+$. --> root , used to get all nodes in the root level
+$.0.name. --> get the value of the name in the second node 
+$.*.name--> get the value of the name from all nodes 
+$.0.name,surname. --> get the name and surname 
+of the first node
+$.0,1.name,surname. --> get the name and surname 
+of the first and second node
+
+Note: 
+
+Path
+https://api.got.show
+
+
+some API are just accepting pathParameter, some queryParameter and some accept both 
+
+
+json 
+
+jsonpath
+
+hamcrest
+________
+
+JSON : 
+JSON is a file type just like xml, java, xls, txt, pdf....
+
+JSON stand for java script object notation. 
+json is used to transfer data, It is data exchange format. 
+easy to read by people and programs alike.
+
+CUCUMBER has an api which generated report in json format. 
+cucumber-html-maven reporing plugin which has api that reads the json report and generates html report. 
+
+
+list = {a, b, c, d,}
+
+map = {name = "admiral", lastname = "kunkka"}
+
+
+in json we use curly braces {} and sqaure brackets [].
+object in json are surrounded by braces
+
+{
+    "name": "Martha",
+    "surname": "Day",
+    "gender": "female",
+    "region": "United States"
+}
+
+json array, this array has 2 nodes in it.
+ node is an elememnt of and array
+
+[
+    {
+        "name": "Evanghelina",
+        "surname": "Budescu",
+        "gender": "female",
+        "region": "Romania"
+    },
+    {
+        "name": "Constant",
+        "surname": "Reynaud",
+        "gender": "male",
+        "region": "France"
+    }
+]
+
+
+In JSON, values must be one of the following data types:
+a string.
+a number
+an object (JSON object)
+an array.
+a boolean.
+null.
+
+__________
+
+JSONPATH 
+
+jsonpath --> similir to xpath, but for json
+
+$. --> root , used to get all nodes in the root level
+
+
+$.0.name. --> get the value of the name in the second node 
+
+
+$.*.name--> get the value of the name from all nodes 
+
+$.0.name,surname. --> get the name and surname 
+of the first node
+
+$.0,1.name,surname. --> get the name and surname 
+of the first and second node
+
+
+___
+
+Parameters
+web service with no Parameters:
+ https://api.got.show/api/cities/
+web service with parameters: 
+https://api.got.show/api/cities/:name
+
+:name --> semicolon means path parameters.
+
+
+when we want to get a specific resource (city), 
+we replace oaramter name with the city name
+
+when we write query use use path param 
+to provide the pramteres
+
+            given.pathParam("name", "Braavos").
+and in the when part, we add the param name in braces
+		when.get("/cities/{name}").
+
+
+Rest assured uses given, when, then statements
+given --> prepare our request
+when --> send the request prepated in given 
+then --> verify the response
+
+___________
+
+in path parameters, parameters values is
+ part of the resource use and separated by /
+https://api.got.show/api/cities/Braavos
+ Braavos is actually a paramer.
+ path parameters are used to point to a single resource
+
+ There is also query parameters. 
+ They are used to filter the results. 
+ they act like filters on the search result page
+
+in the url they start with with ? and come in key + value pairs
+if there are multiple parameters, they are 
+separated by &
+___________
+PAth 
+https://api.got.show/api/cities/Braavos/
+https://api.got.show/api/cities/:name
+
+QUERY 
+amount = 2
+
+https://uinames.com/api/?amount=2
+____________
+
+Burgers:
+	beef
+	well done
+	cheese
+	bun
+
+MY ORDER
+	beef
+	medium
+	cheese
+	bun
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+Date: 03/12/2019 
+API Day 3: 
+
+get() --> is like passing a response, if you click send the request, the clicking part is get, if you don't say get(), then you would not get the answer. 
+
+Cybertek GitHub --> https://github.com/CybertekSchool/rest-assured-project.git
+
+
+Create a new class
+	Homework
+
+Create a new class
+	HamcrestMatchersDemo
+
+	    // Hamcrest library provides matchers (assertion method)
+    // Rest Assured uses hamcrest assertions (matchers)
+    // works with both junit and testng
+
+
+
+Rest assured logging
+logging --> it is like printing
+
+Rest assured has built logging mechanism/methods
+
+Creat new class
+	TestAssuredLoggingExample
+
+
+Request Logging
+given().log().all(). .. // Log all request specification details including parameters, headers and body
+given().log().params(). .. // Log only the parameters of the request
+given().log().body(). .. // Log only the request body
+given().log().headers(). .. // Log only the request headers
+given().log().cookies(). .. // Log only the request cookies
+given().log().method(). .. // Log only the request method
+given().log().path(). .. // Log only the request path
+Response Logging
+get("/x").then().log().body() ..
+get("/x").then().log().ifError(). .. 
+get("/x").then().log().all(). .. 
+get("/x").then().log().statusLine(). .. // Only log the status line
+get("/x").then().log().headers(). .. // Only log the response headers
+get("/x").then().log().cookies(). .. // Only log the response cookies
+get("/x").then().log().ifStatusCodeIsEqualTo(302). .. // Only log if the status code is equal to 302
+get("/x").then().log().ifStatusCodeMatches(matcher). .. // Only log if the status code matches the supplied Hamcrest matcher
+
+____
+
+New class
+
+	StatusCodeValidation
+_________
+
+
+BASE URI > https://api.got.show/api
+
+when.get
+	resource path --> /continents/
+	resource path --> /cities/
+
+https://api.got.show/api/cities
+_____
+
+BASE URI > https://uinames.com/api
+
+no specific resource 
+
+get("ASdfasdfasd")
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>API Day 3 Marufjon>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Date: 16 March 2019 
+
+API Key: --->     http://www.omdbapi.com/?i=tt3896198&apikey=1484125f
+
+-> We test API web services, it is an API which works over the net. 
+
+-> When information travels on the net, they follow certain rules (protocols) and they will either use from http or https protocols. 
+
+-> http: if information is sent over the net using http, anyone can see the information. 
+
+-> https: if information is sent over the net using https, information will be encrypted and only end target can understand it. 
+
+-> Certificate: are used to identify the computer in the network, they act like id so that we can recognize them. 
+
+->  RestAssured.useRelaxedHTTPSValidation ---> trust all certificates 
+
+-> authentication: --> It is about can you get in to, who are you? 
+
+-> authorization: --> what rigths do you have (how far you can go, are you authorized to this or not)? 
+
+
+RestAssured.useRelaxedHTTPSValidation --> trust all certificates
+__________
+
+
+
+authentication   -->   who are you
+authorization	-->    what rights do you have
+
+*Get api key from the omdbapi.com before the class. You will use your api key during the class*
+Go to http://www.omdbapi.com/apikey.aspx
+Select option free
+Fill out the form
+Go to your email
+Click on activate key
+Copy your key from your email
+
+
+______________
+
+apikey --> one type authentication, we get apikey from the service provider (sent to our account after signing up etc). and we include taht key all our requests as a parameter
+	 RestAssured.given().
+                queryParam("t", "Kung Fury").
+                queryParam("apikey", "a9faab96").
+                when().get("http://www.omdbapi.com/").
+                then().assertThat().statusCode(200); 
+
+When we do not proivde api key, we get 401 error, 
+
+>>>>>>>>>>>>>>>>>>>>>>>
+
+Basic Authentication: is using username and password to be authenticated 
+
+There are 2 types of basic authentications: It will only send the username and password initiallly, it will only send it once the server asks for it. 
+
+	1. Challenged basic authentication: 
+
+		  RestAssured.given().
+                auth().basic("admin", "admin").
+                when().get("https://the-internet.herokuapp.com/basic_auth").
+                then().assertThat().statusCode(200);
+
+ 	2. Preemtive basic authentication: rest assured sends credentials (username, passowrd) before server asks for them. Only, they preemptive() --> is added after auth(). 
+
+
+ 		 RestAssured.given().
+                auth().preemptive().basic("admin", "admin").
+                when().get("https://the-internet.herokuapp.com/basic_auth").
+                then().assertThat().statusCode(200);
+
+    Oauth: --> types of authentication where keys and tokens from 3rd party is used to authenticate. There are 2 types of oauth: 
+
+    	Oauth1: It is deficcult to connect to the reference (companies like google, facebook) use from oauth1 or oauth2. 
+
+    	Oauth2: It is 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+we are tyring to login with access token. it is a type of autheriastejoatreq;lj
+
+access is need to access certain apis/resources. but access token is given by a different api/resourse/
+
+
+to get token we are calling the get sign end point the bookit api. it requiers username and password. it api recognizes the credentials it returns token
+
+
+once get the token, we add it to other requests so that server recognizes us
+
+pathParam --> parameter taht will be added to the request url
+
+in rest assured we can add forms to our requests. 
+
+param --> it is shortcut for both queryParam and formParam. if we are making GET request, rest assured will treat it as a  queryParam. if we are making a POST request, rest assured will treat it as formParam
+
+queryParam --> paramaters of a request sent by rest while making GET request
+formParam ---> paramaters of a form sent by rest while making POST request
+
+
+
+POST request: --> wehn we do post request it created a data in the database,
+then we can go to database to check.
+post reqeusts also have repsponse, status code, body etc. we can also check the response
+
+201. --> success message for post operation
+
+}
+
+HomeWork: post a new student and verify the response for data accuracy, status code and verify the database for data accuracy
+_________________________
+
+Date: 17 March 2019 
+
+authentecation
+	api keys
+	token
+	basic
+post requests
+	post team and verify using database
+security stuff
+	relaxedhhtpsvalidation
+	___
+
+log4j
+
+jsonpath
+
+more posting, update / delete	
+
+
+Tuesday --> serialization and deserialization
+____________
+
+LOG4J
+
+	logging --> writing what the program is doing, writing the important event of the application, messages sent and received between users, modules etc. 
+
+	logging can be in different outputs: console, file
+
+	logging we can control the levels of logging
+		in colsole we only print the most important stuff
+		in file we print everything
+	using logging developers can find the reasons for bugs easily, makes maintainance easy. 
+	
+
+Log4j needs a configuration file to configure the differnt levels of logging, output type, format etc
+configuration file can in txt, properties, xml. and it needs to be in certain location.
+we create log4j.properties (standart name) and put int main/java/resources so that it is aumatically picked up. 
+
+
+to do logging, we need a Logger object. logger object is created using the name of the class where it is created
+
+used to write the important steps of the application (both tests and developers), done in the class level,
+to do log4j logging we need
+	1. maven dependency
+	2. log4j propertiles file
+	3. Logger object in the class where want to do log
+
+Jsonpath --> is like xpath, it is used to get objects from json file very easily. 
+
+Test Case: User creation and update End to End scenario
+CREATE
+	Create a new random user using the Add a Student end point
+	verify status code 201
+	verify the response body
+	get the new user details from the database
+	get the new user details from Get a student by id endpoint
+	verify both information is accurate 
+	login to the application using the new user and verify user logged in
+UPDATE
+	verify the status
+	update the user password using the Update a student endpoint
+	try to login to the application using the old pass and verify not logged
+	login to the application using the new pass and verify logged
+DELETE
+	verify the status code
+	verify that in database user with that email does not exist
+	try to login to the application and verify not logged
+
+
+//  baseURL      resource             ? --> query param
+// {{qa1_url}}/ api/students/student  ?first-name=Kunkka&last-name=Admiral&email=admiraklkunka11@somemail.com&password=admiralkunka&role=student-team-member&campus-location=VA&batch-number=8&team-name=CodeHunters
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BackEnd/API Database Review>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+BackEnd: API, Databases Review: 
+
+Go to Etsy.com 
+
+https://www.etsy.com/search?q=java 
+
+public Product[] search (String q){
+	
+//code 
+Go to Database and get all the products that contain "java" 
+
+(JDBC -> run sql query) --> resultset comes in resultset format. 
+
+	//loop through and get teh right one 
+
+	public static String [] getJavaQuery(String query){
+
+		String [] result = new String [query.length()]; 
+
+		for (int idx = 0; idx < result.length; idx++){
+
+			if (query.contains("Java")){
+				result[idx] += query; 
+			}
+		}
+
+		return result; 
+	}
+
+}
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

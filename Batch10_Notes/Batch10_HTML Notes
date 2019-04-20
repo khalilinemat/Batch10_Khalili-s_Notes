@@ -1,0 +1,362 @@
+
+Date: 	November 10, 2018 
+Teacher: 	Mr. Maruf Jan 
+
+HTML Basics: 
+-	Selenium works with browser, we will work with new tools, HTML is working with the browser and we need to learn HTML to be able to work with Selenium.
+ 
+-	HTML, everything we see in web page, run in internet and it is a language that works with the internet. HTML only takes some data and put it in a webpage. HTML is responsible on the content of the webpage. When you use HTML, you will work with the file type called .HTML extension. 
+
+-	HTML is a language, but it is not a programming language. 
+
+-	Different browser will look different contents like; safari, chrome and etc. We use HTML in Google Chrome first and then we will use it in different languages. HTML is responsible for the contents, but HTML is only loading the texts. 
+
+-	After this class, you should be able to read the HTML codes. 
+
+Creating an HTML file steps: 
+1.	Open sublime 
+2.	Command + S (save it in Desktop)
+3.	The extension of file should be .html 
+4.	Name of the file homepage.html 
+
+-	Sublime is showing some different colors as you start typing. 
+-	<!DOCTYPE html> most of the files in HTML starts with this command, it is a declaration of document type in html language. You must put this command <!DOCTYPE html> at the top of each file the browser opens it.   
+-	HTML files are opened by browser and this type is declared for browser and will be opened by using the HTML file. 
+-	DOCTYPE html – browser will open it using html 5  
+-	Government programs mostly used the HTML files and never updated 
+
+-	The HTML is like building a house, you have put all the design aspects together in order to make a good house like colors, bricks and etc. 
+
+-	Html tags => will tell html what content is loaded. HTML documents is made of tags. When you have a tag, we first open and close that put everything inside those 2 tags like the following: 
+<html>  <! –opening tag  
+
+<html> 
+-	Html --> all html documents start and end with this tag. 
+-	Html is the root element 
+-	In html “/” forward slash means close  
+
+-	In html you can’t change the name or tags like we were changing the names of files in Java. 
+
+-	title command in html shows the title of webpage. 
+
+-	tag types: The tag is marking the start and end of the html
+
+-	body is a child of head, it comes after the head and before the </html>. Body directlyt listen to html. 
+
+-	How to see changes? 
+
+1.	Make changes in html files 
+2.	Save the file using cmd + s or cntr + s 
+3.	Refresh the html in chrome browser 
+-	How to refresh? 
+o	Click the refresh button on the browser 
+o	cmd + r in Mac and cntr + r and in windows it is f5. 
+o	Open the file again 
+o	Select your URL and hit enter 
+-	In any application the Front End is the HTML, but on the back there is an application that you have Back End. There is always a Database which give the data to html 
+
+-	In any application there is a lot going on. HTML is in Front End, CSS is making the webpage pretty and the design gets pretty. Java Script is adding some dynamism/actions like doing certain actions. 
+
+-	Mark up: is changing the style of my documents, like; changing fonts, size, bold, italic etc. 
+
+What is HTML? 
+-	HTML is a language for describing Web pages 
+-	HTM is not a programming language. 
+-	HTML is taking a content and showing on the webpage. 
+
+History of HTML: 
+-	We deal with HTML 5, most recent, the only difference is that webpage look different and as a tester we should know the update one. 
+-	Extension will decide how your file will be opened. 
+How to Display HTML files? 
+-	Web browsers are basically the HTML Readers. 
+-	The only information we put in head is the title, the rest of the information goes to the body of the html. If you wanted to make a title looks bigger or bold, use <h1> and close it with </h1>. 
+-	In html in order to enter different types of fonts, you use from the tags. 
+-	<p> right brackets </p>, 
+
+-	<br> just is a break, if you wanted your line to be in the next line you use from <br> 
+
+-	<h1>  just make your title larger and bolder </h1> 
+
+-	<body>   => will have the actual content 
+
+-	<br> => br is very special and this tag doesn’t need a break, the more <br> you put, the more space will come to the paragraph between the lines. 
+
+-	<h1> => is the header of the text it starts from <h6> and goes to <h1> and the lower you come, the larger your text will be. 
+
+-	<p> => If you wanted to make separate paragraphs, then there is a tag for it. Starts new paragraph which starts in a new line. 
+
+-	<ul> => if we create a list, then we use from the command of <ul>, then inside that you need to put the list items by marking it as <li> and close it </li>. 
+
+-	Anything that you put, it has to be between opening tag and closing tag <> <> except the break 
+
+-	You need to create another header and body for the table as well 
+
+-	In order to put a picture in website, use the tag called img like this <img src = “name of picture”> </img>. 
+img --> tag 
+src --> attribute 
+cat1.jpg --> value 
+
+-	<p lang = “en-us”> paragraph in Englihs</p> 
+tag, attribute and value. 
+
+Attribute: give more ifnormaiton about tags. Tags can have one or more attributes. Attributes usually have values. 
+
+src = “cat1.jpg” 
+src = ‘cat1.jpg
+src = cat1.jpg
+-	Style attribute, just add some style in our page 
+
+-	Tag is deciding what type of content you want to add 
+
+-	When you insert an image, then you use an attribute to tell the html where the image is coming from. 
+
+-	Now, we need to add the link, if someone wants to go and find my link then they can find out through this link 
+
+-	t – table, h – header, p – paragraph, a – link 
+
+-	<a href="application.html"> Apply here</a> ----> this is the link 
+
+a 		tag which means link 
+
+href 	attribute which indicates the destination of the link, without href, there will not be a link and every website has an href. 
+
+application.html 	actual url where the link will go 
+
+Apply here: 
+
+-	As a Selenium tester you have to work with the files, inside the form you just put the data or fields that you want. 
+-	<label> means just a text, why we need it, we need identify the boxes that which one belongs to which field. 
+-	<input> is the one that we really need for our link  
+
+
+Date: 	November 17, 2018 
+
+HTML: 
+
+-	<select> --> represents a dropdown menu which contains options to select. Usually we can only select one in a dropdown.
+
+-	<option> --> represent an option in the select dropdown menu. <option> tags must be closed in order to work.  
+
+HTML --> a language for building websites, HTML specifically deals with the content of the website. HTML does not fully deal with the design, look and feel of the website. 
+
+CSS --> deals with the design, looks and feel of the website. It works together with HTML and helps with the design of the webpage. Using of CSS, we need to type: 
+<style> --> used to insert CSS styling into HTML. It will be its own tag, but it will affect the rest of the tags at the whole documents. It is basically asking the HTML website to change all the labels style instead of changing one by one, we command HTML to change all of them labels by using of the CSS. 
+
+#submit ----> matches any element which has an id attribute called submit. 
+
+<input type="text">  --> inpout box to enter text
+<input type="radio">  --> raddio button where we can make a selection
+we can only select one radio button, using the name attribute radio buttons will be grouped in to one set
+<input type="checkbox">   --> it is a checkbox, we can select multiple options in checkbox, in checkbox we can check and uncheck
+<input type="checkbox"> --> not selected be default
+<input type="checkbox" checked> elected be default
+<select>  --> represents a dropdown menu which contains options to select. usually we can only select one in a dropdown
+<option> --> represents an option in the select dropdown menu. <option> tags must come before <select> is closed
+__________
+HTML --> a language for building websites, HTML specfically deals with the content of the website. HTML does not fully deal with the design, look and feel of the website.
+CSS  -->  deals with the design, look and feel of the website.
+<style> used to insert CSS styling into HTML document
+label{
+        font-size: 20px;
+    }
+in this css, all tags of type <label>, will have size 20px. this one line affects all the <label>s in the HTML document
+#submit   ---> matches any element which has an id attribute 'submit'
+
+JavaScript: --> makes a page do something, adds an action to the page. Totally different from Java and it is only a commercial name for advertisement. That is why they named JavaScript, otherwise it was something else before. 
+
+<button id = “btn” onclick = “myFunction()”>. When the button is clicked, oncclick attribute will execute ‘my
+========================================================================
+
+Notes Analysis of a website: 
+
+
+<html> 
+
+This is the root element of the page, all other element and tags will be inside it. 
+
+			<html> 
+			  <head> 
+
+<head> is the Child of <html> 
+<html> is the parent of <head> 
+<body> is also the child of <html> 
+
+Totally, <html> has 2 children that are <head> & <body>, so <head> and <body> are siblings. 
+
+<body> has the follwoing children: 
+
+<html>
+  <head>
+    <script> 
+
+<head> and <script> are both desendants of <html>. It does not consider the child, but they are related to each other. 
+
+<html> is the ancestor of <head> and <script> 
+
+Memo: In <html> we have children, siblings, desendants and ancestor. It basically is like a tree which starts from the root, to body of tree and all the way to the branches. The root is <html>. 
+
+<html> is and ancestor of <head> & <script> 
+
+There is a word called tag and there is a word called element: 
+
+- 
+
+<meta 	charset="		utf-8" /> 
+
+Tag 	attribute 		value  
+The whole 3 components called an element. Element could be anything between openning and closing tags. 
+ 
+<script src="/js/foundation/foundation.js"></script> --> this is an element, because it is between opening and closing. Some elements don't have opening and closing tags, some elements are inside other elements as well. 
+
+<ul>
+    <li><a href='/nested_frames'>Nested Frames</a></li>
+    <li><a href='/iframe'>iFrame</a></li>
+  </ul>
+
+<ul> is a seperate element, it contains other elements as well. So it is possible that there is multiple elements inside the <ul> lement.
+
+a --> tag has an attribute called "href" and the value of href is "/iframe". A has a test "iFrame". 
+
+li --> tag name is li, it is a first child of ul, it has another sibling called li, it has a child called a. 
+
+<html> 
+	<head> 
+
+ <script src="/js/vendor/298279967.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+Meta --> tag name is meta, it has 2 attributes. 
+		 1. Name attribute, it value is viewport 
+		 2. Content attribute, its value is "width = device - width". 
+
+Its parent is <head> it has 2 siblings, it is the 3rd child. 
+It is decendant of <head> and <html> 
+==========================================================================================================================
+
+IMPORTANT ATTRIBUTES TO REMEMBER: 
+
+1)  input type = "text" 	---> text box 
+2)  input type = "radio"	---> radio button 
+3)  input type = "checkbox" ---> check box 
+4)  input type = "submit" ---> submit button 
+
+5)  <a> ---> a link 
+
+6)  <div> ---> section in a document 
+
+7)  <label> ---> used for text 
+
+8)  <span> ---> used for text 
+
+9)  <form> ---> used of forms wich can be submitted 
+
+10)  <p> ---> Paragraph 
+
+11)  <img> ---> Image 
+
+12) <br> ---> Break 
+
+==========================================================================================================================
+
+Selenium: 
+
+What is 'Testing'? ->  It is a process of evaluating a particular product to determine whether the product contains any deffect. 
+
+Software Testing: -> A process of evaluating a system by manual or automatic means and verify that it satisfies specified requirements or identity differences between expected and acual results. 
+
+-> As a selenium testers, we will be dealing with the websites. 
+
+-> What is Automation? Using software or a machine to do something that used to be done manually. It is a machine which does multiple works in the same time to prevent the maunal works. 
+
+-> Why Automation? -> The purpose is to make it faster and make it better. 
+
+Manual Testing Vs Automation: 
+- Manual testing is time consuming. 
+- Manual testing is repetitive effort. 
+- Manual testing is not accurate. 
+- Automation is once you created a test cases and you can run the same script as much as you want. 
+- Automation is much faster then the manual testing. 
+- Automation is highly accurate. Even close to 100 % accuracy.
+- Manual testing happens when the testers are present usually during the day time, but Automation can happen during the night without present of human being testers. 
+- Manual testing will not go away and still you need to manual test certain codes. 
+- Automation is 100 % accurate and much faster then manula testing. 
+
+>>> How to Start Automation? In Agile, Automation has a big role, but Automation is not everything. The codes can be broken and if you don't fix the code then you will have a broken code. 
+
+-> It is very important to know what part of the Application to Automate in different Applications. 
+
+-> Analyze the Application: 
+	- What technology is used to develop this application? 
+	- 
+
+>>> Stress Testing: to test how much load can a website take in the meantime how many users can upload or use the Application or website.  
+
+>>> Selenium is not the only tool, it depends on different application structure and we can use different tool to Automate Codes. 
+
+>>> It is good to use same tool which is used in your company where you work. If it is Ruby, C#, Java and etc. You should use the same tool. Selenium is free, but nobody helps you, in AFT, they have a support line which can help you if you come up with any problem. 
+
+>>> Selenium is a just a small part, there are other parts that play more important tool like following: 
+
+- Se 
+- REST - assured 
+- cucumber 
+- maven 
+- Appache 
+- JUnit 
+- Jenkins 
+- git 
+
+>>> How do all these tools come together? It is called framework which include all of the above mentioned tools.
+
+>>> Who are the players? 
+	- Selenium: is a browser which automates. It works with websites and mobiles. 
+				Selenium is a banch of methods and classes written by someone and you just call it or run it. 
+	- UFT: 
+	- TestComplete 
+	- Protractor: is a good one, it getting bigger and popular. 
+	- Watir: 
+	- IEM Rational:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4752 @@
+Selenium: 
+
+What is 'Testing'? ->  It is a process of evaluating a particular product to determine whether the product contains any deffect. 
+
+Software Testing: -> A process of evaluating a system by manual or automatic means and verify that it satisfies specified requirements or identify differences between expected and acual results. 
+
+-> As a selenium testers, we will be dealing with the websites. 
+
+-> What is Automation? Using software or a machine to do something that used to be done manually. It is a machine which does multiple works in the same time to prevent the maunal works. 
+
+-> Why Automation? -> The purpose is to make it faster and make it better. 
+
+Manual Testing Vs Automation: 
+- Manual testing is time consuming. 
+- Manual testing is repetitive effort. 
+- Manual testing is not accurate. 
+- Automation is once you created a test case and you can run the same script as much as you want. 
+- Automation is much faster then the manual testing. 
+- Automation is highly accurate. Even close to 100 % accuracy.
+- Manual testing happens when the testers are present usually during the day time, but Automation can happen during the night without present of human being testers. 
+- Manual testing will not go away and still you need to manual test certain codes. 
+- Automation is 100 % accurate and much faster then manual testing. 
+
+>>> How to Start Automation? In Agile, Automation has a big role, but Automation is not everything. The codes can be broken and if you don't fix the code then you will have a broken code. 
+
+-> It is very important to know what part of the Application to Automate in different Applications. 
+
+-> Analyze the Application: 
+	- What technology is used to develop this application? 
+
+>>> Stress Testing: to test how much load can a website take in the meantime how many users can upload or use the Application or website.  
+
+>>> Selenium is not the only tool, it depends on different application structure and we can use different tool to Automate Codes. 
+
+>>> It is good to use same tool which is used in your company where you work. If it is Ruby, C#, Java and etc. You should use the same tool. Selenium is free, but nobody helps you, in UFT, they have a support line which can help you if you come up with any problem. 
+
+>>> Selenium is a just a small part, there are other parts that play more important tool like following: 
+
+- Se 
+- REST - assured 
+- cucumber 
+- maven 
+- Appache 
+- JUnit 
+- Jenkins 
+- git 
+
+>>> How do all these tools come together? It is called framework which include all of the above mentioned tools.
+
+>>> Who are the players? 
+	- Selenium: is a tool which automates the browser. It works with websites and mobiles. 
+				Selenium is a banch of methods and classes written by someone and you just call it or run it. 
+	- UFT: 
+	- TestComplete 
+	- Protractor: is a good one, it getting bigger and popular. 
+	- Watir: 
+	- IBM Rational:  
+=============================================================================================================
+
+Date: 	November 24, 2018 
+
+Teacher: 	Marufjon 
+
+Selenium: 
+
+There are different automation tools in the market, selenium, UFT, TestComplete, Protractor, Watir, IBM. Rational. UFT wants money, but it is a good tool and it gives you more options that make your work easier. 
+ 
+What is Selenium? 
+
+o	It is Selenium Automat Browser and that is it. Selenium can do with mobile and UFT is not good with the mobile. 
+
+There are 4 different types of Selenium: 
+
+o	Selenium IDE: it is used for Firefox browser. It is used for testing, but very rarely in the work Area and they are not very good for big skill Automation. 
+o	Selenium RC: This is an older Selenium; the current WebDriver is replaced with Selenium RC. 
+o	Selenium WebDriver: We study this one during our course 
+o	Selenium GRID: It is an implementation of multiple browsers in the meantime, it is complicated and can run more than 100 of browsers in the same time. 
+
+-	JS: JavaScript which is run in your WebDriver. 
+
+Selenium Pros: 
+
+-	Open Source (basically it is free and can be used without paying money like UFT). 
+-	Multiple programming languages: 
+-	Multiple operating system. 
+-	Multiple browsers 
+-	Mobile testing 
+-	Scalable 
+-	You can use same code to test different types of applications. This makes it stronger among other tools and it can do mobile browsers and mobile application. 
+
+Selenium Cons: 
+
+-	Requires knowledge of programming language: You need to know all the methods, encapsulation and etc. You have to be very strong programmatically to use Selenium. 
+
+-	Harder to implement: 
+
+-	Only tests web browsers: It only do functional testing and it doesn’t distinguish the website codes or location of the code. 
+
+-	Not good for visual testing: Anything which is visual, you can’t use Selenium for.
+
+-	No professional supports: It doesn’t have any customer service or customer support like UFT which has a phone number like; 1-800-xxxx and they provide support over the phone and it is important. 
+
+What are drivers? 
+
+-	Driver is a middle program which translate the codes of a Selenium to the Browsers. Browser doesn’t understand Selenium language, until the Driver translates for it and it works like a Compiler to run the codes or functionalities.  So, it will be like; Selenium Code >>>> Driver >>>> Browser. 
+
+-	Selenium & UFT are used for functional testing. There are some aspects of Selenium that you can use for load test or stress test. Stress Testing is just they are adding users to see in what point the website breaks. Basically, checks the number of users that can the Website handle in the meantime. 
+
+-	IntelliJ IDEA CE: The number of users is increasing, it is taking over from Eclipse and Net-Beans. Eclipse is complicated, IntelliJ is simpler and easy to use. IntelliJ doesn’t let you to have all the packages to the left side of your screen like; Eclipse. 
+
+-	How you name a project is important, so it should tell you guys what you are doing with that. 
+
+Commands: 
+
+psvm -> brings you the main method 
+
+Adding Libraries: 
+	File --> 
+
+-> Everytime you create a project, you need to add the libraries. 
+
+-> Click CMD + Enter to import 
+
+-> if you want to open a chrome browser type: 	WebDrive driver = new ChromeDriver(); 
+
+-> webdriver.chrome.driver //this is specifically for ChromeDriver 
+
+-> you have to imoprt the WebDriver and ChromeDriver, you just click it then hold button (Option + Enter) to import it in Mac
+
+-> If you get this Exception "The driver executable does not exist: ", then it means that you didn't add the adress of your Web 
+
+-> Why they update the Selenium or other Browsers? They are adding new features, but they also competate with Firefox, they updated and the other websites want to update too. 
+
+-> How do you update your browsers? 
+ 	-> Just go to downloads, you need to download them manually the latest version and then replace it with your older version 
+
+-> Open the drivers have the following methods: 
+	1) -> driver.get("https://etsy.com");
+	2) -> driver.navigate().to() --> opens a website (url: "https: //www.amazon.com/") 
+	3) -> driver.navigate().forward();  --> goes forward to the next page 
+	4) -> driver.navigate().back(); --> goes back to the previous page 
+	5) -> driver.navigate().refresh(); //it refresh your page 
+
+-> When you create one time a Selenium code, you just copy and paste to run different types of drivers, only different is that you need to create another object. 
+
+
+First Class: 
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FirstSelenium {
+
+    public static void main(String[] args) {
+        // we can not open a browser without setting the path drivers
+        // when we want to open a driver
+
+        //this line must come before creating the WebDriver object
+
+        //first Argument is the type of driver and the second Arguement is the location of the WebDriver
+
+
+        System.setProperty("webdriver.chrome.driver", "/Users/macbook/Documents/Selenium Dependencies/Drivers/chromedriver");
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https: //google.com");
+
+
+        //open a website you lneed to start with http which is very important
+
+    }
+
+}
+
+
+Second Class: 
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class SecondSelenium {
+
+    public static void main(String[] args) {
+
+        System.setProperty("webdriver.gecko.driver", "/Users/macbook/Documents/Selenium Dependencies/Drivers/geckodriver");
+
+        WebDriver driver = new FirefoxDriver(); //this line open firefox driver
+
+        driver.get("https://etsy.com");
+
+
+        //open a website you need to start with http which is very important
+
+        driver.navigate().to("https://www.amazon.com/");
+
+        driver.navigate().back(); //it take us back to Amazon
+
+        driver.navigate().refresh(); //you just refresh your page
+
+    }
+}
+
+=============================================================================================================
+
+Test Case # 1:  
+
+	1. Write a testcase first and then see how it translates to Selenium.  
+
+	2. Before we automate any functionality, we need to test the test case manually. Only Automate if the manual testing pass successfully and only automate the functionalities that is working. 
+
+	3. You have to open the Chrome Browser, Create the object of chromedriver by typing --> WebDriver driver = new ChromeDriver(); 
+
+	4. We go to the url 
+
+	There are 2 things that we take from the testing manually: 
+		1)-> We understand the scenario better 
+		2)-> We will find out if there are any bugs in that functionality. It is also preventing from wasting of time, if any test case is not working properly and you automate several of them, later on you find out that the test case was working properly, then it is waste of time. 
+
+-> How to test if google opens correctly?
+
+	1. Open chrome browser:  System.setProperty("webdriver.chrome.driver", "/Users/macbook/Documents/Selenium Dependencies/Drivers/chromedriver"); and creating object --> WebDriver driver = new ChromeDriver();  
+
+	2. go to url "https://google.com" -->   //Step 2. go to url "https://google.com". --> driver.get("https://google.com");
+
+	3. Verify Title //first you have to see the title at the top and nobody can use another website's tittle 
+			Expected title: Google --> //Step 3.Verify title --> //Expected title: Google
+																						driver.getTitle();
+
+-> Assertion vs verification? 
+
+	Assertion --> stop the execuation if something fails.  
+
+	Verification/Validation --> do not stop the test if somethign fails, move on to the next test. 
+
+-> Selenium doesn't test, it doesn't do any Assertiion, Verification and Validation. It is your code and you need fix it. 
+
+*** -> important: if you type the following command  --> pkill -9 Google Chrome --> in your terminal, then it will close all opened web pages from your task bar. 
+
+
+December 1st, 2018; 
+
+-	WebDriver driver = new ChromeDriver(); //this is just to open a web-driver 
+-	You need to name your variables in very good names that makes sense, because if you read the variable name then you will find out what is the variable belongs to. 
+=============================================================================================================
+
+December 7th, 2018 
+
+-> Maven & Selenium Class: 
+
+The important librarries: 
+
+	1): Selenium Java 
+
+	2): Webdriver manager 
+
+-> We get all dependencies from http://mvnrepository.com, http://search.maven.org	
+
+-> Don't download any Beta option for your librarries. It is just for playing games and some practices that poeple put in the internet. 
+
+-> Don't also download RC, it is the release candidate 
+
+-> usually we select the first dependency file and we put it inside the dependency file. 
+
+-> If you want to set your driver, just you use the webdriver manager librarry, just go to //mvnrepository.com/ or maven.search , type the 	WebDriverManager and import the dependency. 
+
+-> Do you need internet to use maven, what if company blocks internet? 
+
+	- Companies have their local repository (local nexus), companies download and test the required libraries in their nexus first. They use maven with the local nexus, we need to get the settings from our developers, team etc.
+
+	- If the company does not have my dependency like selenium in their nexus, I have to request them to download and add it to nexus
+ 
+We get all dependencies from online repositories: 
+
+	- in the repository do not choose options that say beta, RC (release candidate)
+
+Do we need internet to use maven, what if company blocks internet?
+
+	 there are 2 ways of submitting a form; 
+	1. input.sendKeys("aasdfsadf"+ Keys.ENTER);  --> enters text and hits enter
+
+	2. input.submit();  --> will submit the form will all the data, just like hitting enter
+
+	3. Click on on the submit button
+	
+	HOW TO GET TEXT from an element:
+
+	1. element.getText();
+	2. element.getAttribute("value");
+	3. element.getAttribute("innerHTML"); 
+
+	Text Input Fields 
+		SendKeys 
+		clear
+
+
+	Dropdown: 
+
+	- In selenium dropdowns are handled using a separate class. Select 
+
+
+	-> When you can't find something by lookin the id, name, class, tag, link text, partial link text, then we use either xpath or css. 
+
+	xpath: is a type of locator which uses the HTML information of an element to locate it. Based on HTML of any element we can write xpath which uniquely identified or locate it. xpath is just a sentyx and it is not a language. 
+
+	-> Element that has a tag 'button' and attribute 'type' with the value 'submit'. 
+
+	xpath: 	//button[@type = 'submit'] -> this is uniquely identifying the element 
+
+	//E[@A='t']
+
+	E-> means tag name 
+	A-> attribute 
+	t-> value of the attribute 
+
+	//button[@type = 'submit'] -> this is how you can fill the formulla 
+
+
+	How should I know if xpath is correct or not? 
+	element that has a tag 'button' and attribute 'type' with the value 'submit'. 
+
+	How to find the checkboxes with same spelling 
+
+	formula is: [@id='checkboxes']/input[2]. I wanted to find the second child in html code and that is why I used input [2]. 
+
+	[@id='checkboxes']/input[3] -> Now I am looking for the 3rd child of the html 
+
+	Amazon Example: 
+
+	- If there is 2 helps that we want to find the second one. The formulla will be: 
+
+
+	for a selenium, we will need the following libraries in our pom file? 
+	selenium java
+	webdriver manager
+
+
+we get all dependencies from online repositories: http://mvnrepository.com, http://search.maven.org	
+
+in the repository do not choose options that say beta, RC (release candidate)
+
+Do we need internet to use maven, what if company blocks internet?
+
+
+Companies have their local repository (local nexus), companies download and test the required libraries in their nexus first. To use maven with the local nexus, we need to get the settings from our developers, team etc.
+if the company does not have any dependency like selenium in their nexus, I have to request them to download and add it to nexus
+
+
+ there are 2 ways of submitting a form; 
+1. input.sendKeys("aasdfsadf"+ Keys.ENTER);  --> enters text and hits enter
+
+2. input.submit();  --> will submit the form will all the data, just like hitting enter
+
+3. Click on on the submit button
+
+
+___
+
+HOW TO GET TEXT from an element:
+
+1. element.getText();
+
+2. element.getAttribute("value");
+
+3. element.getAttribute("innerHTML");
+
+TEXT INPUT FIELDS
+	sendKeys
+	clear
+	submit
+	click
+_________
+CHECKBOX and RADIO BUTTON
+
+element.isSelected()  :  returns true / false based on checkbox/radio button is selected or not	
+
+CHECKBOX: if we select/unselect one, others are not affected
+RADIOBUTTON: if we select/unselect one, others are affected, only on radiobutton in the group can be selected
+_____
+
+
+go to : http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCheckBox
+
+select on monday only if it is not select
+_____
+
+
+DROPDOWN
+
+In selenium dropdowns are handled using a separate class: Select.
+In order to create a select object, we need to pass a webelement of tag select as a constructor
+
+in HTML, dropdowns are represented with Select tag, options in the dropdown are represented by option tag, option tag is the child of select tag
+
+getFirstSelectedOption --> returns the selected option in the dropdown (webelement
+
+getOptions() --> returns a list of all the options in the dropdown(selected, not selected all will returned)
+
+___
+
+If in your applicatoin, dropdown menus do not use select tag, you cannot use the select class.
+1. you will have to select and click on the dropdown sperately
+2. you will have to locate and click on the option in the second step
+
+___
+
+BY CLASSNAME locator does not work if the class has multiple words/class spearated by space. 
+	class="btn btn-primary"
+___
+
+
+when none of the options : id, name, class, tag, link text, partial link text does not work, we use xpath or css.
+
+XPATH 
+
+xpath is a type of locator which used the HTML information of an element to locate it. Based on HTML of any element we can write xpath which uniquely identifies it in the page
+
+
+<input type="checkbox">
+<input type="checkbox" checked="">
+____
+
+
+<button class="btn btn-primary" type="submit" value="Search" aria-label="Search">                                          //button[@class='btn btn-primary'][aria-label='Search'] xpath: 
+												                 button[class='btn.btn-primary'] css
+                     Search
+</button>
+
+______
+
+element that has a tag 'button' and attribute 'type' with the value 'submit'
+
+XPATH:  //button[@type='submit']
+
+E - tag name
+A - attribute
+t - value of that attribute
+
+//E[@A='t']
+
+//button[@type='submit']
+_____
+
+element that has a tag 'button' and attribute 'class' with the value 'btn btn-primary'
+
+//button[@class='btn btn-primary']
+
+____
+
+
+<input id="search-query" class="search-input clearable dropdown-relative-positioned rounded.      //input[@id='search-query'] xpath  --> intput[id='search-query'] css 
+
+                    
+                    " type="text" placeholder="Search for items or shops" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
+
+
+                                                //input[@name='search-query']
+______
+
+//form[@id='checkboxes']/input[2]   : finding the form with id checkboxes and giving the second child
+___
+
+
+HOW to find the second help link on amazon
+
+(//a[.='Help'])[2]
+===================================================================
+
+Date: December 12, 2018 
+
+Selenium Review: 
+
+Dependencies: Small pieces of codes created by people and we can use it for free. 
+
+Why do we use POM file? 
+
+-> pom file is the most important file in a maven project. It manage the dependencies of the project. To be able to use any dependency like Selenium we have to add it to the pom file. There are more that POM file does, but will covered later on. 
+
+Dependencies: Are added in he pom file are added inside the <dependencies> tag. pom file has very strike rules that we need to follow. HTML is easier and has less complicity. 
+
+Exmaple of Dependency: 
+
+<dependencies>
+	<dependency>
+
+	</dependency>
+
+</dependencies> 
+
+Each dependency comes with other dependencies inside, so that is why we see more dependencies, even we imported only 3. So they are children of children of children of dependencies. 
+
+
+JAVA: It is programming language 
+
+MAVEN: Maven in tool for creating and managing Java project, adding dependencies.  
+
+SELENIUM: Collection of Java classes and methods. We can use it by adding it as a dependency. 
+
+INTELLIJE: ide, is a tool which makes writing code easy. We can use it to write any type of code with any tool like; Java, JavaScript, html, C#, C++ .... python, ruby, Selenium, Maven and etc. 
+
+ECLIPSE: another ide, is a tool which makes writing code easy. We can use it to write any type of code with any tool like; Java, JavaScript, html, C#, C++ .... python, ruby, Selenium, Maven and etc. 
+
+Note: All companies don't use Maven and Maven is only for Java Project. If a company use NetBeen or other languages, then they don't use Maven. There are some alternative for Maven like; ant, gradle that you can use them. If you learn Maven, then you will be able to operate ant and gradle as well. Becasue, they are the same concept. 
+
+What is your framework? 
+
+- Explain all the tools you use and the reason for the use. like; java, maven and etc. 
+
+IDE: this is a folder created by intellije in all types of projects. It stores project related information which is only important for intellij. We Iqnore This Folder. 
+
+SRC: This is where all the code written. When we look for any code, we have to look inside the src package. When we write a new java class, we have to write it inside the src package. 
+
+	-> There are 2 important packages inside SRC: 
+
+		1): SRC/MAIN --> Developers use the main folder. All the application code is writen in this package. It is a children of SRC folder. Testers iqnore this folder, everything is written under Test Folder. 
+
+		2): SRC/TEST --> Test codes will go to this folder. Testers also write codes, but the codes will be belonged to test the 	written codes of the Developers. It is a children of SRC folder.  
+
+	-> Target: All the code compiled files, reports and all Maven related stuff will be created in this folder. We don't try to code here. FOR NOW, we iqnore target folder too. 
+
+	*.IML File: This is a file created by intellij in all types of projects. It stores project related information which is only important for intellij. We Iqnore this folder. 
+
+External Librarries: All the dependencies in the pom file are shown here. IGNORE this folder, (don't touch, delet or modify it). 
+
+Scratches and Consoles: We don't know what it is, just iqnore it. 
+
+Locators: We have some locators like: 
+	- ID: 
+	- Name: 
+	- Class: 
+	- TagName: 
+	- LinkText: 
+	- PartialLInkText: 
+	- CSS: 
+	- Xpath: 
+
+How to locate elements? 
+
+1 - inspect the element on the page 
+
+2 - analyze the html and see if it has the attribute used by selenium and we look for the following attributes by order: 
+
+	- ID: first look for ID 
+	- Name: Second look for Name 
+	- Class: Third look for Class 
+	- TagName: Fourth look for TagName 
+	
+	If you could not find the above options, then use from CSS or Xpath. 
+	
+	How do you handle dynamic id or how do you handle dynamic table? 
+
+		-> The dynamic id is changing most often, today it is u_0_c and tomorrow could be u_0_p. You have to do multiple test to catch it. 
+
+		//*[@id="u_0_c"] 		//*[@id='u_0_c'] //this is belongs to facebook, the dynomic Id which changes more often, so you need ot write down a code which handles all options. 
+
+3 - if the element is link 
+
+Note: If a name has space, then we can not use it by .className option. 
+
+What is the difference between LinkText and partialLinkText? 
+
+-> LinkText must match 100 % including the spaces any other characters. 
+
+-> partialLinkText just need to match a partial of the text. It can be any part of the text, beginning, middle or end, but must exactly match the partial part of the linkText. partialLinkText is more dynamic.  
+
+Anything inside the code must match including space, symbols, numbers and etc. 
+
+How do you get the number of all links in the page? 
+
+My page always loads different files as links. file names has extensions. How can I gaurantee that I click on the first word document? 
+	-> 
+
+=> If our locator matches multiple elements, Selenium will always pick up the first one. 
+
+
+Date: 	December 15, 2018 
+
+xpath: 
+
+There are 2 types of xpaths: 
+
+1): Absolute xpath: which uses the hierarcy (parent/child) of elements to locate an object. It starts with single slash and html. 
+
+	-> Absolute expath always start looking the html. 
+a 
+div
+div
+div
+body 
+html 
+
+/html/body/div/div/div/a   --> This is the series (selsela) of html relations. parent/child/child of child etc ....
+the slash / in betweeen means child 
+
+Disadvantages: Absolute xpath relies on page not being changed. If the html tree changes, xpath will stop working. 
+
+2. tends to get very very long. 
+
+2): Relative xpaath: does not depend on html structure, does not start with double slashes. It will look anywhere in document. 
+
+Oneway of writing xpath is: using tag, attribute and name. 
+	//tag[@attribute='value']
+
+ 
+3. Nth child: If there were several childs, matching, then you can add a [] and put the number of the child to find the exat one. 
+	/html/body/div/div/div/div/form/input[2] -> second input child of form 
+
+4. any single tag 
+
+//tag 
+
+//ul/li[2] = /html/body/div/div/div/div/form/input[2] 
+
+5. by exact text 
+
+	//tag[.='text']
+
+	<h3>Frames</h3>
+
+6. by partial text 
+
+//tag[contains(@text(), 'text')] --> //h3[contains(@text), 'Fra')] 
+
+//h3 [contains(text(), 'Fra')] 
+
+7. Any element with certain text, attribute 
+
+//*[.= 'Frames'] : any tag with text 'Frames'
+
+//*[@class = 'bn']
+
+8.a[.='Help']
+
+page has Help in 2 places, I want the second one. 
+
+	1. I write the xpath that mathces both 
+		//a[.='Help']
+
+	2. Select the second match 
+
+		(//a[.='Help'])[2]
+
+9. How do you handle dynamic element or id? that the html code changes more often 
+
+	-> tag[contains(@attribute, 'value')] --> //button[contains(@id='j_idt')] --> //button[contains(@id='j_jdt')] --> //button[starts-with(@id='j_')] --> //button[ends-with(@id='jdt')]
+
+	-> tag[starts-wiht(@attribute, 'value')] --> //button[starts-with(@id='j_idt')]
+
+	-> tag[ends-with(@attribute, 'value')] --> //button[ends-with(@id='693']
+
+	<button id = "j_idt693" > </button> 
+
+	//button[contains(@id, 'j_idt')] 
+
+	//button[starts-with(@id, 'j_idt')] 
+
+	//button[ends-with (@id = '93')] 
+
+10. How do we know, if something is dynomic? You have to learn your application, go to the application, click the link and look at the details of the html codes. 
+
+	1 -> write an xpath which matches multiple elements 
+
+		//a[.='Help'] 
+
+	2 -> Write an xpath that locates the section of the page where my element is 
+
+		//div[@id='navFooter'] 
+
+	3 -> mixx and pathc 
+
+		//div[@id='navFooter']//a[.='Help'] 
+
+		--> We are putting both xapths side by side to find the element. It will first find the div section then it will look for the a tag within that div. 
+
+	What is the best xpath? 
+		-> If you don't have any other option, just use the parent, child sequence or parent/child relations to find the xpath exactly where they are located and how it workds like this; /html/body/div/div/div/div/form/input[2] 
+
+
+	Note: 
+		-> There is no xpath that always which always works, in general there is no locator which works every time. All depends on the element we want to locate. 
+
+	Challenges: 
+
+		-> 
+
+		<span class="a-size-small a-color-base">Unlocked Cell Phones</span>
+
+		//span[@class='a-size-small a-color-base']//[@tex='Unlocked Cell Phones']
+
+		<input type="text" id="twotabsearchtextbox" value="iPhone X" name="field-keywords" autocomplete="off" placeholder="" class="nav-input" dir="auto" tabindex="19">
+
+		//input[@id='twotabsearchtextbox']//
+
+=========================================================================================================
+
+Unit Testing using Selenium: 
+
+-> TestNG: 
+
+	Unit testing: testing the small pieces of the code. Usually it is done by the developers. It is not easy, you have to know all the codes and details about writing the code. 
+
+-> Tools that are used for unit testing in Java Language are: 
+	- Junit
+	- TestNG: It is another jar file, like; maven 
+
+Steps of doing TestNG: 
+
+1. Add testNG dependency to your project 
+	- Go to mvn repository website 
+	- look for testing 
+	- select version 
+	- copy 
+	- paste in to pom file 
+
+	 <scope>test</scope> --> it means only the code in the test package can use this dependency 
+
+	 <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>test</scope>
+        </dependency>
+
+  When you see beta, it means the new version is still in progress and the testing is not done. So, please don't use it. 
+		7.0.0-beta1
+  
+  Create a new package 
+  	1. right click on com.cybertek 
+  	2. select New ---> package 
+  	3. enter package name tests 
+  	4. Enter 
+
+Note: We need to seperate the packages, all the tests should be in a seperate package and easier to access in the future. 
+
+ -> No need to write main method anymore, we run the code as a test, not as java application 
+
+ -> In testNG/Junit, we use annotations (something which has @) to indicate whether the method is a test. 
+
+ @Test -> it means the method we are writing is a Unit test. We don't need main method to run unit tests. When we have a method with @Test annotation we can run it as a test, no main method required. 
+
+   @BeforeMethod --> It runs once at the beginning before the test happens. Any test will be followed by beforeMethod, if you 100 methods, then there will be 100 times   @BeforeMethod first then the actual test. Usually, we need one   @BeforeMethod method per class. It will automatically runs each time a test is run. If there not @Test in the class, then before method will not run. 
+
+   		Example: 
+
+   		public class DifferentAnnotations {
+
+	    @Test
+	    public void testOne(){
+	        System.out.println("This is test one");
+	    }
+
+	    @BeforeMethod
+	    public void beforeMethod(){ // Even we don't call this, it is the second one, but it will be printed the first one in the cosole
+
+	        System.out.println("This is before method");
+	    }
+
+	    @Test
+	    public void testTwo() {
+	        System.out.println("This is test two");
+	    }
+
+	}
+		Result will be like below in console: 
+   			This is before method
+			This is test one
+			This is before method
+			This is test two
+
+	Note: The order is that the @BeforeClass comes first, then @Beforemethod, then the tests. 
+
+	-> To be mentioned that whatever has @beforemethod, they also have @Aftermethod. 
+
+	Asssert: 
+		-> TestNG assertions: They are methods for asserting also known as verifiying. All assertion are provided in the Assert class. 
+
+			- assertEqulas(a, b) --> This is the shortcut of writing the whole if condition, like to avoid this code: 
+
+			String expected = "a";
+	        String actual = "b";
+
+	        if (expected.equals(actual)){
+	            System.out.println("PASS");
+	        } else {
+	            System.out.println("FAIL");
+	            System.out.println(actual);
+           		System.out.println(expected);
+	        }
+
+	   The following code does the same job, but it avoids you to write more codes. It is just one line of code like below: 
+
+	    public void test1(){
+
+        String a = "A";
+        String b = "A";
+
+        Assert.assertEquals(a, b); 
+       }
+
+       Why do we have to use Unit Testing Tools? 
+       	1 -> We can organize tests to different test methods, we can create multiple @Test methods. 
+
+       	2 -> We can run test selectively 
+
+       	3 -> Assertion methods: TestNG provides ready methods for comparing, asserting and etc. 
+
+       	4 -> Automating Reporting 
+
+       	Note: If the assertion fails in any line, the rest of the method will not be executed. Other method fails, the rest of the method will execute. 
+=========================================================================================================
+
+Date: 	December 16, 2018 
+
+The Tools we studied so far: 
+	- Eclipse: is ide, we use it to write code 
+
+	- Intellij: is ide, we use it to write code 
+
+	- Java: is a programming language, we write our tests using Java language. 
+
+	- maven: It is officially a build tool and we use it for managing dependencies, later on we will use it for running tests and generate reports. 
+
+	- selenium: It is a tool for automating the browser, usually people say selenium, but the tool is called selenium WebDriver. 
+
+	- TestNG: unit testing tool, we use it to write the actual test. TestNG also organize, runs tests, to do assertions, and finally reporting the result. Whenever we write a code, we add test annotation, then officially it becomes a test by adding @Test on the top. 
+
+	- Jira: is a bug tracking tool and you can manage the whole project by using Jira, before it was just Bug tracking tool, later on it was updated and added the addtional functionalities and now it is more intensive tool to manage big projects. It is management tool that manage sprint, Bugs, project backlog and etc. There are some other tools that are used to replace Jira in different companies. By default, Jira issues: task, story, bug. If you add Jira X-ray, then you can do more with using of Jira. 
+
+	- Postman: used for testing APIs manually. There some other tools, but postman is the most easier to do manual API testing. There is another tool called SOAP UI. 
+
+
+	- Sublime: 	Text editor, alternatives: Notepad++, Sublime, VSCode (Visual Studiu Code), Jedit.
+
+	-> Order starts from the smallest number and we can order tests using the priority keyword.
+		Example: 
+
+		public class OrderOfThings {
+
+    @Test (priority = 1) //it means that this code will be executed the first one
+    public void test1(){
+        System.out.println("Executing 1");
+    }
+
+    @Test (priority = 3) //it means this will be run the 3rd test, if you put -3, then it will come at the beginning like; numberic order
+    public void test2(){
+        System.out.println("Executing 2");
+    }
+
+    @Test (priority = 2) //this test will run second, because we picked the priority as 2nd
+    public void test3(){
+        System.out.println("Executig 3");
+    }
+  } 
+  	Note: If you run only 1 test, then priority doesn't matter, because you just run only 1 test. 
+
+	-> Escaping a formula or a test code. First you can just comment it out by double forward slashes //, there is another funtion called @Iqnore and it will escape the test. 
+
+	Example: 
+
+	@Ignore
+    @Test (priority = 3) //it means this will be run the 3rd test, if you put -3, then it will come at the beginning like; numeric order
+    public void test2(){
+        System.out.println("Executing 2");
+    }
+
+    Dependencies on TestNG: 
+    -> Dependencies: It means that one method is depend on another, if one method doesn't work, then another will not work as well. 
+    
+    -> TestNG is followed by alphabatic order from the class, unless you give them a priority on the method. 
+
+    -> Remember, you should not mix the dependencies or priorities, because it can change your test result. 
+
+CSS (Css): 
+
+-> Css locator is just another type of locator used in Selenium using the html information such as htag, attribute, value of an element we can write css locator for it. 
+
+-> css locator is easy to read and write compared to xpath. However css can not do certain things that xpath can do. For Example, it cannot find by text, it cannot find by index type. 
+
+Maruf's list of locators: 
+id, name, tag, class, css, xpath (So basically try to find the easiest way by id, name, tag, class, if not then try css and lastly you can use xpath). 
+
+1. css using elements tag, attr and value 
+
+	Example: 
+
+	//button[@class='btn btn-primary'] : xpath 
+
+	tag[attribute = 'value']
+
+	button[class='btn btn-primary'] : css
+
+2. parent child: we can use the parent child relationship like absolute xpath. 
+
+/html/body/div/div/div/form/button : xpath 
+
+html>body>div>div>div>form>button : css 
+
+so in xpath you put the slashes and in css you put the diomond signs > 
+
+> child 
+
+3. Descendent: in css space means descendent. 
+
+
+	/html/body/form/button 	: xpath 
+	html>body form>button 	: css 
+
+	htm.
+
+	<input type="text" name="email" id="email"> // //*[@id='email'] --> xpath, 		css: #email; 
+
+			//*[@id='eamil'] xpath; 		#email 	css; 
+
+	//*[@id='email'] 	: xpath 
+
+	#email 				: css 
+
+# : id 
+
+4. id, certain tag 
+
+	<input type="text" name="email" id="email">
+
+	//*[@id='email'] 	: xpath 
+
+	#email 				: css 
+
+	# --> it means id 
+
+
+5. class 
+
+	<input type="text" name="email" id="email"> 	//*[@class='']
+
+	if there are psaces in class attribute, it means it is a different class. 
+
+	//button[@class='btn btn-primary'] 	: xpath 
+
+	button.btn.btn-primary 				 	: css  (so you put button dot then the classn name, dot means class css)
+
+	. (dot) means class css 
+
+
+6. Multiple attributes 
+ 
+ <input type="text" class="inputtext _58mg _5dba _2ph-" data-type="text" name="firstname" aria-required="true" placeholder="" aria-label="First name" id="u_0_c">
+
+ 		--> //input[@type ='text']//[@aria-label='Firs name'] --> Not sure if it works
+
+ 		input[type='text'][arial]
+
+ input[type='text'][aria-label='First name'] 	--> css 
+
+ Note: You can use any other combination to put the formula and it will work. 
+
+ 7. Contains
+
+ <input id = "u_0_c"> ]
+
+ Any input element whose id contains 'u_0_c' 
+ //input[contains(@id, u_0_c)] 			: xpath 
+
+ input[id*='u_0_c'] 					: css  			1. contains = input[id*='u_0_c']; 
+ 														2. starts with = input[id^='u_0_c']; 
+ 														3. ends with = input[id$='u_0_c']; 
+
+ 8. starts with 
+
+ any input element whose id starts with 'u_0_c'
+ //input[starts-with(@id, 'u_0_c')]		: xpath 
+
+ input[id^ = 'u_0_c'] 					: css
+
+ 9. ends-with 
+
+ any input whose id ends with 'u_0_c' 
+
+ //input[ends-with(@id, 'u_0_c')] 		: xpath 
+
+ input[id$='u_0_c'] 					: css 
+
+
+
+<h2 class="fsdDeptTitle">Small &amp; Medium Businesses</h2>
+
+css: h2.fsdDeptTitle; 
+
+<i class="hm-icon nav-sprite"></i>
+
+i.hm-icon.nav-sprite
+
+
+<a href="/gp/site-directory?ref_=nav_em_T1_0_2_2_33__fullstore" class="hmenu-item">
+            <div>
+              Full Store Directory
+            </div>
+          </a>
+
+a[href = '']
+
+a[href='/gp/site-directory?ref_=nav_em_T1_0_2_2_33__fullstore']
+___
+
+
+
+<h2 class="fsdDeptTitle">Small &amp; Medium Businesses</h2>
+
+h2.fsdDeptTitle
+
+================================================================================================
+
+Maroofjan's Notes: 
+
+1. css using elements tag, attr and value
+
+<button class="btn btn-primary"> Search </button> //button[@class='btn btn-primary'] : xpath 
+												  button[class='btn btn-primary']	 : css 
+
+
+//button[@class='btn btn-primary']  : xpath
+
+tag[attrbiute='value']
+
+button[class='btn btn-primary']  : css
+
+2. parent child
+
+/html/body/div/div/div/form/button :  xpath
+
+html>body>div>div>div>form>button   : css
+
+> child
+
+3. descendent
+	/html/body//form/button    : xpath
+
+	html>body form>button     : css
+
+space in css means : descendant
+
+
+3. id, any tag
+
+<input type="text" name="email" id="email">		//input[@type='text'] 
+												input[type='text']
+												#email
+												#eamil -> id 
+												#text 
+
+any element with id "email"
+	
+	//*[@id='email']		: xpath
+	
+	#email					: css
+
+# : id
+
+_______
+
+4.  id, certain tag
+
+<input type="text" name="email" id="email"> // #email or input#email, //input[@id='email']
+input element with id "email"
+
+	//input[@id='email']		: xpath
+
+	tag#id    input#eamil
+
+	input#email 			: css
+
+5. class
+	
+	<button class="btn btn-primary"> Search </button> //button[@class='btn btn-primary'] : xpath 
+														button.btn btn-primary	 : css 
+
+if there are space in class atrrbute, in means it is a different class
+
+	//button[@class='btn btn-primary']  : xpath
+
+	button.btn.btn-primary 				: css
+
+. (dot) means class css
+
+6. multiple attributes
+<input type="text" class="inputtext _58mg _5dba _2ph-" data-type="text" name="firstname" aria-required="true" placeholder="" aria-label="First name" id="u_0_c">
+
+		input[name='firstname'][aria-label="First name"] : css
+		input[id="u_0_c"][name='firstname'] : css 
+		input[type='text'][aria-required='true'] 
+
+input[type='text'][aria-label='First name']
+
+
+7. contains
+
+<input id="u_0_c">  
+any input element whose id contains 'u_0_' 			//input[contains(@id, 'u_0_')] : xpath 
+													  input[id*='u_0_'] 	: css 
+//input[contains(@id, 'u_0_')]   : xpath
+
+input[id*='u_0_']				: css
+
+8. starts with 
+
+any input element whose id starts with 'u_0_' 		//input[starts-with(@id, 'u_0_')] : xpath 
+													  input[id^, 'u_0_'] : css 
+//input[starts-with(@id, 'u_0_')]   : xpath
+
+input[id^='u_0_']					: css
+
+
+
+9. ends with
+
+any input element whose id ends with 'u_0_c' 		//input[ends-with(@id, '0_c')]  : xpath 
+													  input[id$, 'u_0_c']
+
+//input[ends-with(@id, 'u_0_')]   : xpath
+
+input[id$='u_0_c']		   			: css
+
+
+
+<h2 class="fsdDeptTitle">Prime Video</h2>
+
+//h2[@class='fsdDeptTitle'] 
+
+h2[class='fsdDeptTitle'] 
+
+
+
+
+<input type="text" class="inputtext _58mg _5dba _2ph-" data-type="text" name="reg_email__" aria-required="true" placeholder="" aria-label="Mobile number or email" id="u_0_h">
+
+xpath: 
+
+//input[@id='u_0_h']
+	
+	#u_0_h
+
+//input[@class='inputtext _58mg _5dba _2ph-'][@aria-required='true']
+
+//input[@name='reg_email__'] 
+
+input#reg_email__
+================================================================================================
+
+Holidays: 	Dec 24, 25, 31 & January 1st, 2019 
+
+Date: 	December 22nd, 2018 
+
+WebDriver API; 
+Tabs, frames, alerts !!!
+
+Agenda for Today: 
+
+1): IFRAMES: 
+
+What to do if I get no such element exceptions: 
+
+1. Check your locator 
+2. Check your wait 
+3. Check if there is an iframe in the page, then you have to switch 
+
+
+iframe/frame: They are used to put one html document inside another one. Sometimes the Developers purposely develop a webpage with several HTML pages. like this: 
+			html
+				title 
+				text 
+				link
+				iframe 
+					html 
+						link --> Selenium can not see inside this html until you swithch to iframe. 
+
+-> Selenium can only deal with one html document at a time. Selenium will not be able to see both documents at one time and it only sees one html document at one time.  
+
+-> Selenium can see the iframe element, but it can not see what is inside the iframe. 
+
+The solution for handling 2 html documents is: 
+	-> We need to change the focus of selenium to iframe, in other word we need to switch to iframe. We can direct selenium to look the inside of iframe. 
+
+	-> We need to find an element with a tag iframe or frame in HTML code section during the inspection, Selenium usually see the default one which is on the top (the first html). 
+
+	-> We need to use the following method: 	driver.switchTo().frame(iframe); 
+
+	-> When we switch into any iframe, Selenium can not see the content of previous html page. In order to do that we need switch back to the page where we come from. 
+
+	-> We can switch back to previous frame, 
+
+	-> Some pages have multiple iframes: 
+		figure 1.1:	   html -> 					Default Content 
+						iframe 1 -> 			Frame 1 
+							html 1 -> 		
+								iframe 2 -> 	Frame 2 
+									html 2
+
+-> When situtation like figure 1.1; The html on the top is the defatult content and we handle it like follow: 
+
+	How to get the frame 2: 
+		1. switch to iframe 1 
+		2. switch to iframe 2 
+
+	How do I go back from frame 2 to the default frame? We have 2 options: 
+		1. driver.switch.defaultContent(); --> this will take you all the way to the top level, if you have multiple iframes and it doesn't matter, just goes straight to the top. 
+
+		2. If you use this way: 	driver.switchTo().parentFrame(); 		This just goes out step by step, from each iframe, from iframe 2 to iframe 1 and then if you re use same code it will take you to iframe (default content); 
+
+	Multiple Iframes: 
+	html --> 				default content
+		frame 1 
+			html 1
+				frame 2 
+					html 2  
+		frame 3 
+			html 3 
+				frame 4 
+					html 4 
+
+
+	If you use from default content to html2, it will be same like before; driver.switchTo().frame(iframe); 
+	-> You can only jump vertically, if you are in frame1, you can either go to html1 or ifram2. 
+
+	How to jump from frame 2 to iframe 4? 
+	-> You can go to frame 2 --> default --> frame 3 --> frame 4 
+
+	When going back we can use default content to jump multiple levels. But, when we go inside the nested frame, we have to switch one by one. You can not jump to grand child directly. 
+
+	Interview Question: 
+
+	What are the different ways of switching frames? 
+
+	-> Different browsers and websites do the switching frames differently. It is just like this. If you use Chrome, you use different logic, if you use firefox, you use the different logic. In general you use the following ways to switch iframes: 
+
+		1. Locate the frame element and switch to the element, we pass the webElement as a parameter. 
+
+		2. using the name or id of the iframe element 	driver.
+
+2): tabs: 
+
+TABS/WINDOWS: 
+
+/*
+Test Cases:
+  - Go to http://the-internet.herokuapp.com/windows
+  - click on clic "Click here"
+  - Verify that new title is "New window"
+  - Verifty that new title is not "The internet"
+ */ 
+
+ -> By default Selenium can only handle/see one tab at a time. If we want to do anything in the new, 
+
+ -> Selenium can create a list of the tabs, it switch one by one until it finds the right page or tab. 
+
+ -> Set: It is like an Arraylist without duplicate values (everything is unique) and also you don't have the get method and you have to iterate to get the items one by one. 
+
+ -> When we want to change tabes, we use the windowhandles to change, we get the windowhandles from the getWindowsHandle(Method); 
+
+ -> getWindowHandles(); 
+
+ Note: For Selenium, tab and window are treated equally, there is no different between tab and window. 
+
+ driver.close(); closes the current tab controlled by window. 
+
+ driver.quit(); closes all the open tabs, we can not use the webdriver object again, we have to initialize it one more time to use it. 
+
+
+
+3): Pop ups: 
+
+ -> The un-expected messages show up, it also called Alerts. Some Pup-ups have html that we can write click and inspect them. If we can right click and inspect, it means it is generated by html. 
+
+ -> But, some of the Pup ups are not generated by html or don't have html and we can not inspect them or do right click. 
+
+ There are 2 types of Pop ups: 
+
+ 	1): html Pop ups 
+
+ 	2): javaScript Alerts/pop-ups: You can not locate the JavaScript Alerts, then there is a special way of handling it and something that calls AlertClass. Example: 	-> Alert alert = driver.switchTo().alert();  
+
+ -> Dismiss: It is like cancelling and you just click on it to cancel. 
+
+ -> Your responsiblity is to 
+
+
+POP UPS
+
+1. HTML POP UPS
+some pop up have html, meaning we can right click and inspect. if we can right click and inspect, it means it is generated by HTML. they are html pop up
+how to handle: 
+
+2 JAVASCRIPTS ALERTS/POP UP
+
+when we have JS alerts, we need to create an alert object to handle it:
+	 Alert alert = driver.switchTo().alert();
+
+We have to have an actual alert on the page to use this link, if there is not JS alert we get NoAlertPresentException
+
+this xpath is made of 5 parts: 
+(//i[@class='icon-ey-open'])[2]/../../.. 
+
+	1. //i[@class='icon-ey-open'] : it finds all the expath for all elements 
+
+	2. now that I have all the elements, I can select the one I want 
+
+	(xpath)[index] --> locate all eleemtns which match this xpath and return the one based on the order 
+
+	Note; /.. it means to go to the parent of the element 
+
+
+welcome to office hours
+ask me almost anything
+
+
+all of teh assertion methods are overloaded, we can pass string valirable which only print when assertion fails
+
+
+<button id = "btn">
+
+By.id("btn")
+
+//*[@id="btn"]
+
+#btn
+
+Can you talk about iframes?
+
+why iframes? some websites use iframes for their own purposes. 
+when there are two 2 more html documents in the pages, selenium will only see one. 
+
+HMLT			: by default we are here
+	iframe 		: we have to switch to it separately
+___
+
+this xpath is made of 5 parts:
+(//i[@class='icon-eye-open'])[2]/../../..
+
+	1. //i[@class='icon-eye-open']   : it finds all the elements with class icon-eye-open
+
+	2. now that i have all the elements, i can select the one I want
+
+	(xpath)[index]  --> locate all elements which match this xpath and return the one based on the order indicated by [index]
+	
+	3. find the parent of the (//i[@class='icon-eye-open'])[2]
+
+	we can parent by adding  /.. to any xpath
+
+	4. go to parent of the parent:  /../..
+
+	5. go to parent of the parent of the parent:  /../../..
+
+----------------------------------------------------------------------------------------------------------
+
+
+Date: December 29, 2018 
+
+Test Base Class: 
+
+Test Base class is a class which contains common methods for all tests, other tests will extend the test base class
+
+-> Tests: contains actual tests, all classes in this package have method with @Test annotation
+
+-> utilities: contain common and repeated code
+
+Assertion/Verifcation: if fails, whole test will fail 
+Validation: 			if something fails, it does not stop the test
+
+In TestNG/Junit, in any test, if any assertion fails, the rest of the method will be skipped
+
+
+SoftAssert is a class that comes from testng, it allows doing soft assertions, meaning if something fails, it will not stop the execution
+
+HOW TO USE:
+we create a variable of type SoftAssert.  SoftAssert has assertions methods.
+we call as many assertion method from SoftAssert as we want
+
+at then  the end of the testm, we call softAssert.assertAll();  which reports all the failures. 
+
+Test Base Class is a class which contains common methods for all tests 
+
+-> The purpose of this class is to take care of some repeated methods or codes that we write every day and it will save some time like the following codes that we use on daily basis: 
+
+Example: 
+public abstract class TestBase { //You can not make an object of this class, it only can be extended
+
+    WebDriver driver;
+    @BeforeClass
+    public void setUpClass(){
+        WebDriverManager.chromedriver().setup();
+    }
+
+    @BeforeMethod
+    public void setUpMethod(){
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    @AfterMethod
+    public void tearDownMethod(){
+        driver.quit(); 
+    }
+  }
+
+softAssert.assertAll(); //this one will go back and check which assertion failed in the text class
+
+Example: 
+
+ @Test
+    public void test(){
+        driver.get("https://www.etsy.com/");
+        driver.findElement(By.id("search-query")).sendKeys("gift"+ Keys.ENTER);
+
+        softAssert.assertTrue(driver.getTitle().contains("gift"));//this is also fails, but it is soft and it let the code to run and you can see both fails at the console 
+
+        Assert.assertTrue(driver.getTitle().contains("AAA"));//this is hard assertion and it will stop the code
+
+        softAssert.assertAll();
+
+    }
+
+   Note: With   Assert.assertTrue(driver.getTitle().contains("AAA")) in order to make sure which one failed, you can put a message like this: softAssert.assertTrue(driver.getTitle().contains("gift"), "Title did not match"); 
+
+   -> softAssert.assertAll(); //this one will go back and check which assertion failed in the text class
+   
+   -> without assertAll() -> you will not see the report of the problems, so all soft tests will pass
+
+   ACTIONS: 
+   -> 	Actions lets us do advanced interactions with browser. like; 
+
+   		- double click: 
+
+   		- right click: 
+
+   		- drag & drop: 
+
+   		- Hover: It is moving the mouse  
+
+   	-> The options like obove can be handled with programs like; java, python and we can also do some work with selenium. 
+
+   	-> usually the driver.get(string url); is inside the @BeforeMethod, but since we change the urls, better to put it inside the test. 
+
+   	  Actions actions = new Actions(driver);  
+
+   	  -> In order to use the Action class we need to create an object of Actions and pass the driver as the parameter of the object. 
+   	  	-> It indentify the webElement and then double click 
+
+   	  ->  actions.doubleClick(text).perform(); //so you say action dot double click and pass the parameter your webElement and then dot perform 
+
+   	  -> perform: is an action that need to be added at the end of every action. 
+
+
+   	  Scrolling: We can scroll in 3 ways as following: 
+
+   	  	1. actions.moveTo(WebElement); 
+   	  	2. actions.sendKeys(Keys.PAGE_DOWN) or actions.sendKeys(Keys.PAGE_UP); 
+   	  	3. The 3rd one comes from java script that Mrufjon will cover it in the future.  
+
+   	  ->  //We are just verifying the color of the text, we pass the attribute style which is created after the clicking 
+        Assert.assertTrue(text.getAttribute("style").contains("red"));  
+
+      -> We are just scrolling down the page, it does not require to locate the WebElement, you can scrool up or down by using the following codes: 
+        actions.sendKeys(Keys.PAGE_DOWN);
+        
+        actions.sendKeys(Keys.ARROW_DOWN); 
+        
+        actions.sendKeys(Keys.ARROW_UP); 
+
+     -> Drag & Drop: You locate the first object which is source, then drag it and then you drop it in the target which second object that has been already located like following: 
+
+     Example: 
+
+    @Test
+    public void drogDrop(){
+
+        driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+
+        WebElement source; --> the first one called source that we want to move
+        WebElement target; --> the target is where we want to drop the element \
+
+        WebElement source = driver.findElement(By.id("draggable"));
+
+        WebElement target = driver.findElement(By.id("droptarget"));
+
+        //pass the variable in the correct order, first one is the source and the second one is target
+        actions.dragAndDrop(source, target).perform();
+     }
+
+ 
+ => Selenium can not upload or download, selenium can go to a website and can clikc on the download file. it only goes finds the file and click on it. So we have to use different tools to download and upload files. We can use java to verify if a file exist in certain location. 
+
+ Locating the current folder: 
+ 	Exmaple: 
+			  @Test
+			    public void test(){
+
+			 -> this code help us to get the location of the current folder and the follwoig message is printed in the console:  																		          : /Users/macbook/IdeaProjects/mavenprojectZ
+
+			        String currentFolder = System.getProperty("user.dir");
+			        System.out.println(currentFolder);
+
+			 -> this code help us to get the location of the userfolder and the follwoig message is printed in the console:  
+			 																			                         :	/Users/macbook
+			        String userFolder = System.getProperty("user.home");
+			        System.out.println(userFolder);
+
+			         String path = userFolder + "/Downloads/test.txt";
+       				 System.out.println(path); 
+       				 					: /Users/macbook/Downloads/test.txt
+
+			        							
+			    }
+			}
+
+
+ 	-> FILE DOWNLOAD: 
+
+ 		- 
+
+
+ 	-> FILE UPLOAD: 
+
+
+Date: 	January 9, 2019 
+
+AssertTrue --> expected the conditon to return true 
+
+AssertFalse --> expected the conditon to return true 
+
+For each positive TestNG, there is also negative test and it avoid you to write more codes. 
+
+Elements can have different states: 
+
+1)- They exsist on HTML and also visible on the page, if it is visible, then 
+																		   -> driver.findElement --> will return the element 
+																	       -> element.isDisplayed --> return true; 
+											element.isDisplayed ---->  Does not care if the element is displayed or not 
+
+2) -  They exsist on HTML and but not visible on the page 
+
+	   					-> driver.findElement --> will return the element 
+						-> element.isDisplayed --> return true; 
+						-> element.isDisplayed ---->  return false
+						
+
+3) -  Does not exist in HTML and ofcourse does not vissible in page  
+
+	   					-> driver.findElement --> will NoSuchElementException 
+
+=> StaleElemetnReferenceException -> 
+
+Selenium does not verifty anything 
+Selenium does not verify if the element exists, We have to write our own method for it. 
+
+-> element.isDisplayed() --> is only checks element is visible on the page. it does check if the element is in the HTML. 
+
+isDisplayed is different from exists. 
+
+When we say By as a parameter, then we are talking about By class. By is used for the locators, we write a method, it will tell us 
+if anything with the locator exists or not. 
+
+ public boolean elementExists(By by){
+
+
+        return false; 
+    }
+
+->selenium is just automate, it does not test or verify the code. It can't assert or verify. 
+	-> If selenium cannot find an elmeent it returns an exception NoSuchAnElementFound
+
+Excepotion Handling from Selenium Prospective: 
+
+	try{
+		  //do something 
+		} catch(Throwable e){
+
+		} 
+
+		eating/swallowing exception --> when we catch exception and we don't do anything about it. It is a bad habit. 
+		-> try always to do something about it. 
+			-> At least print out 
+				-> e.pirntStachtrace(); 
+				System.println("something went wrong")
+
+	COMMON EXCEPTION IN SELENIUM: 
+
+		-> NoSuchElementException --> locator we passed to the findElement method did not match anything in HTML. 
+
+		-> findElement VS findElementS 
+			- findElement method: if matches : it will return a webelment 
+								  if does not match : NoSuchElementException 
+
+			- findElementS: if matches : list of elements with one or more element in it if does not match: returns an empty list 
+							it never returns exception and will return empty list of webElementS. 
+
+		-> 
+
+Date: 	January 12, 2019 
+
+-> Create a new class in utitlities package by the name of Driver, 
+
+Design: 
+
+-> Singleton design pattern: we will share same object across all classes of the application or project. We need to use Driver object, because even we have more codes and 1 reference object will be used for all. We don't need to extend the Test Base always, it is not a good thing to do. 
+
+public class Driver {
+    
+    public WebDriver getDriver(){
+        if (driver == null){
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(); 
+        }
+        return driver; 
+    }
+}
+
+-> If anyone asks for the webdriver, the method above will create a new object each time and it done only once. 
+
+
+We have a class with a static variable, and a getter method. 
+
+how the getter works: 
+	1. It checks of driver object has value 
+	2. If driver is not intitialized, it will be intialized inside the driver object block, 
+	3. It will return the driver object 
+	4. If the driver is initialized already, then the code will escape the if block and return the driver object. (return driver). 
+
+	-------
+
+Go to the TestBase in utility class and change: 
+
+instead of Driver = new ChromeDriver(); 
+we just put driver = Driver.getDriver(); 
+
+To our Driver class we add a private constructor can make an object of this class. Whoever needs to use the driver object has to call the getDriver() method, they can't reach it out. 
+
+If we quit the webdriver without making the object null and try to use it again, we get webdriver exception. 
+
+
+Page Object Model: 
+
+-> One of the disadvantage of the Selenium, it doesn't know how to locate elements until you find it through the xpath, cssSelector or other attribute values. 
+
+-> Selenium is not good for locating Ojbects compared other tools and also creating object repositories. 
+   We need to manually write locators. When we use same object multiple times. If we ever want to change that xpath or other locators, we have to find every instance where that xpath/other locators was used and change it. 
+
+ -> The solution is Page Object Model, to address these issues we called a design Page Object Model. In page object model, we create a copy object of each page separately and use that object when we need elements from that page. 
+
+
+ Note: You just copy the page and then it will give you all the elements of the page by passing a single locator or piece of information. 
+
+
+ Create a class HomePage in pages package: 
+
+ All page object classes must have the following construcotr: 
+
+public HomePage(){
+        //Page will come with some functions and one of them is called initElements that takes a WebDriver and regular object
+        PageFactory.initElements(Driver.getDriver(),this );
+    }
+
+
+    @FindBy(id="ctl00_MainContent_username")
+    public WebElement usernmae;
+
+    @FindBy. --> annotation from Selenium, we provide the type and the value of the locator to it. 
+
+HomePage doesn't know how to find which homepage, but, it will just use the first writen code that we found and put it in the homepage, then we just call the hompage and it will find it for us in order to avoid going back and looking for the same location of the webElement. 
+
+pom-> Page Object Model: this could be an abbreviation, but better that you use another abbreviation. 
+	-> so we call Page Object Model 
+
+From now on the locator is only written once, the xpath or locator will be in Page Object Model and it will make our maintainance a lot easier. 
+
+============
+The packages should look like this: 
+
+pages packages: pages obejct classes 
+tests package: only the tests 
+utilities: utility class 
+============ 
+
+
+-> Each package has classes wit single purposes 
+
+	Benenifits: 
+		- pae o bject classes are easily reusable 
+		- easy tomaintain (locators are saved only in once place)
+		- easy to understand 
+
+
+Page Object Model Class: We can put the behaviour of the page as well. 
+
+   --> writing a method to login the page 
+    public void login(String username, String password){
+        this.usernmae.sendKeys(username);
+        this.password.sendKeys(password);
+        loginButton.click();  
+    }
+=============================================================================================================================
+
+Date: 	January 15, 2019 
+
+Page Object Model (POM): This is design pattern we try to mirror the AUT in our java code. Page object model enables creating 
+						 a object repository. We create classes for each page of the application. in that class we put the elements 
+						 and the behaviour of that page. 
+
+@FindBy --> used to indicate the locator type and value for that element 
+
+
+Driver: 
+
+We can use a Driver utility to create a quit webDriver objct. 
+
+1. We intialized the homepage variable in the lcass level using the driver. 
+2. run test one 
+3. we close the driver 
+4. we are opening a new browser. 
+5. run test two. 
+
+Properties files: 
+Create a new file in the project top file. 
+- properties is an extention just like .java, .docz, .txt 
+- properties is used for properties files. in properties file we have rows with key and values. 
+
+-> We are trying to read from configuration file, we need to have location of the file and reader of the file. 
+
+
+
+Running tests in different browsers: 
+
+Selenium: It is the specific tool to do UI(User Interface) testing.  
+
+When we use configuration, we need to use 2 things: 
+	1): key ---> browser 
+	2): value ---> chrome 
+			-> It can be anything, it can be 2 different Strings 
+
+	You can put space, it will be trimed by default, but recommended not to put space 
+	--> browser = firefox  
+	if you get a null, it is the problem to the left side, it is case sensitive and you need to pass the right format. 
+
+	NullPointerException --> means, I have an object and it doesn't point to anywhere 
+
+What goes to the configuration File? 
+	-> urls, login information to application, Database connection information, api urls, implicit wait, environment information  
+
+	-> you can comment out the code in configuration File by using # key 
+
+========
+
+public static WebDriver getDriver(){
+        if (driver==null){
+           String browser = ConfigurationReader.getProperty("browser");
+           switch (browser){
+               case "chrome":
+                   ChromeOptions options = new ChromeOptions();
+                   options.addArguments("start-maximized");
+                   options.addArguments("--disable-popup-blocking");
+                   options.addArguments("--allow-runnig-insecure-content");
+                   options.addArguments("--disable-infobars");
+                   WebDriverManager.chromedriver().setup();
+                   driver = new ChromeDriver(options);
+                   break;
+               case "firefox":
+                   WebDriverManager.firefoxdriver().setup();
+                   driver = new FirefoxDriver();
+                   break;
+               case "ie":
+                   DesiredCapabilities capabilities = new DesiredCapabilities().internetExplorer();
+                   capabilities.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL, "about:blank");
+                   capabilities.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, false);
+                   capabilities.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, false);
+                   capabilities.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
+                   WebDriverManager.iedriver().setup();
+                   driver = new InternetExplorerDriver(capabilities);
+                   break;
+
+           }
+        }
+        return driver;
+    }
+
+============================
+
+
+Date: 	22, January 2019 
+
+Selenium: 	Synchronization : waits and stuff 
+
+TestNG framework: how to run groups of tests, generate reports, multi browser testing 
+
+Next classes will use the prestashop homework project. 
+
+Why synchronization? 
+- NoSuchElementException 
+
+- Code runs faster than browser can handle 
+
+- Element appears on the HTML after certain time 
+
+- Element is 
+
+
+Selenium Synchronization: It is important to know when should we give more time for the browser and when should we not. 
+
+What can I do? 
+
+	- Thread.sleep (don't use this): 
+
+	- Implicit wait:  
+
+	- Excplicit Wait 
+
+
+-> Create a new class: SynchronizationExamples
+	
+	This class will NOT extend the test base 
+
+Implicit wait: It is a way of waiting while trying to find elements. We set implicit wait time once and we don't have to worry about it on and on. It will fit where you need it, so it will remember and fit to the code where the code needs to be waited. We do not need to call multiple times and it work. 
+
+Implicit wait only applies to findElement method. 
+
+When we call the findElement method, it either finds it or does not find it, if findElement cannot find element based on the locator provided, it throws NoSuchElementException. 
+
+If we have implicit wait set and if findElement cannot find element, implicit wait, then during that period of time it will try many times to find the Element, as soon as it finds it, no matter if it is less than 10 seconds, we will get the element, if not then it will throws NoSuchElementException. Implicit wait doesn't need a big number of wait, whenever it finds it, it will do it's job. It is better to give it a little bit more time. 
+
+Immplicite wait: During Implicit wait if the Web Driver cannot find it immediately because of the 
+
+Explicit Wait: is used to wait for certain condtion such as element to be clickable, available, disappear, have certain text etc. 
+
+Explicit wait is always called explicitly (just like Thread.sleep) when we need to wait. 
+
+In order to use explicit wait, we need WebDriverWiat object which takes driver and wait duration as construction. 
+
+WebDriverWait wait doe the waiting, but contdition for waiting comes from a different class called ExpectedConditions.  
+------------------------------------------------------------------------------------------------------------
+
+
+MarufJon's Note: 
+
+
+synchronization : waits and stuff, last class in selenium api
+
+
+TestNG framework: how to run groups of tests, generate reports, multi browser testing
+
+Next classes will use the prestashop homework project. 
+
+Create a new class in the tests package: SleepAndImplicitWaitExample
+
+this class will NOT extend the test base
+
+Thread.sleep()  --> java method to pause the execution of a program. it can be called any line and it will pause the execution at that point
+
+only waits when we call it, waits for full duration, not flexible
+
+Implicit wait:
+
+Selenium has 2 types of waits: implicit and explicit
+
+implicit wait: it is a way of waiting while trying to find elements. 
+we set implicit wait once, and it always applies, we do not need to call it multiple times
+
+
+implicit wait only applies to findElement method. 
+
+when we call the findElement method, if findElement cannot find element based on the locator provided, it throws NoSuchElementException. 
+
+if we have implicit wait set and if findElement cannot find element, it will keep trying to find the element. if findELement mehtod locates the element before time runs out, it will return the element. if not, it throws NoSuchElementException.
+Implicit wait does not wait for duration given. it it finds the element early, it will stop waiting and simply return the element
+
+Immplicit wait applies for that webdriver object, we use create/use a different webdriver object, we need to set the implicit wait separately
+
+
+___
+
+Implicit Wait:
+•During Implicit wait if the Web Driver cannot find it immediately because of its availability, it will keep polling the DOM to get the element.
+•If the element is not available within the specified Time an NoSuchElementException will be raised.
+•The default setting is zero.
+•Once we set a time, the Web Driver waits for the period of the WebDriver object instance.
+
+implicit wait only applies to findElement method, not the findElements
+
+EXPLICIT WAIT
+
+Create a new class in the tests package: ExplicitWaitExample
+it does not extend anything
+
+Explicit wait is used to wait for certain condition: such as element to be clickable, available, disappear, have certain text etc
+
+Explicit wait is always called explicitly (just like thread.sleep) when we need to wait
+
+In order to use explicit wait, we need WebDriverWait object which takes driver and wait duration as constructor
+
+WebDriverWait wait.until() does the waiting, but the condition for waiting comes from a different class called ExpedtedConditions. 
+
+ExpedtedConditions has all conditions waht explicit wait can wait for. 
+
+
+seems like thread.sleep, explicit wait and implicit-wait are for different purposes, why they always ask which one you prefer on interview?
+
+I use them based on what problem I am solving, is I have to wait for findelement, then I use implicit wait.
+when I need to wait for certain conditions, thats when I use the explicit wait. 
+Explicit Wait:
+•There can be instance when a particular element takes more than a minute to load.
+•In that case you definitely not like to set a huge time to Implicit wait, as if you do this your browser will going to wait for the same time for every element.
+•To avoid that situation you can simply put a separate time on the required element only.
+•By following this your browser implicit wait time would be short for every element and it would be large for specific element.
+
+locate any element whose text we already know 
+
+//* --> it means any element 
+
+//*[.='Loading...'] ---> any element with this text 
+
+-> Selenium devs seem to work really hard, there are tones of methods under tinies things. 
+
+//TODO message is usually written whenever you advice to do certain things with the specific way 
+
+=> In any project, certain information is saved in a seperate, more accessible place (properties file), in properties file, value 
+
+In testing we may use properties file for browser type, url information
+
+		Driver class       -->       properties file 
+
+							Config Reader --> this will work like a translator 
+
+		TestBase          --->       properties file  
+
+When you create a property file, you don't have to change it, once the logic is there, then it is there. 
+===================================================================================================================
+
+Building Framework: 
+
+-> Tell me about your framework? 
+
+POM File: 	
+
+1. testNG 
+2. maven.compiler.target 1.8 
+3. selenium java 
+4. WebDriverManager 
+5. extentreports 
+
+Note: If you get any error maybe, it is different java installed, you need to set up SDK at least version 8
+
+
+The reason for creting Constant Class is that if a message is repeated several times, you can put it in Constant Class as a final variable like this: 
+
+public class ApplicationConstants {
+    public static final String LOGIN_ERROR_MESSAGE = "Invalid Login or Password.";
+    public static final String LIST_OF_ALL_ORDERS = "List of All Orders";
+    public static final String LIST_OF_ALL_PRODUCTS = "List of Products";
+    public static final String ORDER = "Order";
+    public static final String LOGIN_PAGE_TITLE = "Web Orders Login";
+    public static final String APPLICATION_TITLE = "Web Orders";
+}
+
+How the pages class work? 
+
+Before: 
+LoginPage loginPage = new LoginPage(); 
+
+
+After: 
+pages.login(); 
+
+1. we have different page object classes. 
+	LoginPage 
+	OrderPage 
+
+2. Pages uitlity/factory : it generates object from page classes and rturns them: 
+
+	Pages: 
+
+	private Loginpage; 
+
+	public login(){
+
+	return loginPage; 
+  }
+
+3. How we use it: 
+
+	From now on when we want to use any page object, we do not create objects ourselves. We use the pages class. 
+
+	-> There is a declaration of page: Page is declared in the TestBase class in class level as a protected variable. 
+			Example: 
+
+				 protected Pages pages; 
+
+		- pages variable is instantiated in the before method of TestBase.
+ 		- test which are subclasses of test base can use pages object to get other page objects. 
+
+ 			pages.
+
+=> In order to use the report, we need to use the following link: http://extentreports.com 
+
+EXTENT REPORTS: 	reporting tool that generates HTML reports with detialed steps, matrix 
+
+We have 3 classes when we talk about extendReports: 
+
+1): ExtentReports: --> we use it to set the path where report will be generated 
+
+
+2): ExtentHtmlReporter --> used to customize the html of the report 
+
+
+3): ExtentTest extentLogger: --> used to generate logs in the report. Later on when we generate report, then in each steps we will login or click on something, all these steps we can log like System.print.ln. 
+
+
+Good Report must have the following components :
+
+	1. Test Steps --> For steps we use ExtentTest to generate logs which will be our steps 
+	2. ScreenShots --> We will take a screenshot with our custom method and attach to attachReporter 
+	 
+
+XML RUNNER: 
+
+In testNG we can run multiple clasess using xml runner. To create a testNG xml runner we create a new xml file with any name and this to the first line; 
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="WebOrders" verbose="1">
+
+    <test name="WebOrders Automated Tests">
+        <packages>
+            <package name=".*"></package>
+        </packages>
+    </test>
+
+</suite>
+
+A COLLECTION OF THE TEST METHOD IS A TEST IN TESTNG. 
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="WebOrders" verbose="1"> //if you put more numbers in verbose instead of "1", you get more details in console, up to 10 you can write, but Marufjon doesn't rely on console report, he preffers the Html reports. 
+
+    <test name="WebOrders Automated Tests">
+        <packages>
+            <package name="com.weborders.tests.functional_tests.login"></package> //we say can you please run all packages in this test instead of the previous one. From now on all the test will be run in the order package
+        </packages>
+    </test>
+
+</suite>
+
+
+Steps: 
+
+- Run your test, if it fails, then go right click on report.html, then go to the Reveal in Finder and then you will find the screenshot of the file.  
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="WebOrders" verbose="2">
+
+    <test name="WebOrders Automated Tests">
+
+     <classes>
+         <class name="com.weborders.tests.functional_tests.login.ErrorMessageValidationTest"> 
+             <methods>
+                 
+                 <include name="blankUsername"/> --> this one runs including this method 
+                 <include name="blankPassword"/> --> this one runs including this method 
+                 
+             </methods>
+         </class>
+     </classes>
+
+    </test>
+
+</suite>
+
+When we use include option, only methods that 
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="WebOrders" verbose="2">
+
+    <test name="WebOrders Automated Tests">
+
+     <classes>
+         <class name="com.weborders.tests.functional_tests.login.ErrorMessageValidationTest">
+             <methods>
+
+                 <exclude name="blankPassword"/> ---> this one will run except blankPassword, becuase it was excluded 
+
+             </methods>
+         </class>
+     </classes>
+
+    </test>
+
+</suite>
+
+
+so the methods include and exclude are used when we run a test to either include or exclud some files during the runtime. Sometimes, you need to include some files in your test and sometimes you need to exclude it in your test. 
+
+
+TestNG: 
+
+- Single responsibility principle: 
+
+TestNG Intro: 
+
+-> Unit tesing: It is testing the application code, usually done by developers. 
+
+Junit and TestNG are the unit testing tools for java. There are couple of other tools, but usually developers use this. 
+
+Junit and TestNG are tools the same thing, poeple use one or another. Companies use Junit or TestNG. 
+
+Unit Testing Tools: (Selenium doens't test, we combine selenium + TestNG to do unit testing) 
+
+-> Automation Testers also use unit testing tools for testing the UI. Selenium does the browser automation part, unit testing tools are used for verification and reporting. 
+
+-> Tests are always void method, because we don't call the test from outside 
+
+
+PageObjectModel (POM): 
+
+Methods that work with the page as a whole: 
+
+http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx 
+
+It is very popular design in Selenium Automation. For Each page in Web application, we create dedicated Java class. 
+
+	Fields/Variables/Data 
+	Methods/Behaviour 
+
+In POM design: 
+	We store WebElemetns on that page as Fields/Variables. We write methods in Page classes for the actions that you do on that page. 
+
+Benefits of POM design: 
+
+	-> reusable code 
+	-> centralized maintenance of all element location 
+	-> easy to read the code/readable 
+
+
+	PageFactory.initElements(driver, this); It is a special class in Selenium that is written to support page object model design. 
+
+	The above line, initiazlizes(locates/infds) all elements using the driver provided. 
+
+
+Whe you have a test case to automate: 
+
+1) Manulally execuate it and make usre it is working/passing. Unsderstand the test case. 
+
+2) Automation: 
+
+		- create page object classes, if not already exists. For each page that is part of the test case. 
+		- add all elements that are affected by the test as variables for the page object class 
+		- specify locators using @FindBy annotation. 
+		-create a TestNG test and use page objects and elemetns according to test case. 
+
+Step 1: Navigate to the loginpage 
+	 2: Assert that you are on the login page 
+	 3: login using valid credentials 
+	 4: Verify that Lis of All orders appear 
+	 5: Order 
+
+
+In Selenium test automation we use: 
+
+	POM -> page object model design pattern 
+	Singletons -> Driver class 
+	Factory -> for utilities 
+
+properites file: 
+
+	.properties exension -> Hashmap -> K,V
+
+Purpose: 
+	Configuration data that will be used throughout the porject. In development, it is very popular and each application contains one or more .properties files. 
+
+	Example: 
+		url: 
+		testenv.url = www.test.app.com 
+		uatenv.url = www.uat.app.com 
+
+		browser=chrome 
+		credentials 
+		databaseCredientials 
+		apitoken
+
+	=============================
+
+	Bascically we can store test data/confgiuration data for the porject intor properties file. 
+
+
+
+Thread.sleep() 
+	this is not a selenium sleep, it is from java itself, used to pause the execuation of a program.  
+
+Implicite wait: --> driver.manage.timeout.implicitlyWait(5, TimeUnit.SECONDS); 
+
+	- It only works with find element methods 
+	- One time configuration, we set once and it always apply 
+	- only works with finElemnt method, if the findElement cannot locate element, it will keep trying until it finds the element or time runs out. If findElement cannot find the element after time expires, it will throw NoSuchElementException 
+
+	- If findElement method finds the element after 1 second, it will not wait for the remaining time. 
+
+
+Explicite wait: 
+
+	- waiting for certain condition to happen. It does not apply globally like implicit. It needs to be called explicitly when we want to do the operation. 
+
+	- Explicit wait needs to be told what to wait for. wait conditons come from the ExpectedConditions class. 
+
+fluent wait: 
+
+	- It is just like explicity, but we can make the wait more customized. we can specify how often it should poll, what exceptions should be iqnored. 
+
+
+Monday project: 
+
+- framework should be desgined 
+- 3 test cases should be automated 
+- smoke test should be run 
+- presentation should be prepared 
+- link should be uploaded for the review 
+- git --> branches are better to be used / --> make a branch instead of master to be better accomplished 
+- if you work with the branches, then it should work fine, try automate one by one. 
+
+
+TestNG: 
+
+-> It is runnign a collection of other tests, you can run by package, class or method names, everything you open as for as the tags, it needs to be closed. 
+
+suit-> bigger 
+		-> test 
+			-> class 
+				-> method 
+
+Verbose -> it gives you more details about the test 
+
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > 
+	<suite name = "WebOrders Automation" verbose = "2" >
+		<classses>
+			<class name= "nameOFClass.nameOfTest"></class> 
+			<exclude name = "TestName" /> 
+
+		</classses>
+	</suite>
+
+If you say include, then only the one which are included will run. It is up to you how you design it. 
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > 
+	<suite name = "WebOrders Automation" verbose = "2" >
+		<classses>
+			<class name= "nameOFClass.nameOfTest"> 
+				<method>
+					<include name = "TestName" /> 
+				</method>
+			</class>
+		</classses>
+
+</suite>
+
+Running 2 packages: 
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > 
+	<suite name = "WebOrders Automation" verbose = "2" >
+		 <test name = "Login tests">
+		  
+		  <packages>
+		  		<package name = "nameOfTheFirstPackage"></package>
+		  		<package name = "nameOfTheSecondPackage"></package>
+		  </packages>
+		 </test>
+</suite>
+
+Running everything and nothing will be ignored, if there is not an ignore annotation on the top of a test. It is also known as batch-9, if you hear batch-9 run, it means that you run the one with .* 
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > 
+	<suite name = "WebOrders Automation" verbose = "2" >
+		 <test name = "Login tests">
+		  
+		  <packages>
+		  		<package name = ".*"></package>
+		  	 
+		  </packages>
+		 </test>
+</suite>
+
+
+suite: has multiple attributes, verbose is a tag which provide information about the test to the console, if you increase the numbers, then you get more details printed in console. 
+
+Smoke Test: It can be anything, the first 2 tests of your package 
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > 
+	<suite name = "WebOrders Automation" verbose = "2" >
+		 <test name = "Login tests">
+		  
+		  <packages>
+		  		<package name = "Log In Test"></package>
+		  	 
+		  </packages>
+		 </test>
+
+		 								--> Here just making another folder and both tests will be run 
+		 <test name = "Login tests">
+		  
+		  <packages>
+		  		<package name = "Smoke Test Order"></package>
+		  	 
+		  </packages>
+		 </test>
+
+</suite>
+
+To run the test using cmd we enter command : mvn test 
+
+Sequence of calls when we run testNG test using commond line: 
+	
+	1. mvn test --> this commond run the pom xml 
+
+	2. in the pom xml we have a plugin called maven-surefire-plugin which is pointing to testNam.testng.xml. and testng.runner.xml will trigger testng.runner.xml
+
+	3. testNam.testng.xml will run all the tests inside the test tag 
+
+
+
+<suiteXmlFile>${runner}</suiteXmlFile> 
+${runner}. --> a variable with name 
+runner needs to be passed from the commandLine (terminal)
+
+mvn test -Drunner=smoke_test_runner.xml
+
+When we run test, everything inside the target folder is changed, we need to iqnore some of the folders like 	
+	/target/
+	/test-output/
+	/.classpath 
+
+if you don't know how to ignore these important files including the DS-Store, .idea and etc. 
+
+When running testNG from the commondline, we can call the specific name of the file will call: 
+
+
+	mvn test -Drunner=smoke_test_runner.xml
+
+It will work for mac / unix terminal or windows command line (not powershell)
+
+Powershell: 
+		mvn test -Drunner="smoke_test_runner.xml"
+
+
+Extent - Report API
+
+=> extentreports.com/ 
+
+=> You add the repository from maven to your pom: 
+		<!-- pom.xml -->
+<dependency>
+    <groupId>com.relevantcodes</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>2.41.2</version>
+</dependency>
+                
+We add 3 different classes in TestBase: 
+
+   	protected ExtentReports reports;
+    protected ExtentHtmlReporter htmlReporter;
+    protected ExtentTest extentLogger;
+
+
+===========================================================================================================================
+
+Date: 	January 29, 2019 
+
+Bringing the changes to the page: 
+
+git fetch origin 
+git reset --hard origin/master 
+
+get all the changes from remote, ignore the local changes 
+----------------
+
+How to create Testing Runner? 
+
+
+-> It is very important to use:  <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >  and this explain it that it is an xml file and now it becomes a testNG runner. 
+
+suites --> suite ---> test ---> groups ---> packages ----> class --> method --> test 
+
+-> In our company Regression means all tests and you can use .* which means all tests 
+
+-> You can create Regression or Smoke Test and every company has thier own requirments for each tests. 
+
+Why command line: 
+
+	-> All smoke tests are automated. The are schedulated and triggered by a different software/CI tools like; Jenkins, Bamboo, Travis ...etc 
+
+	-> CI (Continuous Integration) tools run the tests using maven. We can use maven commands to run our tests and generate reports. 
+
+	-> plugins: the one we are looking for is: maven-surefire-plugin and it is used during the test lifecycle of maven, can be used to indicate which file we run, if there are reports, it will also generate reports. 
+
+Exmaple: 
+
+	<build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId> 
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.21.0</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng_runner.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
+
+-> So, the file doesn't know what to run, if you say run smoke test, then it will run smoke test, if you say run Regression test, then it will run Regression test. 
+
+-> The part which is important is: <suiteXmlFile>testng_runner.xml</suiteXmlFile> 
+	-> now it just runs testng_runner.xml 
+	-> if you say regression, then you just modify the name of testng_runner.xml to your new testName like Regression or etc. Even you can use 2 or multiple different tests in the same time. 
+
+These are the teps to follow: 
+
+1. We tell maven to run tests by typing --->  mvn test  
+
+2. maven asks pom file tests to run 
+
+3. pom file tells : <suiteXmlFile>testng_runner.xml</suiteXmlFile>  
+								=> you can change the name to tests you have that is saved as .xml 
+
+4. testng_runner.xml will be executed. 
+
+In maven when we run mvn test, if any of the tests fail, maven build also fails.  
+
+-> There is no a central maven to include all dependencies, you have to look through the internet and find the right one. 
+
+-> Terminal of intellij opens by default the target folder, it makes the work easier, if you run it from the commonline (terminal), you just navigate to the target folder where your project is, then you type mvn test + Enter 
+
+-> Appache: It is a famous librarry, we use some of their product including maven appache. 
+
+-> <suiteXmlFile>runner.xml</suiteXmlFile> 
+			-> this one will tell us whatever tests end with runner.xml will run 
+
+
+Talk about framework: 
+
+	-> Data Driven Framework: A framework where tests are executed based on set of data, framework is designed to read data  from outside sources like excel and run tests based on read data. In data driven framework we can execute the same test multiple times against different sets of data. 
+
+
+	-> Page Object Modle Framework: uses the page object design pattern according to which we create separate java class for each page of the application. 
+		- In Java based driven keywords, you have more options, you can use from OOP rules to make your work easier like inheritance, encapsulation and etc. 
+
+
+	-> Behaviour Drivern Framework: We will talk about it later,  
+
+
+	-> Keyword Driven Framework: We use keywords written outside source (excel. csv) to run out tests. Framework is designed to read the data and steps from excel and execute actions based on it. Once Keyword Driven Framework is set up even non-technical testers can write and execute or automate tests, then there is no need for the rest the testers to be very technical.   
+
+		- You don't have a test package in Keyword Driven Framework, you just have a banch of keywords that are used in one or a few classes and their jobs are to read files from excel or csv, their tasks and to go find the certain locators and values to execute actions including some tests. 
+	Exmaple
+
+	 	Rest Login In Application: 
+	 					Keyword 		Object 			ObjectType		Value 
+	 					GOTOURL 		username 		name 			url 
+	 					SETTEXT 		password 		name 			Demo 
+	 					SETTEXT 		resetButton 	name 			testPassword 
+
+	 	If you delete one line from the excel, then that certain line will not be executed.  
+
+
+	-> Hybrid Framework: It is a framework uses at least two of the types given above (it can be mixed of any 2 pages, it could be any of above frameworks and doesn't need to be specific). 
+
+
+Talking about the tools we use in our framework: 
+
+	Tools: 
+		- Java: My framework is written using Java language 
+
+		- Maven: My framework created as a maven project, maven is used to manage dependencies and also we can use maven to run our tests as mvn goals from the commandline (terminal/powershell). 
+
+		- Selenium WebDriver: A library/tool/api which is used to automate the browser, it interacts with the browser. 
+
+		- TestNG / Junit -> TestNG is used to group tests using xml files, do soft and hard assertions, create test methods, run in certain order. (You can only mention one of these 2 from TestNG or JUnit, because both of them do same job). 
+
+		- Extent: My framework generates detailed HTML reports which is easy to read and understand to non-technical team members. My reports have details test steps and screenshots for any failurs that may occur. It can also do matrix on what percentage is passing, failing, skipped scenarios. 
+
+	IDE: I used IntelliJ in my current framework, but I am also quite comfortable with Exclips which I used in my previous projects.   
+
+	Design: 
+		-> Page Object Model: My framework used page object model according to which I created in a seperate classes for the pages of my application. 
+
+	PafeFactory: It is a design which makes it easy to access the page object class. 
+			-> This is not Page Factory Design, it is a class which has the same name as the Pagefactory design. 
+
+	Singleton Driven: My frameworks uses a singleton pattern to share the WebDriver instance between different classes. 
+
+	TestBase: My framework has a TestBase abstract class which my tests extenss the TestBase class has the common steps for all my tests. 
+
+	Configuration File: It is used to store the important test data 
+
+	Utilities: It has reusability utilities which can be used across different cleasses of my framework. 
+
+	Benefits: 
+		-> Easy to maintain: My framework uses page object model which makes it easy to maintain. For example, if I have to update any locator, I ony need to do one code change and the rest will not be affected. I try to make my tests independent from each other. 
+			- If we have test1, test2, test3, and try to make some changes in test1, it should not effect test2 and test3. If I update one test, it will not affect others and also if one fails, others will not be affected.  
+
+		-> Easy to extend: It is easy to add new test cases to my framework. 
+
+		-> Easy to reuse: I have page obejct model, utilities which I can reuse for any tests. 
+
+		-> Multiple browser testing: As a UI (User Interface) tester I should be able to handle multiple browsers, my framework can run the same tests against different browsers with minimal code change. 
+
+		Types of Tests: My framework can test the UI, database and API of the application. 
+
+		-> Packaging: I have create different packages for different types of classes and logic. Each page package only contains classes with same functionality.   
+
+		-> Naming conventions: In my team we pay a lot of attention to coding standards, especially naming conventions. 
+				Example: 
+					-> You name classes and tests by conventional ways, a test should be started or ended by the test. Classes, methods, variables are named based on what they do and follow a standard. 
+
+						Page Object Class: 
+							homepage, loginpage 
+
+						variable: loginButton, signOutLink 
+
+						methods: login(): this methods only used to login, not for other functionality. 
+
+=================================================================================================================================
+
+Date: 	January 30, 2019
+
+Agenda: 	
+
+	-> TESTING GROUPS 
+	-> MULTIBROWSER TESTING 
+
+	Type the following command: 
+		git fetch origin
+		git reset --hard origin/master
+
+-------
+
+in pom file we can not use 
+
+Create a new runner: 
+
+	1. right click on your projct and create a file name 
+
+	once the file is created, go and copy the first line of the 
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Web Order Regression Tests">
+
+    <groups>
+
+        <run>
+            <include name="regression"/> --> you have to name the groups we want to run and their location 
+        </run>
+
+        	WE ALSO NEED TO SHOW THE CLASSES WHERE WE HAVE THESE GROUPS 
+    </groups>
+
+</suite>
+
+
+-> When we use groups otpions, @before and @after methods do not run, we need to configure so that they run with the groups 
+
+-> Go to Test and add (alwaysRun = true) to beforeMethod, afterMethod, beforeTest, afterTest
+
+-> A test can be a meber of one group or multiple groups for running tests like this: 
+		  @Test (groups = {"regression", "smoke"}) 
+
+-> You can have situations that ask you 
+
+
+MULTIBROWSER TESTING: 
+
+-> In TestNG we can pass parameters from xml file to the tests. 
+
+	<parameter name="browser" value="chrome"></parameter>
+
+Usually, we will be able to read the paramter, we need to use parameter option to be able to read the file from TestBase, whereever you put the @Pramters("browser"), then that will pick up the browser, everything should match by the name of parameter. 
+
+You have the name of paramters or browser in 3 places: 
+	1. public void setUp(@Optional String browser)
+	2. at <parameter name="browser" value="chrome"></parameter>
+	3. at @Parameters("browser")
+
+    // @prameters  --> means that this method will expect an argument
+	// from the xml file
+	// name of the parameter in the xlm file is browser
+	// @optional --> we use this if we dont want to
+	// provide paramters in xml all the time
+
+====
+
+In this project value of browser is in 2 places: 
+	1. xml file 
+	2. configuration file 
+
+In this project, we first try to use the value from the xml to create a WebDriver object (meaning opening the browser), if there is no value is passed from the xml file, then we use the properties file. All of this logic about deciding which one to use is in the Driver class. 
+
+What is the purpose of running the test in different browser? 
+
+	-> All applications are designed to be lunched or run in different browsers, as an Automation Test Engineers we should be able to run the tests using different browsers. 
+
+<suite name="WebOrders Automation Regression Tests" verbose="2"
+parallel="tests">
+
+	<test name="Chrome tests">
+		<parameter name="browser" value="chrome"></parameter>
+		<packages>
+			<package name=".*"></package>
+		</packages>
+	</test>
+	
+	<test name="Firefox tests">
+		<parameter name="browser" value="firefox"></parameter>
+		<packages>
+			<package name=".*"></package>
+		</packages>
+	</test>
+
+</suite>
+
+<suiteXmlFile>${runner}</suiteXmlFile> --> value of the suiteXmlFile must be passed as a parameter from command line 
+
+${runner} --> per syntax of pom file, ${} indicates a parametr 
+ 
+mvn test -Drunner=NameOFParameter
+
+mvn test -Drunner=multi_browser_testing.xml
+
+=> using terminal this is how we can control which testNG runner we want to -Drunner=Drunner=multi_browser_testing.xml or another testNG
+
+=> We do this a lot in work environment, we need to run certain tetNGs specifically and the above way is the right way to handle that. 
+
+================================================================================================================================
+
+Restaurant Application 
+	- shuld list all of the menue
+	- all menue items should have prices 
+	- fries costs 1 
+	- coke costs 2 
+	- pizza costs 3 
+
+	- Cuctomer shuld be able to create an order 
+	- 
+
+----------
+
+ 
+
+Given cusomters order pizza and fries, 
+then calculate the total, 
+then the system should generate the total 
+
+Three Amigos: 
+
+	PO: Product Owner  
+	Dev 
+	QA
+
+BDD. -> Behavior Driver Framework 
+
+Cucumber: 
+
+- First you write the tests, then you start the implementation of the code 
+
+- BDD.: you write the test first and in TDD. you also write the test first and then the implementation of code is done by Dev. 
+
+- In Agile Methodology, you have to test early and get the result early 
+
+	Given cusomters order pizza and fries, 
+	then calculate the total, 
+	then the system should generate the total 
+
+- The functionality part is taken part in the last
+
+-> Developers do TDD in code dev process with their Unit Tests 
+-> Testers do BDD. in their Test Environment 
+
+- Cucumber dependencies: 	https://cucumber.io/
+
+1. Cucumber Java
+2. Cucumber JUnit
+3. Cucumber core
+
+From now on we will use JUnit in our Framework and it works very similar to TestNG 
+
+
+CUCUMBER INTRO CHICAGO: 
+
+TestNG XML Runner files 
+
+- It helps us to group certain automated scenarios 
+- It helps us to manage the test suites. 
+- Helps us to run the test from command line by using maven. 
+- helps us to integrate with third party tool such as Jenkins. 
+
+JUnit --> Testing framework that allows us to do unit testing. Simpler version of TestNG. 
+
+BDD: 
+- Behavior Driven Development 
+- Product or funtionality is developed based on the behavior. 
+
+TDD: 
+- Test Driven Development 
+
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+//this is the class where it connects everything
+
+@RunWith(Cucumber.class)
+@CucumberOptions( //the configuration and implementation goes here
+
+        features = "src/test/resource/features", //this is the address of features which is from src, test, resource, features
+        glue = "steps" // glue is like sticking it to the features
+)
+public class Runner {
+
+}
+
+features --> this property points to feature files 
+glue --> points to step definitions/implementations 
+tags --> configures which scenarios to run using tag name 
+dryRun --> only runs dry. Without execution, it should be initiazlied as false when there is test that you want to run, otherwise it wouldn't work. 
+
+Runner Class: It is controlling everything, flow, scenarios, tags and everything. It is the trigger point of the Cucumber class. 
+================================================================================================================================
+
+Date: 	February 02, 2019 
+
+One of the issues in IT communicatino between customers, non technical team members and technical team members.
+
+
+To overcome the comunication issues, we now use a process called Behaviour driven development. 
+
+
+all parties coming together and describing a functinoaliry that customer wants to built. 
+they write stories, features together. Whever feature discussed in the meeting will be both requirement and test case. and it is coming directly from the customer to technical people with not middle men involved. 
+
+	STORY:
+	As a teacher, 
+	when I login to canvas next day after class,
+	then yesterdays video should be uploaded.
+
+	Customer, Dev and Testers meeting is called "Three Amigos Meeting", They discuss what do the customer want and prepare a plan.  
+
+
+In BDD we need a tool that has 3 parties can use to cummunicate. There are many tools in different languages which hleps them to colloborate. 
+
+
+Scenarios have steps, steps have keywords like: 
+	-> Given 
+	-> When 
+	-> Then 
+
+Cucumber BDD frameworks still use the Juint/Testng, Selenium etc to test. 
+
+-> In this project we will use cucumber with Junit cucumber needs JUnit to run the tests, assertions will be used. 
+
+-> To run feature files we need so called runner that run the feature files, 
+
+Cucumber Hooks; 
+
+	Cucumber hooks --> method that runs before or after every scenario. 
+					- Hooks will run once for each scenaro 
+					- after hook runs no matter if the test fails or pass 
+	@Before -> runs befroe every scenario 
+
+	@After -> runs after each scenario, no matter if the test passes or fails. 
+
+	-> hooks will not run during the dryRun
+
+	-> plugin: 
+		- html: target/default-cucumber-reports: it is for creating cucumber html default report 
+		- pretty 
+
+	-> html: create report with html extension 
+
+	-> json: it is like html which has tag and value, 
+			target -? location where the json file will be created 
+			cucmber.json 
+
+	How to generate Cucumber Sandwich HTML report? 
+
+	-> This report is created by plugin called: 'maven-cucumber-reporting'
+
+	-> This plugin is added to the pom file. IT will generate report if we run the porject as a "mvn verify" command. 
+
+	  1. We enter terminal command and it will run the pom file "mvn verify"
+
+	  2. pom file will run the cukes runner: 
+	  		<include>**/*CuckesRunner.java</include>
+
+	  3. CukeRunner.java will run 
+	  	  a. it will run all the tags 
+	  	  b. after run it will generate a json file because of this line: "json:target/cucumber.json"
+
+	  4. HTML report plugin will read the json file and will generate HTML reports based on thejson file. 
+
+	  5. In our CURRENT FRAMEWORK, the html reports are udner /target/cucumber-reports/cucumber-html-reports
+
+	  ----------
+
+	  in cucumber we can pass tag command line 
+
+	  	mvn verify -Dcucumber.options="--tags @smoke"
+
+	  	- if we run pass a tag from command line, it will override the one in the cukesrunner. 
+======================================================================================
+
+Date: 	February 05, 2019 
+
+1. Make sure that the tag @wip is only in the first scenario pf the login feature. remove other occrences of this tag. 
+
+2. In the HomePage 
+
+Cucumber Hooks: 
+	In Cucumber, we can have certain login/methods execute before and after every cucumber scenario. These kinds of methods are generally known as hooks, buy convention class where we have hook methods also called hooks. 
+
+	Hooks class must be located in the same package as the step_definitions. 
+
+	However this lcass should not contain step definitions. 
+
+	We have 2 types of Hooks in Cucumber: 
+
+		1. Before 
+			- before hooks execute before every scenario. 
+
+		2. After  
+			- after hooks execute before every scenario. 
+
+	
+
+Date: 	February 09, 2019 
+
+Cucumber Table: 
+
+shortcut formula: 
+
+# shortcut to format file in intellij
+# CMD+OPTION+L  mac
+# CMTR+ALT+L    win
+
+Marof's Note: 
+
+create a new feature file
+	1. right click on the features folder
+	2. new --> file
+	3. name: mapdetails.feature
+	4. ok
+
+
+create a new java class
+	1. right click on the step defintions folder
+	2. new --> java class
+	3. name: MapDetailsStepDefinitions
+	4. ok
+
+a>span.room-name  --> all span elements that have class room-name and are direct child of a
+	__
+
+
+    Then the user should be able to see following conference rooms:
+      | harvard   |
+      | yale      |
+      | princeton |
+      | standford |
+      | duke      |
+      | berkeley  |
+      | ping pong |
+
+we can pass collection types like lists and maps from cucumber to java. in the example above, the information in the column can be passed as a string list to java.
+when we generate a step def for a cucumber step with a datatable, it will have parameter datatable and comment on what if can be chagned to:
+
+
+  @Then("the user should be able to see following conference rooms:")
+    public void the_user_should_be_able_to_see_following_conference_rooms(io.cucumber.datatable.DataTable dataTable) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+        // Double, Byte, Short, Long, BigInteger or BigDecimal.
+        //
+        // For other transformations you can register a DataTableType.
+        throw new cucumber.api.PendingException();
+    }
+
+
+
+EVERY ONE UPDATE CODE NOW!!!
+
+
+git fetch origin
+git reset --hard origin/master
+
+windows users try to add into your Hooks class  to Before method setUp         Driver.getDriver().manage().window().maximize();
+
+BREAK 2.10 pm est
+
+code is pushed
+___
+
+create a new feature file
+	1. right click on the features folder
+	2. new --> file
+	3. name: mydetails.feature
+	4. ok
+
+create a new java class
+	1. right click on the step defintions folder
+	2. new --> java class
+	3. name: TeamDetailsStepDefinitions
+	4. ok
+
+__\
+
+
+In cucumber we can also pass values as maps
+    Then the user should see their information:
+      | name   | Ruthann Johnes      |
+      | role   | student-team-leader |
+      | team   | CodeHunters         |
+
+here first column will be keys and second column will be value. when we generate step dfitions, we can change the type of the arguaent to Mapk
+
+
+@Then("the user should see their information:")
+    public void the_user_should_see_their_information(Map<String, String> userInfo) {
+        System.out.println(userInfo);
+    }
+
+
+
+    Then user should be able to see quotes info for each room
+      | ping pong | the more the better |
+      | harvard   | the more the better |
+      | yale      | the more the better |
+      | stanford  | the more the better |
+      | princeton | less is more        |
+      | duke      | less is more        |
+      | berkeley  | less is more        |
+
+
+___
+there are different report options avaiable in cucumber
+cucumber has deafult HTML report. to get the default report we add this to the runner file
+
+plugin = {
+             "html:target/default-cucumber-reports"
+        },
+
+"html:target/default-cucumber-reports"
+
+html --> what kind of report we want
+target/default-cucumber-reports --> where do we want the report
+___
+
+There is another HTML reporter for cucumber developed by a 3rd party. plugin is called maven-cucumber-reporting
+
+HOW TO USE THE MAVEN-CUCUMBER-REPORTING TOOL  
+
+1. we add json reporter to the cukes runner file
+
+	"json:target/cucumber.json" -->
+	json: type of the report we want
+	target/cucumber.json  --> path to the json file
+
+2. we add maven-cucumber-reporting plugin to the pom file and configure
+
+
+Copy the configuration and paste into the pom file, after all the dependencies
+
+3. run the test as a maven command mvn verify.
+this plugin runs all the tests first in the test lifecycle of maven, then based on the json report, it will generate HTML report
+
+	mvn verify
+
+	___
+
+
+How to specify a cucumber tag from command line: 
+
+mvn test --> only runs test but does nto generate the HTML plugin report
+
+
+mvn verify --> runs the tesst and geenrates report
+
+
+mvn verify -Dcucumber.options="--tags @smoke"
+
+When we pass a tag from the command line it overrides the tags in the cukes runner, tag from the command line will run
+
+-----
+
+
+in our project, the report is located here:
+
+my project --> target  --> cucumber-html-reports
+======================================================================================
+
+
+Date: 	February 10, 2019 
+
+reports review
+
+Cucumber data driven testing
+
+______
+
+Cucumber has its own HTML reporting option
+
+ "html:target/default-cucumber-reports",   --> add this in runner file to get html report
+
+
+we can also generate another type of an HTML report for cucumber tests using a plugin: maven-cucumber-reporting
+
+https://github.com/damianszczepanik/maven-cucumber-reporting.
+
+HOW THAT PLUGIN WORKS
+
+in maven there is lifecycle test, when we give command mvn test, maven runs all the tests in the project.
+but maven-cucumber-reporting generates reports in the verify lifecycle which comes after mvn test. in maven if any lifecycle fails, rest will not execute. that means if we have any failiure in the tests, that fails the mvn test lifecycle, and becuase of that mvn verify will not run. 
+
+maven-cucumber-reporting is used with maven-surefire-plugin. 
+in the maven-surefire-plugin we have option testFailureIgnore which is equal to true. when true it will not fail the stop the build even if the tests fail so that we can continue the the verify lifecycle which geenrates the report
+
+in the mavensurefile plugin we add
+                    <includes>
+                        <include>**/*CukesRunner.java</include>
+                    </includes>
+it tells maven which runner to run
+
+__
+
+
+HOW TO GENERATE REPORT?
+1. we need to add json report report option in to the cukes runner. 
+	 "json:target/cucumber.json" --> this line generates a json format report of the tests
+
+2. add the maven-cucumber-reporting plugin to the pom file
+3. run the project from the command line as a maven command
+	mvn verify
+
+by default the report location is:
+	target/cucumber-html-reports
+___
+
+when we run cucumber tests from maven, it runs the tags we have in the runner file. but we can ovveride tags from the command line
+	
+	mvn verify -Dcucumber.options="--tags @login"
+
+Cucumber Data Driven Testing? 
+
+- It is data testing 
+
+Note: 
+=> If you don't have tag optoins (@something), then cucumber will run everything except the files that are escaped. 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Reading Excel File With Cucumber>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Date: 	February 16, 2019 
+
+
+Excel + Cucumber testing
+
+do some excel exercises
+
+cucumber + excel
+
+update the cucumber project.
+In java in order to connect to excel we need apache poi libraries. 
+let's add those libraries to the pom file. 
+
+Sheet ,Workbook ---> these classes come fomr the apache poi, so we need the dependencies first
+
+	poi   		--> for files with xls extension
+	poi-ooxml   --> for files with xlsx extension
+
+In our project, we have an excel utility to work with excel files. 
+
+my utitity can read from and write to excel files. this utility also returns excel data in different formats. for example it can return the data as a list or it can also return as a 2 dimensional array
+
+_____
+
+
+Create a java class in the utilities package. name: ExcelExcercise
+	
+__
+
+
+HOW TO USE OUR EXCEL UTILITY?
+
+Create an object by passing the path file and the sheet name. 
+utility object will have the data from that sheet and methods that work with that data.  
+When create a utility object it only works with one sheet.
+
+
+What it DDT --> running same test against multiple sets of data. in ddt, same test runs many times with different input. data can come from outside sources like excel. xml. json, db etc
+
+but in cucumber in order to run the same test multiple times, we only use outline. 
+
+in cucumber can still use excel, but it does not mean our tests runs multiple times. it depends our logic. 
+
+------------
+
+Date: February 17, 2019 
+
+write feature files which are more complext in implementation
+
+cucumber parallel
+
+log4j logging
+
+fluent wait
+
+javasctipt and selenium
+
+documentation for maven and plugins
+
+how to describe your framework
+
+organization of step defs files
+
+organization of feature files
+__
+
+Create new feature file: user_roles.feature
+
+Create new Java class: UserUtility (utilities package)
+
+Create new Java class: ApplicationConstants (utilities package)
+
+Create new Java class: MySchedulePage (pages package)
+
+//th[contains(.,'7:00am')]/../td[1]
+
+    //th[contains(.,'7:00am')] --> th element that contais text '7:00am'
+    /..  --> parent
+    /td[1]. --> first td child
+
+
+BREAK 15 mins --> 3.08
+
+
+Create new Java class: HuntPage (pages package)
+
+Create new Java class: DateUtility (utility package)
+
+
+________
+
+Some test require a lot of test preparation. 
+    Given the user logs in as a light-side <user>
+    And there are available spots for scheduling
+
+in this test we had to set up test data in form of users and also find available times. 
+    test preraration can be very complex.
+when we estimate story/task, we also look at the test data preparation.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Parallel Cucumber>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Date: February 19, 2019 
+
+open testng-selenium-project on Intellij and update to latest code from github
+___
+
+Javascript and Selenium
+
+cucumber parallel testing
+
+
+___
+
+
+Create a new Java class in the testng-selenium-project, excel_automation package
+class name: JSExecutorDemo
+
+
+___
+
+Webpage:
+	text, photoes : content. --> content of a webpage comes form HTML
+	styling, colors, all the beauty of the page comes from CSS
+	actions like drag and drop, pop up alerts etc --> comes form Javascript
+
+JavaScript is a language of the web, meaning we can run JS code in browsers
+
+Sometimes selenium cannot do certain actions on  browser, wehn that happens, we can use selenium to execute JS commands on a web page. 
+
+
+To execute JS commands on selenium we use class JavaScriptExecutor which comes from Selenium WebDriver. 
+
+
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("alert('You are doing sth dangerous');");
+
+
+JavascriptExecutor jse = (JavascriptExecutor)driver;  --> creating JavascriptExecutor object which is used to pass js commands to browser
+
+jse.executeScript(); --> this method executes the given command ob browser. command is given as a string parameter
+____
+we are done with the testng project
+
+open bookit-acceptance-tests on Intellij and update to latest code from github
+
+___
+
+change branch using IntelliJ
+	right click on project
+	Git --> Repository... --> Branches...
+	Select branch: origin/parallel
+	Check out as
+	OK
+
+____
+Using command line:
+	git checkout -b parallel	
+
+RUNNING CUCUMBER TESTS IN PARALLEL
+	
+there are couple options on how to make Cucumber + JUnit framework run in parallel
+1. there is a plugin cucumber-jvm-parallel-plugin
+	https://github.com/temyers/cucumber-jvm-parallel-plugin
+
+this plugin automatically generates multiple cukes runner files. based on the configuration, this plugin creates one cukes runner per feature file. each runner will point to one feature file. and these cukes runners will run in parallel. 
+normally cucumner runs feature files one after another. when we use this plugin, it runs starts them at the same time. we can specify how many tests running at the same time
+
+
+2. Cucumber 4.x parallel option
+
+Starting from cucumber 4.0, cucumber supports parallellization natively. 
+
+https://cucumber.io/blog/2018/09/24/announcing-cucumber-jvm-4-0-0
+
+by official documentation, in order to run tests in parallel, we have to add parallel optoin to the maven surefire plugin in pom file
+
+	<build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <parallel>both</parallel>
+                <threadCount>4</threadCount>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+__
+
+
+but in my specific project, we added maven failsafe plugin to make sure that tests continue to execute even though some fail
+this plugins makes sure taht tests keep running
+
+<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.18</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <skipTests>false</skipTests>
+                    <includes>
+                        <include>**/runners/*TestRunner.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+
+second plugin is maven-surefire-plugin 
+
+this plugin executes tests in parallel. in this plugin configuration, we indicate which runner files we want to run. we can also indicate how may simultanous tests we want to run. 
+
+	 <include>**/runners/*TestRunner*.java</include>. --> plugin will run these files
+
+ <threadCount>10</threadCount>. --> this shows mow many browsers we want to have in at the same time. 
+
+ <parallel>classes</parallel>. --> this line tells that cukes runner classes must run in parallel
+
+__
+
+we created cukes runner files based on how many tests we want to run and how we want to break down tests. each cukes runner will point to certain set up scenarios/feature files
+
+how to run?
+	we can execute tests in parallel in our framework only by running tests as a maven command
+
+	mvn verify --> this will run the tests and generate reports
+
+	mvn clean verify --> it will first delete the target folder, then runs tests, then generate reports
+
+
+__
+
+Benefits of parallelization: cuts down on the execution time. UI tests usually take a long time, especially in regression testing. 
+
+Challenges of parallezlization? 
+	hard to implement --> not easy to do. 
+	load --> if we open too many instances in the same machine, it can overload the machine. it will result in tests running slow, and it increases the fail rate. 
+	this can addressed by running tests in different machines using GRID. 
+	certain tests cases did not work in parallel in my project. 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Cucumber Framework>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Date: 	February 20, 2019 
+
+
+	Tell me about your framework? 	
+In my recent Book-IT automation framework, we used Cucumber BDD framework for automated tests. this framework is a very flexible framework. It is a hybrid framework which integrates many differnt automation testing concepts. 
+
+The framework is built using MAVEN. maven is used to build the framework, manage the dependencies and plugins, run the tests as a maven life cycle. 
+
+It is written using Java language. 
+
+It is a Cucumber BDD framework. Cucumber is a tool used to make automated testing understandtable to the non technical team members. Cucumber serves as a bridge in connecting the automation engineers and the non technical team members. we use cucumber version 4
+
+We use junit as a testing tools. junit is used to kick off cucumber tests and also do assertions.
+
+We use Selenium WebDriver for automating the browsers. with selenium we can run tests in different browsers. 
+
+Our framework generates step by step HTML reports with screenshots using the maven-cucumber-report plugin. 
+
+Our framework supports data driven testing. Cucumber natively supports data driven testing using scenarion outlines. The framework can also do Data driven tests from excel using the apache POI libraries. 
+
+My framework is based on page object model. page object model is when we represent pages from the application in page object classes. 
+
+we use factory model to create a webdriver. our webdriver class can generate a webdriver based on what kind of driver we want. it uses the singleton pattern for the webdriver object
+
+we use properties file to store the important information about our framework such as url, browser type, login info etc
+
+We use intellij in our company, but i am also quite good at eclipse. 
+
+what layer of application does it test?	
+Using our framework we test the UI, database and the API of the application. 
+
+UI  --> for testing the UI we use selenium webdriver
+Database --> for testing the database we use JDBC libraries
+API  --> for testing the API we use REST Assured libraries
+
+types of tests:
+we do functional, acceptance tests, smoke tests, regression tests, integration tests. 
+
+We use git for version control tool in my project.
+
+We use jenkns for scheduling and running our automated smoke and regression tests, and emailing the test results. Using jenkins, we can run tests and update the JIRA with the test resutls using the xray plugin. 
+
+We use Log4J for logging in our framework. 
+
+organization of code and tests
+
+we use packges for organizing our java code, we have packages for page objects, utilities, setep_defintions, pojos, runners
+we use different utilities, we have utilities for WebDriver, browser utilities, excel utility, configuration utility, Database utility, api related utilites, date utility (since we test calendar related application, we do alot date related stuff). 
+
+features:
+	we have many feature files and we use folders and tags to organize them. we have folders of each major component of the applicaion : reservations, map, account information....
+	we use the issue number from jira as one of the tags in the feature file so that we can map it to jira.
+
+	features
+		account
+		reservation
+		map
+
+
+		@login @BRIT_3521 @smoke
+		Feature: login feature
+		Scenaio: login as admin
+		Given sth sth
+		Then sth the	 
+
+Paralleliztion --> we run our tests in parallel using the maven-surefire-plugin. we use cuucmber 4 which supports parallel testing natively.
+
+Test data --> use feature files, excel files to store our test data in the test/resources package
+
+Flow of the execution or how we run tests
+1. running from cukes runner
+	we put tag in the cukes runner and right click and run the file. cukes runner runs all the matching tags.
+2. run from terminal as a maven command
+	we enter command mvn verify	or mvn test to kick of the tests. and maven will run the cukes runner files shown in the pom file. cukes runner file runs the features mathicng the tags it has
+
+GIT branching
+
+	how do you do git branching now?
+
+CURRENtLY HOW IT IS DONE IN GROUP PROJECTS:
+	theres is master branch and separate braches for each team member. when some one finishes work they push to their own branch, then after review it is merged to master. 
+
+HOW WE DID IT?
+	in my project we had master, develop and branch for person. so if we have 2 automation testes we will have
+		master
+		develop
+		tester1
+		tester2
+	each tester check in to their own branches. then after review it is merged to develop branch. we merge master and develop only once a sprint. 
+____
+
+in the interview when they ask about branching, talk about your automation project branching strategy.
+in you project, your code is separate repo from the application code repo. automation framework have a smaller code base and fewer people involved. so we can have less complicated branching policy
+____
+
+MY CHALLENGES:
+	1. inherited a difficult framework --> the framework was written by a tester who used to be manual tester. the framework was poorly desinged. did not used page object model, was not properly packaged, did not use single naming convention, same logic was repeated in different places, it was hard to change something without affecting other tests, reusing code was also hard. 
+
+	the option was to create a new framework or refactor the same one. when the issue was brought up to the team, pointed out the flows of the framework and made suggestions on how it can be improved. based on the my suggestions team decided to keep the old by but re write based on poage object model, create many utilities to make code easy to reuse. 
+
+
+	2. i had a couple form in my project which had fields with validations. every time when i entered a ext to a field and moved to next field, application validates the prevous field. but my app worked in a way that, when it validate something, it relloaded the whole form.
+	I had to use combination of implicit wait, explicit wait, waiting for backgroung JS process to end, clicking using JS, clicking outside the field and thread sleep.
+
+	3. coordinating functionalities which conflicted with other tests when running in parallel --> i had configuration related tests, and they affected the other tests. because when i run the confiutation tests, it changes the view of the application accross the board. 
+	1. I talked to the team and removed less priority configuration tests from the regreession suite. 
+	2. i organized the tests in a way the configuration tests was running after everything
+
+	4. IE issues: xpath works really slow in ie, for certain elements it takes time to execute sendkeys command --> use css where possible, use javascript to sendkeys to certain elements. 
+
+	5. setting up test data --> i add write long and complex login to set up my test data. for example i have to test reservation in may app. to prepare for this test, i had to find available  dates and resources to reserve programmatically. add it made my tests long, as we know UI tests are quite prone fail. and this increased the change of false positives. 
+	then i modifed by tests so that test data preparation is done using database and api in addition to UI. 
+
+	I used the same approach to clean up after my tests. in my regression, i end up making too many reservatons which makes it hard other tests to run. after certain tests, i use api or db to delete the revervation i created for that test. 
+
+	6. test coverage, rtm, and updating jira. for this we had to buy a new plugin -Xray for our jira. using xray we can update jira with the test result every time when we run smoke test from jenkins. 
+
+
+	7. file upload did not work with seleniu,, had tro use AUtoIT to upload using the upload button. using autoit, managed to click on the native os window
+
+
+
+Maruf's Office Hours: 
+
+ask me anything (except sql)
+
+sql --> the language that database understands
+
+database --> collections of data made tables which are made rows and cols
+
+
+THESE ARE TYPES OF DATABASES. ALL USE SQL LANGUAGE TO INTERACT WITH THEM. THEY ALL HAVE SOME DIFFERENCES IN THEIR SYNTAX AND CERTAIN COMMANDS
+mysql --> 
+oracle --> 
+mongodb --> 
+postresqs (aka postges)-->
+
+
+APPLICATION USED TO INTERACT WITH THE DATABASE:
+sql developer --> 
+pgadmin
+dbvisualizer
+ms sql server --> 
+
+
+using the applications above we can connect to different types of databases. for example sql developer can connect to mysql, oracle ,mongodb  etc
+
+pgadmin and dbvisualizer can also connect to mysql, oracle ,mongodb  etc .
+some of these applications do not support connection to other dbs directly, for example sql developer and oracle db are from the same vendor and integrates easily. however if want to connect to postrges db using dql developer, we need to download driver so that it can support connect to that database type. 
+
+___
+AWS ---> amazon web services. cloud solution form amazon that offers different types of services. for example aws has virtual machine solutions, different databases etc...
+
+
+EC2 --> virtual machine hosted in aws. in ec2 we can host almost anything. for example we can host application servers, if we want to use as a server, we need to install servers. we can host databases. if we want to use as db, we need to isntall and congiugre the db
+
+r2d2 --> character from movie, not related to any other things here. 
+
+rds --> aws solution for databases. rds is a vm/ec2 which only hosts database. it does not have anything else in it. when it is created, we tell what kind of db it will have. once created it gives us connection information to the database and we start using it. we do not install any db ourselves.
+
+
+______
+
+connection link to db:
+room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com
+
+uri/address of the database, this is where the dtabase is. ip address like this means, db is in a different machine. 
+
+localhost: means in this computer. so you want to connect to anything inside your own computer, i use localhost. 
+
+local or other ip addresses are addresses of the machines. we also need a port number to connect. 
+LETS SAY we have a db and a some other applicaation hosted in our computer. 
+
+and this is the ip address of my computer: 12.21.100.67
+using this ip address we can only find the  machine, but not the actual db or toehr program in it. to access spmething specific, we need port number. 
+database has port number: 1521. that means to connect to this specifc database in this computer FROM OUTSIDE i need to have both information: ip + port number
+
+if I want to connect FROM INSIDE the machine, meaning i am alreay in that computer where that datanase is and I want to connect to it, I will not use thge ip address. I will use localhost. localhost automatically means this computer. i just add the port number to it. 
+
+
+
+Page Object Model (Singleton Pattern - Driver Util): It is a way of designing the classes to create just one instance. We used this design for our Driver utility. Becuase for Driver we only need just one instance. 
+
+
+maven surefire plugin --> this plugin controls the flow of our tests in the project. If we don't have the this plugin, then "mvn test" command will run all @Test annontation by default. 
+
+${runner} --> how we declare a variable in xml files 
+
+mvn test -Drunner="file name" --> this will run the specific package 
+
+mvn test 
+mvn verify 
+mvn clean verify 
+
+
+suit 
+	test 
+		package 
+			classes
+					method 
+
+					method 
+			classes
+		package 
+	test 
+suit 
+
+
+mvn test -Drunner="recap.Soft"; 
+
+
+XML Runner: 
+
+- In testNG we can run multiple classes using xml runner. To create a testng 
+
+
+Appium: 
+Wrapper on Selenium 
+
+Mobile Apps: Native, Web, Hybrid 
+
+Appium : Open Source 
+
+Selenium will be interacting with Appium and Appium will be interacting wiht UIAutomator & AppleAutomator that are provided. 
+
+Serialization vs deserialization: 
+
+	file 		JAVA 						file 
+				compiled byte code 
+
+	ABC 	---> 01010101101 ---> 			ABC 
+
+	SERIALIZATION TAKING SOMETHIGN OUTSIDE JAVA AND CHANGING TO A FORMAT WHERE JAVA UNDERSTANDS IT. 
+
+	For Example: A json file and converting it into java object is example of serialization. 
+
+	deserialization taking a java object and converting to json or different forms. 
+
+Tehre are some terms in Java like; POJO, model beans --> Java object with properties, getters and setters 
+
+	- POJO: 
+
+	public class Student{
+
+		String firstName; 
+		String lastName; 
+		int age; 
+
+		setFirstName(); 
+		getFirstName(); --> just provide getters and setters 
+
+	}
+
+
+Create a new 	class in the tests name Pojo
+ 
+ serialization vs deserialization
+
+file       JAVA						file
+			compiled byte code
+
+ABC  --- > 01101010   ---> 			ABC
+
+
+deserialization taking something outside java and changing to somethin java understands
+
+for example taking a json file and converting it into java object is example of deserialization
+
+
+serialization taking a java object and converting to json or differnet form
+
+___
+
+POJO, model, beans  --> java object with properties, getters and setters
+
+POJO --> plain old java objects
+
+	public class Student
+		String firstName;
+		String lastName;
+		int age;
+
+
+		setFirsName()
+		getFirstName()
+		....
+
+
+
+___
+
+
+
+Create a new CLASS IN THE tests package
+	name: PojoExamples
+
+
+For serialization we can you couple libraries: Gson and Jackson-databind
+
+___
+
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.9.8</version>
+</dependency>
+
+_____
+
+
+
+Create class 
+	name ResponseToJsonExample
+
+
+
+
+___
+
+We will create instructor using the post method. 
+instead of passing the new instructor info in query params, we send in as a json payload.
+
+payload --> json, xml that we send in the body of the request.   we also have the payload in responses
+
+____
+
+        Instructor instructor = new Instructor();
+
+   Response postResponse = given().
+                contentType(ContentType.JSON).
+                body(instructor).
+
+
+we can create pojo object and send it as a payload in the of the post request without expolicitly serializaing it. when that happends, rest assured will convert it automatically to type given in contentType. 
+it will use either gson ot jackson-databing based on what we have in the path (as a dependency)
+
+Open the bookit-acceptance-tests
+Get the latest code from GitHub
+
+cucumber + selenium
+cucumber + jdbc
+cucumber + rest assured
+
+cucumber only does the scenairos parts, we write our scenarios in feature files, put some test data in features, use tags to choose tests to run. 
+
+
+the actual testing the UI or db is done in the java side. scenario comes from cucumber, it directs the java code to do the steps required to fullfill the test steps. it can done using selenium or jdbc or rest. 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Selenium Grid >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+Date: 	03/24/2019 
+
+Selenium Grid: 
+
+- It is used for remote machines, in total we have 10 servers (virtual machines), it does not mean that we use all of them for the Selenium Grid, we only use 2 or 3 of them. Because, we use them for the different applications, we use different virtual machines for the different applications. For one application only we use up to 3 virtual machines for 1 application. 
+
+- We have dedicated servers, it is like a specific computer, it is used for different purposes, for virtual machines for the application, we use from clouds like AWS EC2 machines. Big computers, they have installed some platforms, they provide some virtual servers with dedicated services. We do the same steps and same process as Automation for our projects. 
+
+- Regression Test: It runs in 3 virtual machines, we have 35 browsers in total, Regression takes about 3 hours, every machine has 10 browsers, it takes about 3 hours and all of them are run in parallel. 
+
+- 1 Virtual Machine = 1 Node ,
+
+- Feature file, can have 1 to 10 different scenarios, they are written based on the user stories and acceptance criteria. About 1200 test cases are run for our regression test. It is specifically for cucumber tests. 
+
+-  Selenium Grid: It is a testing tool which allows us to test different machines against different browsers. It is a part of Selenium Suit. Why we need Selenium Grid? It is running your tests in different computers without opening browsers, you trigger it through Jenkins. We can specify our parameters through JSON files.  
+
+	- The Hub: inside Hub we can have mutliple Nodes, inside our Nodes we can run our tests. 
+
+		- Selenium Node: They are the Selenium instances that will execute the tests that you loaded on the hub. There can be one or more nods in a grid. Nodes can be launched on multiple machines with different platforms and browsers. Nodes can be located on different machines. Nodes can be paramterized with json file. 
+
+
+How Seleinum Grid works with a Hub and Nodes: 
+
+	- A grid consist of a single hub, and one or more nodes. Both are started using the selenium-server.jar executable. The hub receives a test to be executaed along with ifnormation on which browser and platform. 
+
+How to set up Selenium Grid: 
+
+	- Step 1: Go to https://www.seleniumhq.org/
+
+	- Download Seleinum Standalone Server 
+
+	- Step 2: run the command: java -jar selenium-server-standalone-3.141.59.jar -role hub 
+		-> Hub will automatially start-up using port 4444 by default. To change the default. 
+
+How to run Nodes from the command line: 
+
+	- We run the nodes, only we include the chromeDriver. 	--> java -Dwebdriver.chrome.driver=“chromedriver" jar selenium-server-standalone-3.141.59.jar -role node  -hub http://localhost:4444/grid/register
+
+Vasyl's Notes: 
+
+
+selenium-server-standalone-3.141.59.jar -- this is selenium grid, we use same file for hub and node. We just need to specify role when we are executing this file. 
+-role hub --> for hub
+-role nide --> for node
+we can have only one hub, but we can have multiple nodes 
+Steps to run selenium grid.
+1. Go to https://www.seleniumhq.org/download/ and download selenium server, this file has .jar extension   
+2. Go to https://chromedriver.storage.googleapis.com/index.html?path=2.46/ and download chromedriver
+3. Create folder selenium grid on your desktop and move to this folder selenium-server-standalone-3.141.59 file and chromedriver file. Make sure chrome driver file unziped.
+4. Open terminal inside this folder 
+5. Execute command to start hub: java -jar selenium-server-standalone-3.141.59.jar -role 
+So default port is 4444. If this port is busy, change port:
+java -jar selenium-server-standalone-3.141.59.jar -role -port 4445
+Do not shut down terminal, before you stoped the proccess.
+Click ctrl + c in the terminal to stop execution
+6. Run the node.
+open one more termianl and run this command. If port of your hub is dafault(4444), you can execute this command without changes.
+//NODE WITHOUT CHROME DRIVER
+java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register
+//NODE WIHTH webdriver
+java -Dwebdriver.chrome.driver="chromedriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register
+Later we will run node with chrome driver
+7. If we have done everything correctly, we should be able to see grid console. Go to localhost:4444/grid/console to view yout grid console.
+The node is registered to the hub and ready to use --> this message means that hub and node are connected.
+You may use port only once. If you have node (hub) running on the specific port, you need to choose different port
+Go to terminal where you are running th hub, and observe node's information
+Example:
+Registered a node http://192.168.1.73:35584
+35584 - port of our node
+instead 192.168.1.73, use localhost. Becasuse we are running selenium grid locally,
+clone https://github.com/vasyafomiuk/bookit-cucumber-junit.git
+
+node {
+   stage('Cloning project from GIT') { // for display purposes
+      // Get some code from a GitHub repository
+     git 'https://github.com/vasyafomiuk/bookit-cucumber-junit.git'
+   }
+   
+   stage('Run automation'){
+       bat label: 'smoke', script: 'mvn clean verify -DBROWSER=remotefirefox -P SmokeTest'
+   }
+   
+   stage('Generate report'){
+        cucumber fileIncludePattern: '**/*.json', sortingMethod: 'ALPHABETICAL'
+   }
+    
+    stage('Copy report'){
+        bat label: '', script: 'xcopy /E /I "%programfiles(x86)%\\Jenkins\\jobs\\pipeline-grid\\builds\\%BUILD_NUMBER%\\cucumber-html-reports" "C:\\reports\\pipeline-reports\\smoketest\\%BUILD_NUMBER%"'
+    }
+   stage('Email report'){
+        def readContent = readFile 'C:\\Program Files (x86)\\Jenkins\\workspace\\pipeline-grid\\target\\smoketest.json'
+        if(readContent.contains("FAILURE")||readContent.contains("failed")||readContent.contains("FAILED")||readContent.contains("fail")){
+                 emailext body: '''<html>
+                    <head>
+                        <title>Smoke Test Report</title>
+                    </head>
+                    <body>
+                    <h1>SMOKE TEST FALIED!</h1>
+                    <br/>
+                    <br/>
+                    <h3>Click to view cucumber reports for each browser:</h3>
+                    <br/>
+                    http://ec2-54-172-104-193.compute-1.amazonaws.com/reports/pipeline-reports/smoketest/${BUILD_NUMBER}/overview-features.html
+                    <br/>
+                    </body>
+                    </html>''', subject: 'SMOKE TEST FALIED!', to: 'youremail'
+          } else {
+                 emailext body: '''<html>
+                 <head>
+                    <title>Smoke Test report</title>
+                 </head>
+                 <body>
+                <h1>SMOKE TEST PASSED!</h1>
+                <br/>
+                http://ec2-54-172-104-193.compute-1.amazonaws.com/reports/pipeline-reports/smoketest/${BUILD_NUMBER}/overview-features.html
+                <br/>
+                 </body>
+                 </html>''', subject: 'SMOKE TEST PASSED!', to: 'youremail'
+        
+        }    
+            
+    }
+}
+ 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BootsCampSelenium>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ Environments: 
+
+ Local -> Development -> Testing -> Staging -> Deployment 
+
+ Local Environment: 
+ 	- Developers get a story, they write or develop features, when they have a Bug, then they need to fix it. 
+
+ 	- When they write a code, they need to change the application, first they make changes in their own laptop. 
+
+ 	- Developers, don't test, but they always test something like a unit test to make sure it is working. 
+
+ 	- They make changes at the code and they push it. Once they are good, they push the code to the Github or whatever version control they use. Then they commit the repository management system. The code will be in the development environment. Usually, the companies have more than one developers, they put thier code in Development Environment. All developers keep adding the codes in different time. The Development Environment is not for testing, sometimes testing can happen in Development Environment for quick fix and the testers go to Development Environment to fix the small bugs. It is very unstable, they keep adding multiple times a day. Development Environment is held in a place with multiple machines and it is not stable at all. Testers can do some white-box testing and the Unit Test can happen in Development Environment too. The Unit Testing usually happens while the code is moved from local machine to the Development Environment. 
+
+ Test Environment: 
+ 	- It is the Environment that all manual and automation testing happens. We set up to be replicate the Production Environment exactly. 
+
+ 	- Changes are developed in the intervals. 
+
+ 	- Usually more stable compared to Development server. 
+
+ 	- Automated funcitonal tests run here. 
+
+ 	- Automated Smoke testes are run here. 
+
+ 	- Automated integeration test are run here 
+
+ 	- Automated regression test are run here  
+
+ 	- Usually, we don't change the codes more often, only twice a day Morufjon was changing his codes. Uusually, you talk with your team to agree about it. Companies are different, sometimes the leadershp encourage to deploy the code more often. 
+
+ 	- Test Environment is very stable, usually twice a day codes were added. 
+
+ Stating Environment: 
+
+ 	- The whole purposes is to bring the code to an environment before production. 
+
+ 	- It is also known as User's Acceptance Test, Pre-Production Environment as well. You don't update it every day, usually every sprint or every other sprint, to do a small regression, it is very stable Environment, if something goes wrong in the production, you can use the Staging Environment. 
+
+ 	- Different purposes exist for Staging Environment: 
+ 		-> You test all the works for the last few months, very big regression test. This does not interrupt the test and very stable. 
+
+ 	- Usually, the clients/customers are given access to play with the application in the Staging Area and give us some comments. Agile is all about customers and the cutomer feedback is very important. Sometimes, the customers find some Bugs that they can comment and testers can fix it before the production. 
+
+ 	- There is very specific expectation from the application from customer's side. We share the loging information with the customers/clients, they login in pre-production environenment of the Application and then they start playing to get satisfied before the release. 
+
+ 	- If you break the staging, it means that you break the production. You need to do very extensive testing before pushing the code to the Staging Environment. 
+
+ 	- Staging is when we see Beta, it means something that you give to the Users. 
+
+ Note: Every Environment has a different URL, a different Database and a different Login Information. 
+
+*** Regression Test is very important, many company leadership is waiting for the result of the Regression. 
+
+
+what is selenium? ui automatio tool
+what actions class? class for advancced intarectinos
+what waits do you know? imp, exp 
+
+STORY AAA-001 users should be able to do stuff
+TO DO 				IN PROG				DONE
+
+				development (dev)
+				auto test (auto tester)
+
+@aaa-001
+Scenario: positive one
+	Given user logins
+	When users does that action
+	Then the expected should happen 
+
+Then the expected should happen --> the sotry is usually about this. 
+
+	Given user logins			---> already completed
+	When users does that action -->  already completed
+
+
+
+TO DO 			IN PROG 		TEST       DONE
+
+								aaa-001
+				dev 				tester
+
+
+
+@aaa-001
+Scenario: positive one
+	Given user logins
+	When users does that action
+	Then the expected should happen 
+
+
+@aaa-001
+Scenario: more positive one
+	Given user logins
+	When users does that action
+	Then another expected should happen 
+
+
+____
+My smoke tests
+
+it ran against the test environment
+	2 feature, 3 scenarios each 
+
+	10  mins -- duration
+
+twice day because we deployed to test environment tive a day. 
+
++ 
+
+it runs every time when new code is pushed to test environment/when test environemnt is re deployed
+___
+
+later i created additional smoke tests on jenkins so taht they run against other environemtns as well. same command, but the url changes based on each environment
+command to run smoke tests in test env
+
+mvn test -Durl="url/to/test/env" -Dcucumber.options="--tags @smoke"
+
+
+command to run smoke tests in dev env
+
+mvn test -Durl="url/to/dev/env" -Dcucumber.options="--tags @smoke"
+
+
+command to run smoke tests in staging env
+
+mvn test -Durl="url/to/stag/env" -Dcucumber.options="--tags @smoke"
+
+____
+
+my smoke tests created all the necessary test data in the background steps
+
+___
+
+Scenario: As an attorney I should be able to create a discovery hearing
+
+Given I schedule a new hearing:
+	|type 	|discovery|
+	|judge  | Dredd, Judge|
+	|attorney| Kunkka, Admiral|
+	|date    | 12/12/2022	  |
+	|resouce |TV         	  |
+When I go to date " 12/12/2022	"
+
+
+Then i should see my hearing detials
+	|type 	|discovery|
+	|judge  | Dredd, Judge|
+	|attorney| Kunkka, Admiral|
+	|date    | 12/12/2022	  |
+	|resouce |TV         	  |
+____
+
+schedule a new hearing:
+	|type 	|discovery|
+	|judge  | Dredd, Judge|
+	|attorney| Kunkka, Admiral|
+	|date    | 12/12/2022	  |
+	|resouce |TV         	  |
+
+
+	schedule a new hearing:
+	|type 	|trial|
+	|judge  | Dredd, Judge|
+	|attorney| Kunkka, Admiral|
+	|date    | 12/12/2022	  |
+	|resouce |TV         	  |
+
+
+schedule a new hearing:
+	|type 	|forfeiture|
+	|judge  | Dredd, Judge|
+	|attorney| Kunkka, Admiral|
+	|date    | 12/12/2022	  |
+	|resouce |TV         	  |
+
+___
+
+
+regression --> 
+between 300-350 feature files
+
+around 1100 scenarios in total
+
+12 hours duration of run
+
+ built by 2 testers: 1 worked for 3 years, 2 - 1 year
+
+
+Tell me about your framework? 
+In my recent Book-IT automation framework, we used Cucumber BDD framework for automated tests. this framework is a very flexible framework. It is a hybrid framework which integrates many differnt automation testing concepts.
+
+The framework is built using MAVEN. maven is used to build the framework, manage the dependencies and plugins, run the tests as a maven life cycle.
+
+It is written using Java language.
+
+It is a Cucumber BDD framework. Cucumber is a tool used to make automated testing understandtable to the non technical team members. Cucumber serves as a bridge in connecting the automation engineers and the non technical team members. we use cucumber version 4
+
+We use junit as a testing tools. junit is used to kick off cucumber tests and also do assertions.
+
+We use Selenium WebDriver for automating the browsers. with selenium we can run tests in different browsers.
+
+Our framework generates step by step HTML reports with screenshots using the maven-cucumber-report plugin.
+
+Our framework supports data driven testing. Cucumber natively supports data driven testing using scenarion outlines. The framework can also do Data driven tests from excel using the apache POI libraries.
+
+My framework is based on page object model. page object model is when we represent pages from the application in page object classes.
+
+jdbc --> we use jdbc to test the data base. jdbc is a java library for connecting to database. there are different driuvers availabe for different datbases. in my project I worked with Postgres database, so i used the postgresql. 
+I use jdbc when have test cases related to database, I also use jdbc when I need to create data or clean after my tests. for example in my application, i have to clear my cart. after my tests i run the command to delte items for my test user and it deletes all items in the cart for that user. when i login next time, cart will be empty 
+
+Rest assured  --> i use rest assured library to test the api. using rest i create requests, pass parameters and make GET, POST, UPDATE or DELETE reuqests. 
+Then i verify the response code, response headers, response type and the body. 
+
+log4j --> We use Log4J for logging in our framework. i use the log4j library. and i have a log4j properties file. when i want to do logging, I create logger object in that class and log using method such as log.info(), log.degug() ....
+
+
+we use factory model to create a webdriver. our webdriver class can generate a webdriver based on what kind of driver we want. it uses the singleton pattern for the webdriver object
+
+we use properties file to store the important information about our framework such as url, browser type, login info etc
+
+We use intellij in our company, but i am also quite good at eclipse.
+
+what layer of application does it test? 
+Using our framework we test the UI, database and the API of the application.
+
+UI --> for testing the UI we use selenium webdriver
+Database --> for testing the database we use JDBC libraries
+API --> for testing the API we use REST Assured libraries
+
+types of tests:
+we do functional, acceptance tests, smoke tests, regression tests, integration tests.
+
+We use git for version control tool in my project.
+
+We use jenkns for scheduling and running our automated smoke and regression tests, and emailing the test results. Using jenkins, we can run tests and update the JIRA with the test resutls using the xray plugin.
+
+
+organization of code and tests
+
+we use packges for organizing our java code, we have packages for page objects, utilities, setep_defintions, pojos, runners
+we use different utilities, we have utilities for WebDriver, browser utilities, excel utility, configuration utility, Database utility, api related utilites, date utility (since we test calendar related application, we do alot date related stuff).
+
+features:
+we have many feature files and we use folders and tags to organize them. we have folders ofr each major component of the applicaion : reservations, map, account information....
+we use the issue number from jira as one of the tags in the feature file so that we can map it to jira.
+
+features
+account
+reservation
+map
+
+
+
+____
+
+
+How to create framework from scratch?
+
+I have created automation framework from scratch before. 
+I went to bla bla where they did not have automation and I was tasked with setting it up. 
+
+first this I did was met with teh team meeting to talk about the expectations, delivarables and milestones.
+
+i asked the about who pariticates in the automatino process and who participeates in creating test cases. 
+my company is agile company where all team members have their input in test cases. because of this i decided to use cucumber. 
+
+I also asked about whaat tools and langauges used in my company by developers. i choose same or similar tools for my framework. they use junit, i use junit. 
+
+then i discussed what to automate so that I can demo the initial version of the framework. our team decided taht we will only automate the login/logout and one simple functionality before the first demo. 
+
+then after talking the team and clarifying everything, i started creating my framework
+
+based on discussion, I choose to do Cucumber bdd iwth Junit, selenium for ui ...
+
+1. first created a maven project, 
+2. i added required maven dependencies
+3. created packages for pages, step defs, utils ....
+4. I write the feature for the basic log in log out scenario based on the earlier discussion
+5. i implemented the scenarios:
+	create runner class
+	create page objects
+	create step def classes
+	create hooks
+	creat utils for driver, properties ...
+6. once finished implenting the basic scenarios, then I added  maven-cucumber-reporting to generate HTML reports with test steps and screenshots
+7. i pushed the code to new git repo
+
+After setting up the basic framework and implementing the scenario, I did a demo to my team.
+I expained the tools i used. showed how cucumber feature works and ran the test. after the test i showd the html report.
+
+BootsCampDay2: 
+
+JDBC
+
+for testing databases, we use jdbc library. 
+in automation we can use jdbc for actual testing as well as setting up for tests and cleaning up after tests. 
+1. for example in scenario or tests case we have expected data. we go to DB to verify the actual
+2. in DB we have the expected data, then using selenium we go to UI and verify the actual data
+3. we make get, post, put etc using api and the response will be our expected, then we go to DB to verify the actual. 
+
+
+for testing database we need JDBC library. in project I worked on application with had postrges database, so used the driver for postgres
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.5</version>
+</dependency>
+
+I also worked on porject which has oracle database, for that I used ojbdc library
+	<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc14</artifactId>
+    <version>10.2.0.4.0</version>
+</dependency>
+
+MYSQL
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.15</version>
+</dependency>
+___
+
+
+How did you do DB testing in your framework?
+in my automation framework I had Database utility class which handled everything related to setting up connections, closing connections, getting data from database and storing the results from database into diffent collections, arrays etc so that I can easily work with it. 
+
+Always talk about these 3 classes:
+	Connection
+	Statement
+	ResultSet
+
+
+To create connection to database, I used the Connection class. I created object of the connection class by calling Driver.getConnection method. to the getCOnnection method we provide:
+	connection url: 
+	username
+	password
+
+jdbc:postgresql://room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com:5432/room_reservation_qa
+
+The connection url starts with jdbc + type of the driver I am using + server/host + port number + name of the schema
+
+"jdbc:db_type://host:port/dbname"
+
+i my project I keep the connection informaiton (url, username, password ) in the configuration file. 
+
+Statement
+ResulSet
+
+To get any result from databaes, after we create succesful connection, we create Statement object. Statement class has execute query method which takes out sql query as a string. 
+
+the output of the statement.executeQuery("select * from employees") is saved in to ResultSet object. 
+
+when we try to create connection using DriverManager.getConnection() or make a query using statement.executeQuery() is throws SQLexception which must be handled. 
+
+__
+
+BREAK 4.10 or sth like that
+
+API
+
+
+what is API? API is application programming interface. 
+it an interface between softwares. using api different programs talk to each other without a need to user/person. 
+it is intermediary between two applications. 
+
+API is also set of programming insructions and standards on how to use it. 
+
+WebDriver api --> used to automate browsers, when we use in java is it in form a jar file. 
+
+https://uinames.com/api/. --> api used to generate random names. mostly used for testing
+
+Faker --> api used to generate a variety of test data, jar file
+
+
+	api vs web service
+
+
+web service is an api that works over the web, using http (mostly). 
+
+http --> set of rules on how to do requests and responces on the net
+
+
+There 2 main types of web services:
+RESTful web services?
+can be less secure compared to SOAP
+workds with different types like xml, json, html, text etc
+more better for flexible design
+
+SOAP? 
+ more secure	
+ only works with XMl
+ more better for strict design
+
+
+	client server application
+
+
+email application on my mac is clent server application.
+
+I can access my emails using the app, but the actual emails are stored in db in the cloud or in gmail servers somewhere. 
+
+web application --> application where the client is the browser. 
+
+client --> application that is making the request
+server --> application that consumes the request and produces response. 
+
+
+request  --> set data sent to the server to communicate. it tells what the client is expecting the server to do, it will have all required information for it. 
+in REST a request is made of request url, request headers , request body
+
+response --> set of data sent by the server to the client as a a result of the request. 
+Response has status code, message, headers and body. 
+
+there are differnt types of web service requests we can make? 
+crud operations --> in means get, post, update and delete
+
+
+GET  -->  is a type of a request as a result of which there will be no change in the database. it only gets some data from database. 
+when we make a get request, our request will have url, headers and body. 
+
+our response will have url, headers and body. 
+
+POST --> is a type of a request as a result of which there will be new set os data in the database. it only gets some data from database. 
+when we make a get request, our request will have url, headers and body. 
+
+our response will have url, headers and body. 
+
+UPDATE/PUT.  --> is a type of a request as a result of which no new set of data in the database. this type of request will result in existing data to chagne. it only gets some data from database. 
+when we make a get request, our request will have url, headers and body. 
+our response will have url, headers and body. 
+
+DELETE. --> is a type of a request as a result of existing data will be delted in the database. 
+when we make a get request, our request will have url, headers and body. 
+our response will have url, headers and body. 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BootsCampAPI>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+DBC
+
+for testing databases, we use jdbc library. 
+in automation we can use jdbc for actual testing as well as setting up for tests and cleaning up after tests. 
+1. for example in scenario or tests case we have expected data. we go to DB to verify the actual
+2. in DB we have the expected data, then using selenium we go to UI and verify the actual data
+3. we make get, post, put etc using api and the response will be our expected, then we go to DB to verify the actual. 
+
+
+for testing database we need JDBC library. in project I worked on application with had postrges database, so used the driver for postgres
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.5</version>
+</dependency>
+
+I also worked on porject which has oracle database, for that I used ojbdc library
+	<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc14</artifactId>
+    <version>10.2.0.4.0</version>
+</dependency>
+
+MYSQL
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.15</version>
+</dependency>
+___
+
+
+How did you do DB testing in your framework?
+in my automation framework I had Database utility class which handled everything related to setting up connections, closing connections, getting data from database and storing the results from database into diffent collections, arrays etc so that I can easily work with it. 
+
+Always talk about these 3 classes:
+	Connection
+	Statement
+	ResultSet
+
+
+To create connection to database, I used the Connection class. I created object of the connection class by calling Driver.getConnection method. to the getCOnnection method we provide:
+	connection url: 
+	username
+	password
+
+jdbc:postgresql://room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com:5432/room_reservation_qa
+
+The connection url starts with jdbc + type of the driver I am using + server/host + port number + name of the schema
+
+"jdbc:db_type://host:port/dbname"
+
+i my project I keep the connection informaiton (url, username, password ) in the configuration file. 
+
+Statement
+ResulSet
+
+To get any result from databaes, after we create succesful connection, we create Statement object. Statement class has execute query method which takes out sql query as a string. 
+
+the output of the statement.executeQuery("select * from employees") is saved in to ResultSet object. 
+
+when we try to create connection using DriverManager.getConnection() or make a query using statement.executeQuery() is throws SQLexception which must be handled. 
+
+__
+
+BREAK 4.10 or sth like that
+
+API
+
+
+what is API? API is application programming interface. 
+it an interface between softwares. using api different programs talk to each other without a need to user/person. 
+it is intermediary between two applications. 
+
+API is also set of programming insructions and standards on how to use it. 
+
+WebDriver api --> used to automate browsers, when we use in java is it in form a jar file. 
+
+https://uinames.com/api/. --> api used to generate random names. mostly used for testing
+
+Faker --> api used to generate a variety of test data, jar file
+
+
+	api vs web service
+
+
+web service is an api that works over the web, using http (mostly). 
+
+http --> set of rules on how to do requests and responces on the net
+
+
+There 2 main types of web services:
+RESTful web services?
+can be less secure compared to SOAP
+workds with different types like xml, json, html, text etc
+more better for flexible design
+
+SOAP? 
+ more secure	
+ only works with XMl
+ more better for strict design
+
+
+	client server application
+
+
+email application on my mac is clent server application.
+
+I can access my emails using the app, but the actual emails are stored in db in the cloud or in gmail servers somewhere. 
+
+web application --> application where the client is the browser. 
+
+client --> application that is making the request
+server --> application that consumes the request and produces response. 
+
+
+request  --> set data sent to the server to communicate. it tells what the client is expecting the server to do, it will have all required information for it. 
+in REST a request is made of request url, request headers , request body
+
+response --> set of data sent by the server to the client as a a result of the request. 
+Response has status code, message, headers and body. 
+
+there are differnt types of web service requests we can make? 
+crud operations --> in means get, post, update and delete
+
+
+GET  -->  is a type of a request as a result of which there will be no change in the database. it only gets some data from database. 
+when we make a get request, our request will have url, headers and body. 
+
+our response will have url, headers and body. 
+
+POST --> is a type of a request as a result of which there will be new set os data in the database. it only gets some data from database. 
+when we make a get request, our request will have url, headers and body. 
+
+our response will have url, headers and body. 
+
+UPDATE/PUT.  --> is a type of a request as a result of which no new set of data in the database. this type of request will result in existing data to chagne. it only gets some data from database. 
+when we make a get request, our request will have url, headers and body. 
+our response will have url, headers and body. 
+
+DELETE. --> is a type of a request as a result of existing data will be delted in the database. 
+when we make a get request, our request will have url, headers and body. 
+our response will have url, headers and body. 
+
+DAY 4 CONT'D
+
+URL
+
+parameters
+
+end point  
+
+GITHUB API
+
+https://api.github.com/  base url
+
+users --> resource
+
+events --> resourse
+
+https://api.github.com/events.  --> end point to specific resource
+
+
+URL  --> https://api.github.com/events
+
+URI --> api.github.com/events
+
+
+PARAMETERS
+
+PATH parameters
+
+	int the url, the path params are indicated by /
+
+	path param is used to access  specific resourse
+
+
+https://api.github.com/users/cybertekschool/repos	
+https://api.github.com/users/mfcimen/repos
+https://api.github.com/users/mfcimen/followers
+
+
+cybertekschool --> path param
+mfcimen --> path param
+
+
+QUERY PARAMETERS
+
+	indicated by ? in the url
+	comes in key value pairs
+	used to sort or filter results
+
+
+
+
+easy way to remember query and path param --->
+everything with "/" like xpath its path param.
+everything with "=Name.id" query param. query params looks like SQL queries :slightly_smiling_face:
+
+AUTHENTICATION
+
+	when we hit any server, we may need to be authenticated. that means server checks if we have permissions to use that api/end point
+
+there are different ways of authenticating
+
+basic authentication
+	using username and password to be authenticated
+when we call the service we pass our username and password in our request. 
+
+
+RestAssured.given().
+                auth().basic("username", "password"). 
+
+
+In rest assured there are 2 types of basic authentication:
+	preemptive: sends the username and password before server asks for it
+		 RestAssured.given().
+                auth().preemptive().basic()
+	challenged: only sends the username and password after server asks	
+
+when we are not authorised we get 401 error code. FORBIDDEN
+
+
+API KEY
+
+	another form of authentication. api key must be provided as a parameter to get authorized
+
+	api key is provided as parameter in the string. 
+
+
+TOKEN
+	some autogeenrated token is used to get authenticated. 
+
+	once we get a token, we pass the token as the header of the request
+
+	String accessToken= "ASfasdfasdfsd";
+
+	       given().
+	       header("Authorization", accessToken).
+                get("/api/campuses").then().
+                assertThat().statusCode(200);
+
+
+
+API testing tools
+	to test api manually, i used Postman in muy project. 
+		SOAP UI, Advanced REST plugin (chrome)
+
+To test API (restful web services) we used REST Assured library. 
+
+	it is a java library. we added as a maven dependency to the pom file. 
+
+	<dependency>
+	    <groupId>io.rest-assured</groupId>
+	    <artifactId>rest-assured</artifactId>
+	    <version>3.3.0</version>
+	    <scope>test</scope>
+	</dependency>
+
+
+____________
+
+
+Any request has url, headers, body
+
+Any response has status line, headers, body
+
+body can have different data type. the data type of the response body can be checked with header of the response
+	Content-Type →application/json.  -> response body is of json type
+
+
+when we make a request, we can specify what type of data we are sending in the body using the header
+	Content-Type →application/json. -> request body is of json type
+
+
+PAYLOAD --> content inside the body
+
+BREAK 1 hour 2.22 pm est
+
+
+Given a certain api/web service/end point, how would you test it? 
+
+	Azamat with triple a
+
+	take test case from ba
+	manually using postman etc
+	write given method using rest assured
+	prov end point, authentication, params if required 
+	send the request using when
+	server will process it and send response
+	then i check status code, header body i use hamcrest
+	i can do differnet tyoes of testing
+
+	Khalili
+
+test all aspects,
+1.  send valid info, before that i need to locate fields using public variable. weusually store them inside the page object using the @findby
+
+2. then valid username, invalid password
+validate message. for message I use constans to store the message
+
+3. invalid username, valid password
+
+4. empty username or password
+
+i use testng or junit for certain validations 
+i can write emthod to pass the username and password to make it reusable. 
+
+___
+
+Given a certain api/web service/end point, how would you test it? 
+	first talk about the approach you will take on how to test, treat it as another functionality. do not jump into code yet. talk scenarios which you can test with and what will the expection behavior you will verify. 
+
+	to test the team creattion service:
+
+	first I authenticate using the token in the given() part. this api uses token based authentication. 
+	then i send the required team information as a query param
+		param("batch", 8).
+		param("campus", "VA").
+		param("name", "fun club")
+
+
+	next i send my POST request to the url in when()
+	
+
+	after sending the request, i get a response.
+	in the response i check the following information
+		status code 201 
+		verify message Created
+
+		then I verify the headers
+			content type must be application/json
+
+		in the 	body i verify the confirmation message,
+		and verify that the response contains the id of the team i just created
+
+		{
+		result: "Succes",
+		team-id: 12
+
+		}
+
+______________________
+
+
+it does not matter if we are testing GET, PUT, POST or DELETE, we always have the same things in the request: request url, request parameters and request body
+
+it does not matter if we are testing GET, PUT, POST or DELETE, we always verify the same things in the respnse: response code, respnse message and body
+
+______
+
+200 --> when we made a succesful get request
+201 --> when we make a sucessful post request
+401 --> when we make a request wihtout proper authorization
+403 --> forbidden, not enough priviliges 
+
+404 --> not found, when the url is wrong
+
+422 --> unprocessable entity, when the server receives the request but cannot act on it becuase of some bad or missing data,parameter etc
+
+
+500 --> internal server error
+
+501 --> not implemented 
+
+503 --> service not available, when system crashed or system overloaded
+
+502 --> bad gateway, 
+
+405  --> method not allowed, we send a POST request where we should be only sending GET
+
+___
+
+
+Hamcrest
+
+hamcrest is a library used to assertions. it makes assertions easy to read and write. in hamcrest the term for assertion is matcher. 
+
+	    assertThat(1, equalTo(1));
+        String str1 = "Kunkka";
+        String str2 = "Kunkka";
+        // verify if first argument is equal to the second
+        assertThat(str1, is("Kunkka"));
+        assertThat(str1, is(str2));
+
+       dep 
+       <dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest-all</artifactId>
+    <version>1.3</version>
+    <scope>test</scope>
+</dependency>
+
+
+
+
+Rest Assured uses hamcrest matchers for assetions. we do not need to add hamcrest library separately if we have Rest Assured dependency.
+
+
+________
+
+
+POJO and serizalitation, deserizalization
+
+serialization --> turning a java object to sth else like json etc
+
+deserialization --> turning a json etc to java object
+
+
+__________
+
+Uber app, i want to request a ride. every time when I request ride, i enter address and search. it gives me options. 
+	sometimes, it does not give me ride options, instead it says update your payment method. 
+
+	it is takig cc info and checking with the bank if still valid
+	{
+		name: a k
+		num: 1234123423
+		ex : 2.22
+		code: 121
+		zip: 20001
+
+	}
+
+	bank api receives the request which has xml/json payload which contains my cc info. it first deserializes the body and gets the actual information.
+
+
+	response:	
+		{
+		status:exp
+		}
+
+_______
+
+POJO --> plain old java object. it is used to represent a certain type, person, in the application.
+for example my application is student related and the pojos i have is 
+	instructor
+	student
+	campus
+	classroom
+
+VyTrack/ Driver --> 
+	Vehicles,
+	Contracts,
+	FuealLogs, 
+	Contacts
+pojo is just a class with variables, getters and setters for those variables. pojo can also have constuctor for those variable.
+
+pojo
+bean
+model
+
+two classes used for converting from/to json?
+	Gson
+	jackson-databind
+
+we have a json file with some info:
+
+{
+	fname: "John",
+	lname: "Doe"
+	id: 234234,
+	age: old enough
+
+
+}
+
+
+POJO
+class Person{
+	String fname
+	String lname
+	int id
+
+	getters
+	setters
+}
+
+during deserialization, values in the json file with certain key will be mapped to the variabe with the same name in the pojo object 
+
+in case there a key from json file does not have matching field in tje pojo, we add @JsonIgnoreProperties(ignoreUnknown = true). it means dusinr the deserializaiton process, it will skips those fields. 
+if we dont have this, we get UnrecognizedPropertyException
+
+
+
+if you know sysout you're good!!
+	(Kosim)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
